@@ -1615,7 +1615,7 @@ $arya_study_path_config_json = function_exists('wp_json_encode')
         animation: none !important;
       }
     }
-  
+
 
     .lesson-link.is-visited .step-orb {
       background: #edf8df;
