@@ -29,6 +29,85 @@ if (!isset($arya_learning_path_data['categories']) || !is_array($arya_learning_p
   $arya_learning_path_has_meta = false;
 }
 
+if (!function_exists('arya_learning_path_product_course_for_display')) {
+  function arya_learning_path_product_course_for_display($course) {
+    if (!is_array($course) || empty($course['product_id']) || !function_exists('wc_get_product')) {
+      return is_array($course) ? $course : array();
+    }
+
+    $product_id = absint($course['product_id']);
+    $product = $product_id ? wc_get_product($product_id) : false;
+
+    if (!$product) {
+      return $course;
+    }
+
+    $price = 0;
+    if ($product->is_type('variable')) {
+      $max_price = $product->get_variation_price('max', false);
+      $price = $max_price !== '' ? (float) wc_get_price_to_display($product, array('price' => $max_price)) : 0;
+    } else {
+      $price = (float) wc_get_price_to_display($product);
+    }
+
+    $image_id = $product->get_image_id();
+    $image = $image_id ? wp_get_attachment_image_url($image_id, 'medium_large') : '';
+    if (!$image && function_exists('wc_placeholder_img_src')) {
+      $image = wc_placeholder_img_src('medium_large');
+    }
+
+    $duration = get_post_meta($product_id, '_duration', true);
+    if (!$duration) {
+      $duration = get_post_meta($product_id, 'duration', true);
+    }
+
+    $course['product_id'] = $product_id;
+    $course['title'] = html_entity_decode($product->get_name(), ENT_QUOTES, get_bloginfo('charset'));
+    $course['duration'] = $duration ? sanitize_text_field($duration) : (isset($course['duration']) ? $course['duration'] : '');
+    $course['price'] = $price;
+    $course['rating'] = (float) $product->get_average_rating();
+    $course['link'] = get_permalink($product_id);
+    $course['image'] = $image;
+    $course['featured'] = (bool) $product->is_featured();
+
+    return $course;
+  }
+}
+
+if (!function_exists('arya_learning_path_hydrate_products_for_display')) {
+  function arya_learning_path_hydrate_products_for_display($data) {
+    if (!isset($data['categories']) || !is_array($data['categories'])) {
+      return array('categories' => array());
+    }
+
+    $data['categories'] = arya_learning_path_hydrate_nodes_for_display($data['categories']);
+    return $data;
+  }
+}
+
+if (!function_exists('arya_learning_path_hydrate_nodes_for_display')) {
+  function arya_learning_path_hydrate_nodes_for_display($nodes) {
+    foreach ($nodes as $node_index => $node) {
+      if (!is_array($node)) {
+        continue;
+      }
+
+      if (isset($node['path']['courses']) && is_array($node['path']['courses'])) {
+        foreach ($node['path']['courses'] as $course_index => $course) {
+          $nodes[$node_index]['path']['courses'][$course_index] = arya_learning_path_product_course_for_display($course);
+        }
+      }
+
+      if (isset($node['children']) && is_array($node['children'])) {
+        $nodes[$node_index]['children'] = arya_learning_path_hydrate_nodes_for_display($node['children']);
+      }
+    }
+
+    return $nodes;
+  }
+}
+
+$arya_learning_path_data = arya_learning_path_hydrate_products_for_display($arya_learning_path_data);
 $arya_learning_path_can_edit = $arya_learning_path_post_id && function_exists('current_user_can') && current_user_can('edit_post', $arya_learning_path_post_id);
 $arya_learning_path_json_flags = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES;
 $arya_learning_path_json = function_exists('wp_json_encode')
@@ -394,97 +473,58 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
 }
 
-    .lp-editor {
-      max-width: 1080px;
-      margin: 24px auto 90px;
-      padding: 16px;
+    .lp-admin-box {
+      margin-top: 14px;
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, .06);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .05);
       direction: rtl;
-      font-size: 14px;
     }
 
-    .lp-editor[hidden],
-    .lp-editor__body[hidden],
-    .lp-hidden {
-      display: none !important;
+    .lp-admin-box--empty {
+      max-width: 1080px;
+      margin: 18px auto 0;
+      text-align: center;
     }
 
-    .lp-editor__header,
-    .lp-editor__actions,
-    .lp-editor__node-head,
-    .lp-course-row__head {
+    .lp-admin-title {
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .lp-admin-actions,
+    .lp-course-row__head,
+    .lp-modal__head,
+    .lp-modal__foot {
       display: flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
     }
 
-    .lp-editor__header {
+    .lp-admin-actions,
+    .lp-course-row__head,
+    .lp-modal__head,
+    .lp-modal__foot {
       justify-content: space-between;
     }
 
-    .lp-editor__header h2 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: 900;
-    }
-
-    .lp-editor__body {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
-      gap: 16px;
-    }
-
-    .lp-editor__panel {
-      background: #f9fafb;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
-    }
-
-    .lp-editor__panel h3 {
-      margin: 0 0 10px;
-      font-size: 15px;
-      font-weight: 900;
-    }
-
-    .lp-editor__tree {
-      display: grid;
-      gap: 10px;
-    }
-
-    .lp-editor__node {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px;
-    }
-
-    .lp-editor__node-head {
-      justify-content: space-between;
-    }
-
-    .lp-editor__node-title {
-      font-weight: 900;
-    }
-
-    .lp-editor__node-meta {
-      margin-top: 6px;
+    .lp-admin-status {
+      margin-top: 8px;
+      min-height: 20px;
       color: var(--muted);
+      font-weight: 700;
       font-size: 12px;
-      line-height: 1.8;
     }
 
-    .lp-editor__children {
-      margin: 10px 14px 0 0;
-      padding-right: 12px;
-      border-right: 2px solid var(--border);
-      display: grid;
-      gap: 10px;
+    .lp-admin-status.is-error {
+      color: #dc2626;
+    }
+
+    .lp-admin-status.is-success {
+      color: #059669;
     }
 
     .lp-btn {
@@ -548,28 +588,6 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
       direction: rtl;
     }
 
-    .lp-json-draft {
-      min-height: 300px;
-      direction: ltr;
-      text-align: left;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12px;
-    }
-
-    .lp-status {
-      min-height: 20px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .lp-status.is-error {
-      color: #dc2626;
-    }
-
-    .lp-status.is-success {
-      color: #059669;
-    }
-
     .lp-empty {
       padding: 14px;
       color: var(--muted);
@@ -606,11 +624,7 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
 
     .lp-modal__head,
     .lp-modal__foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
+      margin-bottom: 12px;
     }
 
     .lp-modal__head h3 {
@@ -643,7 +657,6 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
     }
 
     .lp-course-row__head {
-      justify-content: space-between;
       margin-bottom: 10px;
       font-weight: 900;
     }
@@ -660,7 +673,6 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
     }
 
     @media (max-width: 780px) {
-      .lp-editor__body,
       .lp-modal__grid {
         grid-template-columns: 1fr;
       }
@@ -703,42 +715,10 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
 
   <div id="sticky" class="sticky"></div>
   <?php if ($arya_learning_path_can_edit) : ?>
-    <section id="learningPathEditor" class="lp-editor" aria-label="ویرایشگر مسیر آموزشی">
-      <div class="lp-editor__header">
-        <div>
-          <h2>ویرایش بصری مسیر آموزشی</h2>
-          <div class="lp-status" id="lpEditorStatus">تغییرات بعد از ذخیره به متای همین برگه منتقل می‌شود.</div>
-        </div>
-        <div class="lp-editor__actions">
-          <button type="button" class="lp-btn lp-btn--secondary" id="lpToggleEditor">نمایش/مخفی کردن ویرایشگر</button>
-          <button type="button" class="lp-btn lp-btn--success" id="lpSaveMeta">ذخیره در متا</button>
-        </div>
-      </div>
-      <div class="lp-editor__body" id="lpEditorBody" hidden>
-        <div class="lp-editor__panel">
-          <div class="lp-editor__header">
-            <h3>ساختار دسته‌بندی‌ها</h3>
-            <button type="button" class="lp-btn lp-btn--success" id="lpAddRoot">افزودن دسته‌بندی ریشه</button>
-          </div>
-          <div id="lpEditorTree" class="lp-editor__tree"></div>
-        </div>
-        <div class="lp-editor__panel">
-          <h3>JSON موقت و قابل اعمال</h3>
-          <div class="lp-field">
-            <label for="lpJsonDraft">در صورت نیاز JSON را دستی ویرایش کنید و سپس روی اعمال JSON بزنید.</label>
-            <textarea id="lpJsonDraft" class="lp-textarea lp-json-draft" spellcheck="false"></textarea>
-          </div>
-          <div class="lp-editor__actions">
-            <button type="button" class="lp-btn lp-btn--warning" id="lpApplyJson">اعمال JSON</button>
-            <button type="button" class="lp-btn lp-btn--secondary" id="lpCopyJson">کپی JSON</button>
-          </div>
-        </div>
-      </div>
-    </section>
     <div id="lpEditorModal" class="lp-modal" hidden>
       <div class="lp-modal__card">
         <div class="lp-modal__head">
-          <h3 id="lpModalTitle">ویرایش گره</h3>
+          <h3 id="lpModalTitle">ویرایش آیتم</h3>
           <button type="button" class="lp-btn lp-btn--secondary" id="lpCloseModal">بستن</button>
         </div>
         <div id="lpModalContent"></div>
@@ -762,6 +742,9 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
 
     let breadcrumb = [];
     let nodeMap = new Map();
+    let selectedPath = null;
+    let adminStatus = '';
+    let adminStatusType = '';
 
     renderLanding();
 
@@ -789,7 +772,11 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
       levelsEl.innerHTML = '';
       detailSection.innerHTML = '';
       sticky.innerHTML = '';
-      renderLevel(DATA.categories || [], 0);
+      if (!DATA.categories || !DATA.categories.length) {
+        renderAdminEmptyState();
+        return;
+      }
+      renderLevel(DATA.categories || [], 0, {}, []);
     }
 
     function escapeHtml(value) {
@@ -809,7 +796,7 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
       return price > 0 ? formatPrice(price) : 'نیاز به استعلام';
     }
 
-    function renderLevel(nodes, levelIndex, parent = {}) {
+    function renderLevel(nodes, levelIndex, parent = {}, pathPrefix = []) {
       // پاک کردن همه سطوح از levelIndex به بعد
       const levels = [...levelsEl.children];
       for (let i = levels.length - 1; i >= levelIndex; i--) {
@@ -821,7 +808,8 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
       const grid = document.createElement('div');
       grid.className = 'tree';
 
-      (nodes || []).forEach(node => {
+      (nodes || []).forEach((node, nodeIndex) => {
+        const path = pathPrefix.concat(nodeIndex);
         const item = document.createElement('div');
         item.className = 'tree-item';
         item.dataset.id = node.id;
@@ -834,6 +822,7 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
         nodeMap.set(node.id, item);
 
         item.onclick = () => {
+          selectedPath = path;
           breadcrumb = breadcrumb.slice(0, levelIndex);
           breadcrumb.push({ id: node.id, title: node.title });
           updateSticky();
@@ -842,7 +831,7 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
           item.classList.add('active');
 
           if (node.children && node.children.length) {
-            renderLevel(node.children, levelIndex + 1, node);
+            renderLevel(node.children, levelIndex + 1, node, path);
           } else {
             // اگر children ندارد، مطمئن شو سطوح بعدی پاک شده‌اند
             const levels = [...levelsEl.children];
@@ -851,8 +840,8 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
             }
           }
 
-          if (node.path) {
-            renderPath(node.path);
+          if (node.path || ARYA_LEARNING_PATH_CONFIG.canEdit) {
+            renderSelectedDetail(node, path);
             setTimeout(() => detailSection.scrollIntoView({ behavior: 'smooth' }), 100);
           } else {
             detailSection.innerHTML = '';
@@ -879,26 +868,7 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
     }
 
     function renderPath(path) {
-      const courses = Array.isArray(path.courses) ? path.courses : [];
-      detailSection.innerHTML = `
-    <div class="path-box" id="productSection">
-      <h3>${escapeHtml(path.title || '')}</h3>
-      <div class="discription">${path.description || ''}</div>
-      <div class="course-grid">
-        ${courses.map(c => `
-          <div class="course">
-            <img src="${escapeHtml(c.image || '')}" alt="${escapeHtml(c.title || '')}">
-            <div class="title">${escapeHtml(c.title || '')}</div>
-            <div class="meta">
-              <span>${escapeHtml(c.duration || '')}</span>
-              <span class="price">${escapeHtml(coursePriceLabel(c))}</span>
-            </div>
-            <a href="${escapeHtml(c.link || '#')}">مشاهده جزئیات دوره</a>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
+      detailSection.innerHTML = getPathMarkup(path);
     }
 
     function updateSticky() {
@@ -923,498 +893,427 @@ $arya_learning_path_config_json = function_exists('wp_json_encode')
       return new Intl.NumberFormat('fa-IR').format(n) + ' تومان';
     }
 
-    initLearningPathEditor();
+    initInlineLearningPathEditor();
 
-    function initLearningPathEditor() {
+    function initInlineLearningPathEditor() {
       if (!ARYA_LEARNING_PATH_CONFIG.canEdit) return;
 
-      const editor = document.getElementById('learningPathEditor');
-      const body = document.getElementById('lpEditorBody');
-      const treeEl = document.getElementById('lpEditorTree');
-      const statusEl = document.getElementById('lpEditorStatus');
-      const jsonDraft = document.getElementById('lpJsonDraft');
+      const modal = document.getElementById('lpEditorModal');
+      const closeButton = document.getElementById('lpCloseModal');
+      if (!modal || !closeButton) return;
+
+      closeButton.addEventListener('click', closeEditorModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeEditorModal();
+      });
+    }
+
+    function createEditorNode() {
+      return {
+        id: 'node_' + Date.now() + '_' + Math.floor(Math.random() * 1000),
+        title: 'زمینه جدید',
+        description: '',
+        childhint: '',
+        image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088',
+        children: []
+      };
+    }
+
+    function renderAdminEmptyState() {
+      if (!ARYA_LEARNING_PATH_CONFIG.canEdit) return;
+      levelsEl.innerHTML = `
+        <div class="lp-admin-box lp-admin-box--empty">
+          <div class="lp-admin-title">هنوز زمینه‌ای برای این مسیر ثبت نشده است.</div>
+          <p>برای شروع، اولین زمینه را بسازید و سپس فرزند، توضیحات و دوره‌ها را روی همان کارت‌ها مدیریت کنید.</p>
+          <button type="button" class="lp-btn lp-btn--success" id="lpCreateFirstNode">ایجاد زمینه اولیه</button>
+          <div class="lp-admin-status ${adminStatusType ? 'is-' + adminStatusType : ''}">${escapeHtml(adminStatus)}</div>
+        </div>
+      `;
+      document.getElementById('lpCreateFirstNode').addEventListener('click', () => {
+        const node = createEditorNode();
+        DATA.categories.push(node);
+        selectedPath = [DATA.categories.length - 1];
+        openNodeEditor(node, selectedPath);
+        renderLanding();
+      });
+    }
+
+    function renderSelectedDetail(node, path) {
+      const adminMarkup = ARYA_LEARNING_PATH_CONFIG.canEdit ? getAdminControlsMarkup(node) : '';
+      const pathMarkup = node.path ? getPathMarkup(node.path) : '';
+      detailSection.innerHTML = adminMarkup + pathMarkup;
+      bindAdminControls(node, path);
+    }
+
+    function getAdminControlsMarkup(node) {
+      const coursesCount = node.path && Array.isArray(node.path.courses) ? node.path.courses.length : 0;
+      return `
+        <div class="lp-admin-box">
+          <div class="lp-admin-title">مدیریت آیتم: ${escapeHtml(node.title || 'بدون عنوان')}</div>
+          <div class="lp-admin-actions">
+            <button type="button" class="lp-btn lp-btn--success" data-lp-action="add-child">افزودن فرزند</button>
+            <button type="button" class="lp-btn" data-lp-action="edit-node">ویرایش توضیحات</button>
+            <button type="button" class="lp-btn lp-btn--warning" data-lp-action="edit-courses">مدیریت دوره‌ها (${coursesCount})</button>
+            <button type="button" class="lp-btn lp-btn--secondary" data-lp-action="save">ذخیره JSON</button>
+            <button type="button" class="lp-btn lp-btn--danger" data-lp-action="delete">حذف آیتم</button>
+          </div>
+          <div class="lp-admin-status ${adminStatusType ? 'is-' + adminStatusType : ''}">${escapeHtml(adminStatus || 'تغییرات پس از ذخیره JSON در متای همین برگه ثبت می‌شود.')}</div>
+        </div>
+      `;
+    }
+
+    function bindAdminControls(node, path) {
+      if (!ARYA_LEARNING_PATH_CONFIG.canEdit) return;
+
+      detailSection.querySelectorAll('[data-lp-action]').forEach(button => {
+        button.addEventListener('click', () => {
+          const action = button.dataset.lpAction;
+          if (action === 'add-child') {
+            addChildNodeInline(node, path);
+          } else if (action === 'edit-node' || action === 'edit-courses') {
+            openNodeEditor(node, path, action === 'edit-courses' ? 'courses' : 'node');
+          } else if (action === 'save') {
+            saveLearningPathMeta(button);
+          } else if (action === 'delete') {
+            deleteNodeInline(path);
+          }
+        });
+      });
+    }
+
+    function addChildNodeInline(node, path) {
+      if (!Array.isArray(node.children)) node.children = [];
+      const child = createEditorNode();
+      node.children.push(child);
+      selectedPath = path.concat(node.children.length - 1);
+      openNodeEditor(child, selectedPath);
+      setAdminStatus('فرزند جدید ایجاد شد. بعد از تکمیل فرم، ذخیره تغییرات را بزنید.', 'success');
+    }
+
+    function deleteNodeInline(path) {
+      if (!confirm('آیا از حذف این آیتم و همه فرزندان آن مطمئن هستید؟')) return;
+      getSiblingList(path).splice(path[path.length - 1], 1);
+      selectedPath = null;
+      saveLearningPathMeta(null, 'آیتم حذف شد و JSON ذخیره شد.');
+    }
+
+    function getNode(path) {
+      let list = DATA.categories;
+      let node = null;
+      for (const index of path) {
+        node = list[index];
+        if (!node) return null;
+        list = node.children || [];
+      }
+      return node;
+    }
+
+    function getSiblingList(path) {
+      if (path.length === 1) return DATA.categories;
+      const parent = getNode(path.slice(0, -1));
+      if (!parent.children) parent.children = [];
+      return parent.children;
+    }
+
+    function getPathMarkup(path) {
+      const courses = Array.isArray(path.courses) ? path.courses : [];
+      return `
+    <div class="path-box" id="productSection">
+      <h3>${escapeHtml(path.title || '')}</h3>
+      <div class="discription">${path.description || ''}</div>
+      <div class="course-grid">
+        ${courses.map(c => `
+          <div class="course">
+            <img src="${escapeHtml(c.image || '')}" alt="${escapeHtml(c.title || '')}">
+            <div class="title">${escapeHtml(c.title || '')}</div>
+            <div class="meta">
+              <span>${escapeHtml(c.duration || '')}</span>
+              <span class="price">${escapeHtml(coursePriceLabel(c))}</span>
+            </div>
+            <a href="${escapeHtml(c.link || '#')}">مشاهده جزئیات دوره</a>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+    }
+
+    function openNodeEditor(node, path, mode = 'node') {
       const modal = document.getElementById('lpEditorModal');
       const modalTitle = document.getElementById('lpModalTitle');
       const modalContent = document.getElementById('lpModalContent');
-      let editorData = cloneLearningPathData(DATA);
+      if (!modal || !modalContent) return;
 
-      if (!editor || !body || !treeEl || !jsonDraft || !modal) return;
+      const pathData = node.path || { title: '', description: '', courses: [] };
+      const courses = Array.isArray(pathData.courses) ? JSON.parse(JSON.stringify(pathData.courses)) : [];
 
-      document.getElementById('lpToggleEditor').addEventListener('click', () => {
-        body.hidden = !body.hidden;
-      });
-
-      document.getElementById('lpAddRoot').addEventListener('click', () => {
-        editorData.categories.push(createEditorNode());
-        renderEditorTree();
-      });
-
-      document.getElementById('lpApplyJson').addEventListener('click', () => {
-        try {
-          editorData = normalizeLearningPathData(JSON.parse(jsonDraft.value));
-          DATA = cloneLearningPathData(editorData);
-          renderLanding();
-          renderEditorTree();
-          setEditorStatus('JSON روی پیش‌نمایش اعمال شد. برای ماندگاری، ذخیره در متا را بزنید.', 'success');
-        } catch (error) {
-          setEditorStatus('JSON معتبر نیست: ' + error.message, 'error');
-        }
-      });
-
-      document.getElementById('lpCopyJson').addEventListener('click', () => {
-        navigator.clipboard.writeText(jsonDraft.value).then(() => {
-          setEditorStatus('JSON کپی شد.', 'success');
-        }).catch(() => {
-          setEditorStatus('امکان کپی خودکار وجود نداشت.', 'error');
-        });
-      });
-
-      document.getElementById('lpSaveMeta').addEventListener('click', saveEditorMeta);
-      document.getElementById('lpCloseModal').addEventListener('click', closeModal);
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) closeModal();
-      });
-
-      renderEditorTree();
-
-      function createEditorNode() {
-        return {
-          id: 'node_' + Date.now() + '_' + Math.floor(Math.random() * 1000),
-          title: 'عنوان جدید',
-          description: '',
-          childhint: '',
-          image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088',
-          children: []
-        };
-      }
-
-      function createEditorCourse() {
-        return {
-          product_id: '',
-          title: 'دوره جدید',
-          duration: '',
-          price: 0,
-          rating: 0,
-          link: '#',
-          image: '',
-          description: '',
-          level: 'متوسط',
-          featured: false
-        };
-      }
-
-      function renderEditorTree() {
-        treeEl.innerHTML = '';
-        if (!editorData.categories.length) {
-          treeEl.innerHTML = '<div class="lp-empty">هیچ دسته‌بندی ثبت نشده است.</div>';
-        } else {
-          editorData.categories.forEach((node, index) => {
-            treeEl.appendChild(renderEditorNode(node, [index]));
-          });
-        }
-        updateDraftJson();
-      }
-
-      function renderEditorNode(node, path) {
-        const nodeEl = document.createElement('article');
-        nodeEl.className = 'lp-editor__node';
-
-        const head = document.createElement('div');
-        head.className = 'lp-editor__node-head';
-        head.innerHTML = `
-          <div>
-            <div class="lp-editor__node-title">${escapeHtml(node.title || 'بدون عنوان')}</div>
-            <div class="lp-editor__node-meta">شناسه: ${escapeHtml(node.id || '')}</div>
-          </div>
-        `;
-
-        const actions = document.createElement('div');
-        actions.className = 'lp-editor__actions';
-        actions.appendChild(makeButton('ویرایش', 'lp-btn', () => openNodeModal(path)));
-        actions.appendChild(makeButton('افزودن فرزند', 'lp-btn lp-btn--success', () => {
-          if (!Array.isArray(node.children)) node.children = [];
-          node.children.push(createEditorNode());
-          renderEditorTree();
-        }));
-        actions.appendChild(makeButton('بالا', 'lp-btn lp-btn--secondary', () => moveNode(path, -1)));
-        actions.appendChild(makeButton('پایین', 'lp-btn lp-btn--secondary', () => moveNode(path, 1)));
-        actions.appendChild(makeButton('حذف', 'lp-btn lp-btn--danger', () => deleteNode(path)));
-        head.appendChild(actions);
-        nodeEl.appendChild(head);
-
-        const meta = document.createElement('div');
-        meta.className = 'lp-editor__node-meta';
-        const courseCount = node.path && Array.isArray(node.path.courses) ? node.path.courses.length : 0;
-        meta.innerHTML = `
-          ${node.description ? '<div>توضیحات: ' + escapeHtml(node.description).slice(0, 120) + '</div>' : ''}
-          ${node.childhint ? '<div>راهنمای فرزند: ' + escapeHtml(node.childhint).slice(0, 120) + '</div>' : ''}
-          ${node.path ? '<div>مسیر آموزشی: ' + escapeHtml(node.path.title || '') + ' / دوره‌ها: ' + courseCount + '</div>' : ''}
-        `;
-        nodeEl.appendChild(meta);
-
-        if (Array.isArray(node.children) && node.children.length) {
-          const childrenEl = document.createElement('div');
-          childrenEl.className = 'lp-editor__children';
-          node.children.forEach((child, index) => {
-            childrenEl.appendChild(renderEditorNode(child, path.concat(index)));
-          });
-          nodeEl.appendChild(childrenEl);
-        }
-
-        return nodeEl;
-      }
-
-      function makeButton(text, className, onClick) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = className;
-        button.textContent = text;
-        button.addEventListener('click', onClick);
-        return button;
-      }
-
-      function getNode(path) {
-        let list = editorData.categories;
-        let node = null;
-        for (const index of path) {
-          node = list[index];
-          if (!node) return null;
-          list = node.children || [];
-        }
-        return node;
-      }
-
-      function getSiblingList(path) {
-        if (path.length === 1) return editorData.categories;
-        const parent = getNode(path.slice(0, -1));
-        if (!parent.children) parent.children = [];
-        return parent.children;
-      }
-
-      function moveNode(path, direction) {
-        const siblings = getSiblingList(path);
-        const index = path[path.length - 1];
-        const nextIndex = index + direction;
-        if (nextIndex < 0 || nextIndex >= siblings.length) return;
-        const current = siblings[index];
-        siblings[index] = siblings[nextIndex];
-        siblings[nextIndex] = current;
-        renderEditorTree();
-      }
-
-      function deleteNode(path) {
-        if (!confirm('آیا از حذف این مورد و همه فرزندان آن مطمئن هستید؟')) return;
-        getSiblingList(path).splice(path[path.length - 1], 1);
-        renderEditorTree();
-      }
-
-      function openNodeModal(path) {
-        const node = getNode(path);
-        if (!node) return;
-        const pathData = node.path || { title: '', description: '', courses: [] };
-        const courses = Array.isArray(pathData.courses) ? JSON.parse(JSON.stringify(pathData.courses)) : [];
-
-        modalTitle.textContent = 'ویرایش: ' + (node.title || 'بدون عنوان');
-        modalContent.innerHTML = `
-          <form id="lpNodeForm">
-            <div class="lp-modal__grid">
-              <div class="lp-field">
-                <label for="lpNodeTitle">عنوان</label>
-                <input id="lpNodeTitle" class="lp-input" value="${escapeHtml(node.title || '')}">
-              </div>
-              <div class="lp-field">
-                <label for="lpNodeId">شناسه ID</label>
-                <input id="lpNodeId" class="lp-input" value="${escapeHtml(node.id || '')}">
-              </div>
-              <div class="lp-field lp-modal__full">
-                <label for="lpNodeDescription">توضیحات کارت</label>
-                <textarea id="lpNodeDescription" class="lp-textarea">${escapeHtml(node.description || '')}</textarea>
-              </div>
-              <div class="lp-field lp-modal__full">
-                <label for="lpNodeChildhint">راهنمای سطح بعدی (HTML مجاز)</label>
-                <textarea id="lpNodeChildhint" class="lp-textarea">${escapeHtml(node.childhint || '')}</textarea>
-              </div>
-              <div class="lp-field lp-modal__full">
-                <label for="lpNodeImage">آدرس تصویر</label>
-                <input id="lpNodeImage" class="lp-input" value="${escapeHtml(node.image || '')}">
-              </div>
-              <div class="lp-field lp-modal__full">
-                <label>
-                  <input type="checkbox" id="lpPathEnabled" ${node.path ? 'checked' : ''}>
-                  فعال بودن مسیر آموزشی برای این گره
-                </label>
-              </div>
-              <div class="lp-field lp-modal__full">
-                <label for="lpPathTitle">عنوان مسیر</label>
-                <input id="lpPathTitle" class="lp-input" value="${escapeHtml(pathData.title || '')}">
-              </div>
-              <div class="lp-field lp-modal__full">
-                <label for="lpPathDescription">توضیحات مسیر (HTML)</label>
-                <textarea id="lpPathDescription" class="lp-textarea">${escapeHtml(pathData.description || '')}</textarea>
-              </div>
-            </div>
-            <div class="lp-modal__head">
-              <h3>دوره‌ها</h3>
-              <button type="button" class="lp-btn lp-btn--success" id="lpAddCourse">افزودن دوره</button>
-            </div>
-            <div id="lpCoursesEditor" class="lp-courses"></div>
-            <div class="lp-modal__foot">
-              <button type="submit" class="lp-btn lp-btn--success">ذخیره تغییرات گره</button>
-              <button type="button" class="lp-btn lp-btn--secondary" id="lpCancelNode">انصراف</button>
-            </div>
-          </form>
-        `;
-
-        const coursesEl = document.getElementById('lpCoursesEditor');
-        const renderCourses = () => {
-          coursesEl.innerHTML = '';
-          if (!courses.length) {
-            coursesEl.innerHTML = '<div class="lp-empty">هیچ دوره‌ای ثبت نشده است.</div>';
-            return;
-          }
-          courses.forEach((course, index) => coursesEl.appendChild(renderCourseRow(course, index)));
-        };
-
-        document.getElementById('lpAddCourse').addEventListener('click', () => {
-          syncCoursesFromRows();
-          courses.push(createEditorCourse());
-          renderCourses();
-        });
-        document.getElementById('lpCancelNode').addEventListener('click', closeModal);
-        document.getElementById('lpNodeForm').addEventListener('submit', (event) => {
-          event.preventDefault();
-          node.title = document.getElementById('lpNodeTitle').value.trim();
-          node.id = document.getElementById('lpNodeId').value.trim() || node.id;
-          node.description = document.getElementById('lpNodeDescription').value;
-          node.childhint = document.getElementById('lpNodeChildhint').value;
-          node.image = document.getElementById('lpNodeImage').value;
-          if (document.getElementById('lpPathEnabled').checked) {
-            node.path = {
-              title: document.getElementById('lpPathTitle').value,
-              description: document.getElementById('lpPathDescription').value,
-              courses: collectCoursesFromModal()
-            };
-          } else {
-            delete node.path;
-          }
-          DATA = cloneLearningPathData(editorData);
-          renderLanding();
-          renderEditorTree();
-          closeModal();
-          setEditorStatus('تغییرات در پیش‌نمایش اعمال شد. برای ذخیره دائمی، ذخیره در متا را بزنید.', 'success');
-        });
-
-        coursesEl.addEventListener('click', (event) => {
-          const button = event.target.closest('button[data-course-action]');
-          if (!button) return;
-          const row = button.closest('.lp-course-row');
-          const index = Number(row.dataset.index);
-          const action = button.dataset.courseAction;
-          if (action !== 'product') {
-            syncCoursesFromRows();
-          }
-          if (action === 'delete') {
-            courses.splice(index, 1);
-            renderCourses();
-          } else if (action === 'up' && index > 0) {
-            const current = courses[index];
-            courses[index] = courses[index - 1];
-            courses[index - 1] = current;
-            renderCourses();
-          } else if (action === 'down' && index < courses.length - 1) {
-            const current = courses[index];
-            courses[index] = courses[index + 1];
-            courses[index + 1] = current;
-            renderCourses();
-          } else if (action === 'product') {
-            fetchProductIntoRow(row, button);
-          }
-        });
-
-        renderCourses();
-        modal.hidden = false;
-
-        function syncCoursesFromRows() {
-          courses.splice(0, courses.length, ...collectCoursesFromModal());
-        }
-      }
-
-      function renderCourseRow(course, index) {
-        const row = document.createElement('div');
-        row.className = 'lp-course-row';
-        row.dataset.index = String(index);
-        row.innerHTML = `
-          <div class="lp-course-row__head">
-            <span>دوره ${index + 1}: ${escapeHtml(course.title || 'بدون عنوان')}</span>
-            <span class="lp-editor__actions">
-              <button type="button" class="lp-btn lp-btn--secondary" data-course-action="up">بالا</button>
-              <button type="button" class="lp-btn lp-btn--secondary" data-course-action="down">پایین</button>
-              <button type="button" class="lp-btn lp-btn--danger" data-course-action="delete">حذف</button>
-            </span>
-          </div>
-          <div class="lp-product-tools">
-            <div class="lp-field" style="margin-bottom:0">
-              <label>شناسه محصول ووکامرس</label>
-              <input class="lp-input" data-course-field="product_id" value="${escapeHtml(course.product_id || '')}" inputmode="numeric">
-            </div>
-            <button type="button" class="lp-btn lp-btn--warning" data-course-action="product">دریافت از محصول</button>
-          </div>
+      modalTitle.textContent = mode === 'courses' ? 'مدیریت دوره‌ها' : 'ویرایش آیتم';
+      modalContent.innerHTML = `
+        <form id="lpNodeForm">
           <div class="lp-modal__grid">
             <div class="lp-field">
-              <label>عنوان دوره</label>
-              <input class="lp-input" data-course-field="title" value="${escapeHtml(course.title || '')}">
+              <label for="lpNodeTitle">عنوان کارت</label>
+              <input id="lpNodeTitle" class="lp-input" value="${escapeHtml(node.title || '')}">
             </div>
             <div class="lp-field">
-              <label>مدت زمان</label>
-              <input class="lp-input" data-course-field="duration" value="${escapeHtml(course.duration || '')}">
-            </div>
-            <div class="lp-field">
-              <label>قیمت (تومان)</label>
-              <input type="number" class="lp-input" data-course-field="price" value="${escapeHtml(course.price || 0)}">
-            </div>
-            <div class="lp-field">
-              <label>امتیاز</label>
-              <input type="number" step="0.1" class="lp-input" data-course-field="rating" value="${escapeHtml(course.rating || 0)}">
+              <label for="lpNodeId">شناسه ID</label>
+              <input id="lpNodeId" class="lp-input" value="${escapeHtml(node.id || '')}">
             </div>
             <div class="lp-field lp-modal__full">
-              <label>لینک دوره</label>
-              <input class="lp-input" data-course-field="link" value="${escapeHtml(course.link || '#')}">
+              <label for="lpNodeDescription">توضیحات کارت</label>
+              <textarea id="lpNodeDescription" class="lp-textarea">${escapeHtml(node.description || '')}</textarea>
             </div>
             <div class="lp-field lp-modal__full">
-              <label>آدرس تصویر</label>
-              <input class="lp-input" data-course-field="image" value="${escapeHtml(course.image || '')}">
+              <label for="lpNodeChildhint">توضیح/راهنمای فرزندان</label>
+              <textarea id="lpNodeChildhint" class="lp-textarea">${escapeHtml(node.childhint || '')}</textarea>
             </div>
-            <div class="lp-field">
-              <label>سطح</label>
-              <select class="lp-select" data-course-field="level">
-                <option value="مقدماتی" ${course.level === 'مقدماتی' ? 'selected' : ''}>مقدماتی</option>
-                <option value="متوسط" ${!course.level || course.level === 'متوسط' ? 'selected' : ''}>متوسط</option>
-                <option value="پیشرفته" ${course.level === 'پیشرفته' ? 'selected' : ''}>پیشرفته</option>
-              </select>
+            <div class="lp-field lp-modal__full">
+              <label for="lpNodeImage">آدرس تصویر کارت</label>
+              <input id="lpNodeImage" class="lp-input" value="${escapeHtml(node.image || '')}">
             </div>
-            <div class="lp-field">
+            <div class="lp-field lp-modal__full">
               <label>
-                <input type="checkbox" data-course-field="featured" ${course.featured ? 'checked' : ''}>
-                دوره ویژه
+                <input type="checkbox" id="lpPathEnabled" ${node.path ? 'checked' : ''}>
+                این آیتم مسیر آموزشی و دوره داشته باشد
               </label>
             </div>
             <div class="lp-field lp-modal__full">
-              <label>توضیحات دوره</label>
-              <textarea class="lp-textarea" data-course-field="description">${escapeHtml(course.description || '')}</textarea>
+              <label for="lpPathTitle">عنوان مسیر آموزشی</label>
+              <input id="lpPathTitle" class="lp-input" value="${escapeHtml(pathData.title || '')}">
+            </div>
+            <div class="lp-field lp-modal__full">
+              <label for="lpPathDescription">توضیحات مسیر آموزشی (HTML)</label>
+              <textarea id="lpPathDescription" class="lp-textarea">${escapeHtml(pathData.description || '')}</textarea>
             </div>
           </div>
-        `;
-        return row;
-      }
+          <div class="lp-product-tools">
+            <div class="lp-field" style="margin-bottom:0">
+              <label for="lpProductId">افزودن دوره فقط با شناسه محصول</label>
+              <input id="lpProductId" class="lp-input" inputmode="numeric" placeholder="مثلا 1234">
+            </div>
+            <button type="button" class="lp-btn lp-btn--warning" id="lpAddProductCourse">فراخوانی و افزودن</button>
+          </div>
+          <div id="lpCoursesEditor" class="lp-courses"></div>
+          <div class="lp-modal__foot">
+            <button type="submit" class="lp-btn lp-btn--success">ذخیره تغییرات</button>
+            <button type="button" class="lp-btn lp-btn--secondary" id="lpCancelNode">انصراف</button>
+          </div>
+        </form>
+      `;
 
-      function collectCoursesFromModal() {
-        return [...document.querySelectorAll('#lpCoursesEditor .lp-course-row')].map(row => ({
-          product_id: row.querySelector('[data-course-field="product_id"]').value.trim(),
-          title: row.querySelector('[data-course-field="title"]').value,
-          duration: row.querySelector('[data-course-field="duration"]').value,
-          price: Number(row.querySelector('[data-course-field="price"]').value || 0),
-          rating: Number(row.querySelector('[data-course-field="rating"]').value || 0),
-          link: row.querySelector('[data-course-field="link"]').value,
-          image: row.querySelector('[data-course-field="image"]').value,
-          description: row.querySelector('[data-course-field="description"]').value,
-          level: row.querySelector('[data-course-field="level"]').value,
-          featured: row.querySelector('[data-course-field="featured"]').checked
-        })).filter(course => course.title.trim());
-      }
+      const coursesEl = document.getElementById('lpCoursesEditor');
+      const productInput = document.getElementById('lpProductId');
+      const addProductButton = document.getElementById('lpAddProductCourse');
 
-      function fetchProductIntoRow(row, button) {
-        const productId = row.querySelector('[data-course-field="product_id"]').value.trim();
+      const renderCourses = () => {
+        coursesEl.innerHTML = '';
+        if (!courses.length) {
+          coursesEl.innerHTML = '<div class="lp-empty">هیچ دوره‌ای اضافه نشده است. دوره‌ها باید با شناسه محصول فراخوانی شوند.</div>';
+          return;
+        }
+        courses.forEach((course, index) => {
+          const row = document.createElement('div');
+          row.className = 'lp-course-row';
+          row.dataset.index = String(index);
+          row.innerHTML = `
+            <div class="lp-course-row__head">
+              <span>${escapeHtml(course.title || 'محصول بدون عنوان')}</span>
+              <span>${escapeHtml(coursePriceLabel(course))}</span>
+            </div>
+            <div class="meta">
+              <span>شناسه محصول: ${escapeHtml(course.product_id || 'ثبت نشده')}</span>
+              <span>${escapeHtml(course.duration || '')}</span>
+            </div>
+            <div class="lp-admin-actions" style="margin-top:10px">
+              <button type="button" class="lp-btn lp-btn--secondary" data-course-action="refresh">به‌روزرسانی از محصول</button>
+              <button type="button" class="lp-btn lp-btn--secondary" data-course-action="up">بالا</button>
+              <button type="button" class="lp-btn lp-btn--secondary" data-course-action="down">پایین</button>
+              <button type="button" class="lp-btn lp-btn--danger" data-course-action="delete">حذف</button>
+            </div>
+          `;
+          coursesEl.appendChild(row);
+        });
+      };
+
+      addProductButton.addEventListener('click', () => {
+        const productId = productInput.value.trim();
         if (!productId) {
-          setEditorStatus('شناسه محصول را وارد کنید.', 'error');
+          setAdminStatus('شناسه محصول را وارد کنید.', 'error');
           return;
         }
-        const request = new FormData();
-        request.append('action', ARYA_LEARNING_PATH_CONFIG.actions.product);
-        request.append('nonce', ARYA_LEARNING_PATH_CONFIG.nonce);
-        request.append('post_id', ARYA_LEARNING_PATH_CONFIG.postId);
-        request.append('product_id', productId);
+        fetchProductCourse(productId, addProductButton)
+          .then(course => {
+            courses.push(course);
+            document.getElementById('lpPathEnabled').checked = true;
+            productInput.value = '';
+            renderCourses();
+            setAdminStatus('دوره از محصول خوانده شد. برای ذخیره نهایی، تغییرات را ذخیره کنید.', 'success');
+          })
+          .catch(error => setAdminStatus(error.message, 'error'));
+      });
 
+      coursesEl.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-course-action]');
+        if (!button) return;
+        const index = Number(button.closest('.lp-course-row').dataset.index);
+        const action = button.dataset.courseAction;
+        if (action === 'delete') {
+          courses.splice(index, 1);
+          renderCourses();
+        } else if (action === 'up' && index > 0) {
+          const current = courses[index];
+          courses[index] = courses[index - 1];
+          courses[index - 1] = current;
+          renderCourses();
+        } else if (action === 'down' && index < courses.length - 1) {
+          const current = courses[index];
+          courses[index] = courses[index + 1];
+          courses[index + 1] = current;
+          renderCourses();
+        } else if (action === 'refresh') {
+          const productId = courses[index].product_id;
+          if (!productId) {
+            setAdminStatus('این دوره شناسه محصول ندارد.', 'error');
+            return;
+          }
+          fetchProductCourse(productId, button)
+            .then(course => {
+              courses[index] = course;
+              renderCourses();
+              setAdminStatus('اطلاعات دوره از محصول به‌روز شد.', 'success');
+            })
+            .catch(error => setAdminStatus(error.message, 'error'));
+        }
+      });
+
+      document.getElementById('lpCancelNode').addEventListener('click', closeEditorModal);
+      document.getElementById('lpNodeForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        node.title = document.getElementById('lpNodeTitle').value.trim() || 'بدون عنوان';
+        node.id = document.getElementById('lpNodeId').value.trim() || node.id;
+        node.description = document.getElementById('lpNodeDescription').value;
+        node.childhint = document.getElementById('lpNodeChildhint').value;
+        node.image = document.getElementById('lpNodeImage').value;
+
+        if (document.getElementById('lpPathEnabled').checked) {
+          node.path = {
+            title: document.getElementById('lpPathTitle').value,
+            description: document.getElementById('lpPathDescription').value,
+            courses
+          };
+        } else {
+          delete node.path;
+        }
+
+        selectedPath = path;
+        closeEditorModal();
+        saveLearningPathMeta(null, 'تغییرات ذخیره شد.');
+      });
+
+      renderCourses();
+      modal.hidden = false;
+
+      if (mode === 'courses') {
+        setTimeout(() => productInput.focus(), 50);
+      }
+    }
+
+    function closeEditorModal() {
+      const modal = document.getElementById('lpEditorModal');
+      const modalContent = document.getElementById('lpModalContent');
+      if (modal) modal.hidden = true;
+      if (modalContent) modalContent.innerHTML = '';
+    }
+
+    function fetchProductCourse(productId, button) {
+      const request = new FormData();
+      request.append('action', ARYA_LEARNING_PATH_CONFIG.actions.product);
+      request.append('nonce', ARYA_LEARNING_PATH_CONFIG.nonce);
+      request.append('post_id', ARYA_LEARNING_PATH_CONFIG.postId);
+      request.append('product_id', productId);
+
+      if (button) {
         button.disabled = true;
+        button.dataset.originalText = button.textContent;
         button.textContent = 'در حال دریافت...';
-        fetch(ARYA_LEARNING_PATH_CONFIG.ajaxUrl, {
-          method: 'POST',
-          credentials: 'same-origin',
-          body: request
+      }
+
+      return fetch(ARYA_LEARNING_PATH_CONFIG.ajaxUrl, {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: request
+      })
+        .then(response => response.json())
+        .then(response => {
+          if (!response.success) {
+            throw new Error(response.data && response.data.message ? response.data.message : 'خطا در دریافت محصول');
+          }
+          return response.data.course;
         })
-          .then(response => response.json())
-          .then(response => {
-            if (!response.success) {
-              throw new Error(response.data && response.data.message ? response.data.message : 'خطا در دریافت محصول');
-            }
-            const course = response.data.course || {};
-            Object.entries(course).forEach(([key, value]) => {
-              const field = row.querySelector(`[data-course-field="${key}"]`);
-              if (!field) return;
-              if (field.type === 'checkbox') {
-                field.checked = Boolean(value);
-              } else {
-                field.value = value ?? '';
-              }
-            });
-            setEditorStatus('اطلاعات محصول دریافت شد. برای اعمال نهایی، تغییرات گره را ذخیره کنید.', 'success');
-          })
-          .catch(error => setEditorStatus(error.message, 'error'))
-          .finally(() => {
+        .finally(() => {
+          if (button) {
             button.disabled = false;
-            button.textContent = 'دریافت از محصول';
-          });
+            button.textContent = button.dataset.originalText || 'فراخوانی';
+          }
+        });
+    }
+
+    function saveLearningPathMeta(button = null, successMessage = 'JSON در دیتابیس ذخیره شد.') {
+      if (!ARYA_LEARNING_PATH_CONFIG.canEdit) return Promise.resolve();
+      if (!ARYA_LEARNING_PATH_CONFIG.ajaxUrl || !ARYA_LEARNING_PATH_CONFIG.nonce) {
+        setAdminStatus('تنظیمات AJAX وردپرس در دسترس نیست.', 'error');
+        return Promise.reject(new Error('تنظیمات AJAX وردپرس در دسترس نیست.'));
       }
 
-      function closeModal() {
-        modal.hidden = true;
-        modalContent.innerHTML = '';
-      }
+      const request = new FormData();
+      request.append('action', ARYA_LEARNING_PATH_CONFIG.actions.save);
+      request.append('nonce', ARYA_LEARNING_PATH_CONFIG.nonce);
+      request.append('post_id', ARYA_LEARNING_PATH_CONFIG.postId);
+      request.append('data', JSON.stringify(DATA));
 
-      function updateDraftJson() {
-        jsonDraft.value = JSON.stringify(editorData, null, 2);
-      }
+      if (button) button.disabled = true;
+      setAdminStatus('در حال ذخیره JSON...', '');
 
-      function saveEditorMeta() {
-        if (!ARYA_LEARNING_PATH_CONFIG.ajaxUrl || !ARYA_LEARNING_PATH_CONFIG.nonce) {
-          setEditorStatus('تنظیمات AJAX وردپرس در دسترس نیست.', 'error');
-          return;
-        }
-        const button = document.getElementById('lpSaveMeta');
-        const request = new FormData();
-        request.append('action', ARYA_LEARNING_PATH_CONFIG.actions.save);
-        request.append('nonce', ARYA_LEARNING_PATH_CONFIG.nonce);
-        request.append('post_id', ARYA_LEARNING_PATH_CONFIG.postId);
-        request.append('data', JSON.stringify(editorData));
-
-        button.disabled = true;
-        setEditorStatus('در حال ذخیره...', '');
-        fetch(ARYA_LEARNING_PATH_CONFIG.ajaxUrl, {
-          method: 'POST',
-          credentials: 'same-origin',
-          body: request
+      return fetch(ARYA_LEARNING_PATH_CONFIG.ajaxUrl, {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: request
+      })
+        .then(response => response.json())
+        .then(response => {
+          if (!response.success) {
+            throw new Error(response.data && response.data.message ? response.data.message : 'ذخیره انجام نشد');
+          }
+          DATA = normalizeLearningPathData(response.data.data || DATA);
+          renderLanding();
+          renderSelectedPathAfterRefresh();
+          setAdminStatus(successMessage, 'success');
         })
-          .then(response => response.json())
-          .then(response => {
-            if (!response.success) {
-              throw new Error(response.data && response.data.message ? response.data.message : 'ذخیره انجام نشد');
-            }
-            editorData = normalizeLearningPathData(response.data.data || editorData);
-            DATA = cloneLearningPathData(editorData);
-            renderLanding();
-            renderEditorTree();
-            setEditorStatus('ذخیره شد و پیش‌نمایش با متای جدید به‌روز شد.', 'success');
-          })
-          .catch(error => setEditorStatus(error.message, 'error'))
-          .finally(() => {
-            button.disabled = false;
-          });
-      }
+        .catch(error => {
+          setAdminStatus(error.message, 'error');
+          throw error;
+        })
+        .finally(() => {
+          if (button) button.disabled = false;
+        });
+    }
 
-      function setEditorStatus(message, type) {
+    function setAdminStatus(message, type) {
+      adminStatus = message;
+      adminStatusType = type || '';
+      document.querySelectorAll('.lp-admin-status').forEach(statusEl => {
         statusEl.textContent = message;
         statusEl.classList.remove('is-success', 'is-error');
         if (type === 'success') statusEl.classList.add('is-success');
         if (type === 'error') statusEl.classList.add('is-error');
+      });
+    }
+
+    function renderSelectedPathAfterRefresh() {
+      if (!selectedPath) return;
+      const node = getNode(selectedPath);
+      if (node) {
+        renderSelectedDetail(node, selectedPath);
       }
     }
   </script>
