@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویرایشگر ساختار آموزشی</title>
+    
+    <!-- CDN ها -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        .tree-node {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+        
+        .node-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background-color: #f8fafc;
+            border-bottom: 1px solid #e5e7eb;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .node-content {
+            padding: 15px;
+        }
+        
+        .children-container {
+            padding-right: 30px;
+            margin-top: 10px;
+            border-right: 2px solid #e5e7eb;
+        }
+        
+        .empty-message {
+            color: #9ca3af;
+            font-style: italic;
+            padding: 15px;
+            text-align: center;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .json-output {
+            font-family: monospace;
+            white-space: pre-wrap;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .tree-level-0 { margin-bottom: 15px; }
+        .tree-level-1 { margin-right: 20px; }
+        .tree-level-2 { margin-right: 40px; }
+        .tree-level-3 { margin-right: 60px; }
+        
+        .course-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: white;
+        }
+        
+        .path-section {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+        
+        .btn-success {
+            background-color: #10b981;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #059669;
+        }
+        
+        .btn-danger {
+            background-color: #ef4444;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+        
+        .btn-warning {
+            background-color: #f59e0b;
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background-color: #d97706;
+        }
+        
+        .btn-secondary {
+            background-color: #6b7280;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #4b5563;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .course-list {
+            margin-top: 20px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .tab-content {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="container mx-auto p-4">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-blue-700 mb-2">ویرایشگر ساختار آموزشی</h1>
+            <p class="text-gray-600">مدیریت ساختار درختی دسته‌بندی‌های آموزشی با قابلیت ویرایش کامل</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- پنل سمت چپ: ساختار درختی -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow p-6 mb-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-gray-800">
+                            ساختار درختی دسته‌بندی‌ها
+                        </h2>
+                        <button id="addRootNode" class="btn btn-success">
+                            افزودن دسته‌بندی ریشه
+                        </button>
+                    </div>
+                    
+                    <div id="categoryTree" class="tree-container">
+                        <!-- درخت به صورت پویا ساخته می‌شود -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- پنل سمت راست: کنترل‌ها و JSON -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow p-6 mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">
+                        ورودی/خروجی JSON
+                    </h2>
+                    
+                    <div class="mb-6">
+                        <label class="form-label">JSON ورودی:</label>
+                        <textarea id="jsonInput" class="form-textarea json-output" placeholder='{"categories": [...]}' rows="8">{"categories":[{"id":"computer","title":"کامپیوتر","description":"شروع مسیر کامپیوتر","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"id":"accounting","title":"مالی و حسابداری","description":"شروع مسیر حسابداری","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"id":"accounting","title":"آشپزی و شیرینی پزی","description":"","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"id":"webdesign","title":"طراحی سایت","description":"مسیر ورود به طراحی سایت","childhint":"طراحی وبسایت به دو طریق میسر است. با برنامه نویسی و بدون برنامه نویسی. لطفا انتخاب کنید که از کدام طریق میخواهید طراحی وبسایت را شروع کنید","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","children":[{"id":"wordpress","title":"یادگیری طراحی سایت بدون برنامه نویسی","description":"","childhint":"","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر طراحی سایت بدون کدنویسی با وردپرس","description":"\n    <p>مسیر تخصصی <strong>طراحی سایت بدون کدنویسی با وردپرس</strong> برای افرادی که می‌خواهند بدون دانش برنامه‌نویسی سایت‌های حرفه‌ای ایجاد کنند:</p>\n    \n    <h4>📚 مراحل کامل یادگیری:</h4>\n    <ol>\n      <li><strong>مبانی وب و اینترنت</strong>\n        <ul>\n          <li>درک مفاهیم پایه: دامنه (Domain)، هاست (Hosting)</li>\n          <li>آشنایی با انواع سایت‌ها: شرکتی، فروشگاهی، شخصی، وبلاگ</li>\n          <li>مفاهیم سئو (SEO) پایه برای بهینه‌سازی سایت</li>\n          <li>امنیت وب‌سایت‌ها و راه‌های محافظت</li>\n        </ul>\n      </li>\n      \n      <li><strong>مقدمات HTML و CSS (ضروری برای کنترل بیشتر)</strong>\n        <ul>\n          <li>آشنایی با ساختار HTML تگ‌های اصلی</li>\n          <li>مفاهیم CSS برای استایل‌دهی ساده</li>\n          <li>کار با کلاس‌ها و ID در CSS</li>\n          <li>ویرایش ظاهری سایت با کدهای ساده</li>\n          <li><strong>نکته:</strong> نیازی به تسلط کامل نیست، فقط برای سفارشی‌سازی</li>\n        </ul>\n      </li>\n      \n      <li><strong>آشنایی کامل با وردپرس</strong>\n        <ul>\n          <li>نصب وردپرس روی هاست (cPanel، DirectAdmin)</li>\n          <li>آشنایی با پیشخوان مدیریت وردپرس (Dashboard)</li>\n          <li>مدیریت کاربران و نقش‌ها (Roles)</li>\n          <li>تنظیمات عمومی وردپرس</li>\n        </ul>\n      </li>\n      \n      <li><strong>کار با پوسته‌ها (Themes) و صفحه‌سازها</strong>\n        <ul>\n          <li><strong>انتخاب پوسته مناسب:</strong>\n            <ul>\n              <li>پوسته‌های رایگان و پرمیوم</li>\n              <li>پوسته‌های چندمنظوره (Multipurpose)</li>\n              <li>پوسته‌های تخصصی (فروشگاهی، شرکتی)</li>\n            </ul>\n          </li>\n          \n          <li><strong>صفحه‌سازهای حرفه‌ای:</strong>\n            <ul>\n              <li><strong>Elementor:</strong> محبوب‌ترین و قدرتمندترین</li>\n              <li><strong>Divi Builder:</strong> با کتابخانه گسترده</li>\n              <li><strong>WP Bakery:</strong> قدیمی اما قدرتمند</li>\n              <li><strong>Beaver Builder:</strong> برای توسعه سریع</li>\n            </ul>\n          </li>\n          \n          <li><strong>مهارت‌های صفحه‌سازی:</strong>\n            <ul>\n              <li>طراحی صفحه اصلی (Homepage)</li>\n              <li>ساخت صفحات داخلی (About، Contact، Services)</li>\n              <li>طراحی هدر و فوتر</li>\n              <li>مدیریت منوها و ناوبری</li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت محتوا در وردپرس</strong>\n        <ul>\n          <li>ایجاد و مدیریت پست‌ها (مقالات)</li>\n          <li>ایجاد و مدیریت صفحات (Pages)</li>\n          <li>مدیریت دسته‌بندی‌ها و تگ‌ها</li>\n          <li>کار با رسانه‌ها (عکس، ویدئو، فایل)</li>\n          <li>بلاگ‌نویسی و مدیریت نظرات</li>\n        </ul>\n      </li>\n      \n      <li><strong>افزونه‌های ضروری (Plugins)</strong>\n        <ul>\n          <li><strong>افزونه‌های امنیتی:</strong> Wordfence، iThemes Security</li>\n          <li><strong>افزونه‌های سئو:</strong> Yoast SEO، Rank Math</li>\n          <li><strong>افزونه‌های کش:</strong> W3 Total Cache، WP Rocket</li>\n          <li><strong>فرم‌سازها:</strong> Contact Form 7، WPForms</li>\n          <li><strong>فروشگاه ساز:</strong> WooCommerce (برای سایت فروشگاهی)</li>\n          <li><strong>پشتیبان‌گیری:</strong> UpdraftPlus، BackWPup</li>\n        </ul>\n      </li>\n      \n      <li><strong>سایت فروشگاهی با WooCommerce</strong>\n        <ul>\n          <li>نصب و راه‌اندازی WooCommerce</li>\n          <li>تنظیمات فروشگاه (درگاه پرداخت، حمل و نقل)</li>\n          <li>مدیریت محصولات و دسته‌بندی‌ها</li>\n          <li>تنظیم تخفیف‌ها و کوپن‌ها</li>\n          <li>مدیریت سفارشات و مشتریان</li>\n        </ul>\n      </li>\n      \n      <li><strong>بهینه‌سازی و نگهداری</strong>\n        <ul>\n          <li>بهینه‌سازی سرعت سایت</li>\n          <li>سئوی فنی (Technical SEO)</li>\n          <li>پشتیبان‌گیری دوره‌ای</li>\n          <li>بروزرسانی پوسته و افزونه‌ها</li>\n          <li>مانیتورینگ سلامت سایت</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های کسب‌وکار و فروش</strong>\n        <ul>\n          <li>تحلیل نیاز مشتری</li>\n          <li>تعیین قیمت‌گذاری پروژه‌ها</li>\n          <li>مدیریت ارتباط با مشتری</li>\n          <li>بازاریابی خدمات طراحی سایت</li>\n          <li>پشتیبانی پس از تحویل</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مخاطبان این مسیر:</h4>\n    <ul>\n      <li>افراد غیرفنی که می‌خواهند سایت داشته باشند</li>\n      <li>کارآفرینان و صاحبان کسب‌وکارهای کوچک</li>\n      <li>فریلنسرهایی که می‌خواهند طراحی سایت ارائه دهند</li>\n      <li>دانشجویان برای افزایش مهارت‌های شغلی</li>\n      <li>مشاغل آزاد برای توسعه کسب‌وکار آنلاین</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت سایت‌های کاملاً حرفه‌ای بدون کدنویسی</li>\n      <li>مدیریت کامل محتوا و ظاهر سایت</li>\n      <li>راه‌اندازی فروشگاه اینترنتی با WooCommerce</li>\n      <li>بهینه‌سازی سرعت و سئوی سایت</li>\n      <li>مدیریت امنیت و پشتیبان‌گیری</li>\n      <li>توانایی طراحی سایت برای مشتریان و کسب درآمد</li>\n    </ul>\n    \n    <h4>💰 بازار کار و درآمد:</h4>\n    <ul>\n      <li>طراحی سایت برای مشتریان (پروژه‌ای)</li>\n      <li>پشتیبانی و نگهداری سایت‌ها (ماهانه)</li>\n      <li>فروش سایت‌های آماده (قالب وردپرس)</li>\n      <li>آموزش طراحی سایت به دیگران</li>\n      <li>مدیریت سایت سازمان‌ها</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۳ تا ۶ ماه (بسته به زمان تمرین)</p>\n    <p>💡 نکته: با این مسیر می‌توانید در کمتر از ۶ ماه به درآمدزایی برسید</p>\n    <p>🌟 مزیت: نیاز به پیش‌نیاز خاصی ندارد و برای همه قابل یادگیری است</p>\n  ","courses":[{"title":"مبانی وب و هاستینگ","duration":"4 جلسه","price":490000,"rating":4.7,"link":"#","image":"https://images.unsplash.com/photo-1547658719-da2b51169166"},{"title":"HTML و CSS مقدماتی برای وردپرس","duration":"6 جلسه","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"title":"وردپرس از صفر تا صد","duration":"10 جلسه","price":1190000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1593720213428-28a5b9e94613"},{"title":"طراحی حرفه‌ای با Elementor","duration":"8 جلسه","price":990000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1563013544-824ae1b704d3"},{"title":"سئوی وردپرس با Yoast SEO","duration":"5 جلسه","price":590000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"},{"title":"فروشگاه اینترنتی با WooCommerce","duration":"8 جلسه","price":1090000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"},{"title":"امنیت وردپرس","duration":"4 جلسه","price":490000,"rating":4.7,"link":"#","image":"https://images.unsplash.com/photo-1510915228340-29c85a43dcfe"},{"title":"پروژه عملی طراحی سایت","duration":"10 جلسه","price":1290000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1552664730-d307ca884978"}]}},{"id":"accounting","title":"طراحی سایت با برنامه نویسی","description":"","childhint":"یادگیری طراحی وبسایت از طریق برنامه نویسی شامل مفاهیم مستقل و بزرگی است. انتخاب کنید که علاقه مند به چه چیزی هستید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر طراحی سایت با برنامه‌نویسی (Developer)","description":"\n    <p><strong>مسیر فنی و حرفه‌ای</strong> - کنترل کامل، انعطاف نامحدود، درآمد بالا</p>\n    \n    <h4>🚀 مسیر سریع (Crash Course):</h4>\n    <ol>\n      <li><strong>ماه ۱-۲: پایه‌ها</strong>\n        <ul>\n          <li>HTML5 + CSS3 + JavaScript ES6</li>\n          <li>Git + GitHub</li>\n          <li>Responsive Design</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۳-۴: فرانت‌اند</strong>\n        <ul>\n          <li>React.js (پیشنهاد اول) یا Vue.js</li>\n          <li>State Management (Redux/Vuex)</li>\n          <li>API Calls + Routing</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۵-۶: بک‌اند</strong>\n        <ul>\n          <li>Node.js + Express یا Python + Django</li>\n          <li>دیتابیس (PostgreSQL/MongoDB)</li>\n          <li>RESTful APIs + Authentication</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۷-۸: تکمیل</strong>\n        <ul>\n          <li>TypeScript برای کیفیت کد</li>\n          <li>Deployment و DevOps مقدماتی</li>\n          <li>Testing + Security Basics</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 تفاوت با وردپرس:</h4>\n    <ul>\n      <li>✅ کنترل ۱۰۰٪ روی کدها</li>\n      <li>✅ انعطاف نامحدود در پیاده‌سازی</li>\n      <li>✅ بهینه‌سازی سرعت و امنیت بالا</li>\n      <li>✅ درآمد ۲-۳ برابر بیشتر</li>\n      <li>❌ زمان یادگیری طولانی‌تر (۸-۱۲ ماه)</li>\n      <li>❌ پیچیدگی فنی بیشتر</li>\n    </ul>\n    \n    <h4>💰 بازار کار:</h4>\n    <ul>\n      <li>Frontend Developer</li>\n      <li>Backend Developer</li>\n      <li>Fullstack Developer</li>\n      <li>در شرکت‌های تکنولوژی و استارتاپ‌ها</li>\n    </ul>\n    \n    <p>⏱ زمان: ۸-۱۲ ماه تا بازار کار</p>\n    <p>💡 انتخاب کنید اگر: عاشق تکنولوژی، حل مسئله و چالش‌های فنی هستید</p>\n  ","courses":[{"title":"HTML/CSS/JS فشرده","duration":"8 جلسه","price":890000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"title":"React.js سریع","duration":"10 جلسه","price":1190000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"Node.js و Express","duration":"8 جلسه","price":990000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1555066931-4365d14bab8c"},{"title":"پروژه Fullstack","duration":"12 جلسه","price":1490000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"}]}}]},{"id":"programing","title":"برنامه نویسی","description":"مسیر ورود به برنامه نویسی","childhint":"از آنجایی که حوزه برنامه نویسی حوزه بزرگی می باشد. لطفا مشخص کنید که دقیقا به برنامه نویسی کدام بخش علاقه مند هستید","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","children":[{"id":"web","title":"برنامه‌نویسی و طراحی وب","description":"","childhint":"برنامه‌نویسی وب شامل مسیرهای تخصصی مختلفی است. انتخاب کنید به کدام علاقه‌مند هستید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","children":[{"id":"frontend","title":"فرانت‌اند","description":"طراحی و پیاده‌سازی ظاهر وب‌سایت","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر فرانت اند","description":"\n                    <img src=\"https://img.freepik.com/premium-vector/front-end-developer-course-infographic-chart-design-template_106317-14547.jpg\" />\n    <p>با توجه به انتخاب‌های شما، مسیر یادگیری <strong>فرانت‌اند (Frontend Development)</strong> به صورت زیر خواهد بود:</p>\n    \n    <h4>📚 مراحل یادگیری فرانت‌اند:</h4>\n    <ol>\n      <li><strong>HTML & CSS</strong> - پایه و اساس ساختار و ظاهر وب‌سایت</li>\n      <li><strong>JavaScript</strong> - افزودن تعامل و منطق به صفحات وب</li>\n      <li><strong>Responsive Design</strong> - طراحی واکنش‌گرا برای تمام دستگاه‌ها</li>\n      <li><strong>Version Control (Git)</strong> - مدیریت کدها و همکاری تیمی</li>\n      <li><strong>CSS Frameworks</strong> - Bootstrap یا Tailwind CSS</li>\n      <li><strong>JavaScript Libraries/Frameworks</strong> - React.js (پیشنهاد اصلی)</li>\n      <li><strong>State Management</strong> - مدیریت state در اپلیکیشن‌های بزرگ</li>\n      <li><strong>Modern Tools</strong> - Webpack, npm/yarn, API Integration</li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های کسب شده پس از پایان مسیر:</h4>\n    <ul>\n      <li>ساخت وب‌سایت‌های زیبا و واکنش‌گرا</li>\n      <li>ایجاد اپلیکیشن‌های وب پویا و تعاملی</li>\n      <li>توانایی کار با APIها و داده‌های واقعی</li>\n      <li>آمادگی برای ورود به بازار کار فرانت‌اند</li>\n      <li>پایه قوی برای یادگیری فریم‌ورک‌های پیشرفته‌تر</li>\n    </ul>\n    \n    <p>⏱ مدت زمان تقریبی برای تسلط: ۶ تا ۹ ماه (با تمرین روزانه)</p>\n  ","courses":[{"title":"HTML/CSS مقدماتی","duration":"4 جلسه","price":490000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"title":"JavaScript پایه","duration":"6 جلسه","price":690000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1627398242454-45a1465c2479"},{"title":"React.js مقدماتی","duration":"8 جلسه","price":890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"طراحی واکنش‌گرا (Responsive)","duration":"3 جلسه","price":390000,"rating":4.7,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"},{"title":"Git & GitHub برای فرانت‌اند","duration":"3 جلسه","price":290000,"rating":4.6,"link":"#","image":"https://images.unsplash.com/photo-1618401471353-b98afee0b2eb"},{"title":"پروژه محور فرانت‌اند","duration":"10 جلسه","price":990000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1555066931-4365d14bab8c"}]}},{"id":"backend","title":"بک‌اند","description":"مدیریت داده‌ها، سرور و منطق سیستم","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر بک اند","description":"\n    <p>با توجه به انتخاب‌های شما، مسیر یادگیری <strong>بک‌اند (Backend Development)</strong> به صورت زیر خواهد بود:</p>\n    \n    <h4>📚 مراحل اصلی یادگیری بک‌اند:</h4>\n    <ol>\n      <li><strong>انتخاب زبان برنامه‌نویسی سمت سرور</strong><br>\n      ابتدا باید یکی از زبان‌های بک‌اند را انتخاب و یاد بگیرید. گزینه‌های رایج:\n      <ul>\n        <li>PHP (برای شروع آسان و بازار کار گسترده)</li>\n        <li>Python (برای توسعه سریع و هوش مصنوعی)</li>\n        <li>Node.js (جاوااسکریپت برای همه‌کاره بودن)</li>\n        <li>Java (برای سیستم‌های سازمانی بزرگ)</li>\n        <li>C# (برای توسعه تحت ویندوز)</li>\n      </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر کامل با PHP</strong><br>\n      اگر PHP را انتخاب کنید:\n      <ol type=\"a\">\n        <li>یادگیری مبانی PHP (سینتکس، توابع، شیءگرایی)</li>\n        <li>کار با دیتابیس (MySQL یا PostgreSQL)</li>\n        <li>یادگیری یک فریم‌ورک (Laravel یا Symfony)</li>\n        <li>ساخت RESTful API</li>\n        <li>احراز هویت و امنیت</li>\n        <li>کار با Composer (مدیریت پکیج‌ها)</li>\n      </ol>\n      </li>\n      \n      <li><strong>پایگاه داده‌ها</strong><br>\n      یادگیری هر دو نوع:\n      <ul>\n        <li>دیتابیس‌های رابطه‌ای (SQL): MySQL، PostgreSQL</li>\n        <li>دیتابیس‌های غیررابطه‌ای (NoSQL): MongoDB، Redis</li>\n      </ul>\n      </li>\n      \n      <li><strong>فریم‌ورک‌ها</strong><br>\n      انتخاب یک فریم‌ورک اصلی برای افزایش سرعت و کیفیت توسعه:\n      <ul>\n        <li>PHP: Laravel، Symfony</li>\n        <li>Python: Django، Flask</li>\n        <li>Node.js: Express.js، NestJS</li>\n      </ul>\n      </li>\n      \n      <li><strong>API Development</strong><br>\n      ساخت APIهای RESTful یا GraphQL برای ارتباط با فرانت‌اند</li>\n      \n      <li><strong>احراز هویت و امنیت</strong><br>\n      پیاده‌سازی JWT، OAuth، hash کردن پسوردها، جلوگیری از حملات رایج</li>\n      \n      <li><strong>ابزارهای کمکی</strong><br>\n      Git، Docker، Redis (برای کش)، تست‌نویسی، مستندسازی API</li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی پس از پایان مسیر:</h4>\n    <ul>\n      <li>ساخت سرورهای قدرتمند و امن</li>\n      <li>طراحی و بهینه‌سازی پایگاه داده</li>\n      <li>ایجاد APIهای کامل و مستند</li>\n      <li>پیاده‌سازی سیستم‌های احراز هویت پیچیده</li>\n      <li>استقرار (Deploy) پروژه‌ها روی سرور</li>\n      <li>آمادگی کامل برای ورود به بازار کار بک‌اند</li>\n    </ul>\n    \n    <p>⏱ مدت زمان تقریبی برای تسلط: ۸ تا ۱۲ ماه (با تمرین مداوم)</p>\n    <p>💡 نکته: انتخاب یک زبان و فریم‌ورک و تسلط کامل روی آن بهتر از یادگیری سطحی چندین تکنولوژی است.</p>\n  ","courses":[{"title":"PHP مقدماتی","duration":"6 جلسه","price":590000,"rating":4.7,"link":"#","image":"https://images.unsplash.com/photo-1555066931-4365d14bab8c"},{"title":"MySQL و طراحی دیتابیس","duration":"5 جلسه","price":490000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1543946602-c0516cd30c8c"},{"title":"فریم‌ورک Laravel","duration":"10 جلسه","price":990000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"API Development با PHP","duration":"6 جلسه","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1558494949-ef010cbdcc31"},{"title":"امنیت در بک‌اند","duration":"4 جلسه","price":490000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1510915228340-29c85a43dcfe"},{"title":"پروژه عملی بک‌اند","duration":"12 جلسه","price":1190000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"}]}},{"id":"fullstack","title":"فول‌استک","description":"ترکیب فرانت‌اند و بک‌اند","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر Fullstack (مثال PHP)","description":"\n    <p>با انتخاب مسیر <strong>فول‌استک (Fullstack Development)</strong>، شما هم فرانت‌اند و هم بک‌اند را یاد می‌گیرید:</p>\n    \n    <h4>📚 مراحل یادگیری Fullstack با PHP:</h4>\n    <ol>\n      <li><strong>پایه‌های فرانت‌اند</strong>\n        <ul>\n          <li>HTML & CSS (ساختار و استایل)</li>\n          <li>JavaScript (تعامل و منطق)</li>\n          <li>Responsive Design (واکنش‌گرا)</li>\n        </ul>\n      </li>\n      \n      <li><strong>بک‌اند با PHP</strong>\n        <ul>\n          <li>مبانی PHP و شیءگرایی</li>\n          <li>کار با دیتابیس MySQL</li>\n          <li>فریم‌ورک Laravel</li>\n        </ul>\n      </li>\n      \n      <li><strong>اتصال فرانت و بک</strong>\n        <ul>\n          <li>ساخت API با Laravel</li>\n          <li>فراخوانی API با JavaScript</li>\n          <li>مدیریت state و session</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارهای پیشرفته</strong>\n        <ul>\n          <li>Git & GitHub</li>\n          <li>Docker</li>\n          <li>Deployment و هاستینگ</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت کامل وب‌اپلیکیشن از صفر</li>\n      <li>مدیریت همزمان فرانت‌اند و بک‌اند</li>\n      <li>تسلط بر چرخه کامل توسعه وب</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۰ تا ۱۴ ماه</p>\n  ","courses":[{"title":"HTML/CSS & JavaScript","duration":"8 جلسه","price":790000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"title":"PHP و MySQL","duration":"8 جلسه","price":890000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1555066931-4365d14bab8c"},{"title":"فریم‌ورک Laravel","duration":"10 جلسه","price":990000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"پروژه Fullstack","duration":"12 جلسه","price":1190000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"}]}},{"id":"wordpress","title":"توسعه وردپرس  ","description":"","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر توسعه وردپرس","description":"\n    <p>مسیر تخصصی <strong>توسعه وردپرس (WordPress Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری توسعه وردپرس:</h4>\n    <ol>\n      <li><strong>آشنایی با وردپرس</strong>\n        <ul>\n          <li>نصب و راه‌اندازی وردپرس</li>\n          <li>کار با پنل مدیریت</li>\n          <li>نصب پوسته و افزونه</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه پوسته (Theme Development)</strong>\n        <ul>\n          <li>یادگیری HTML/CSS/JavaScript</li>\n          <li>آشنایی با PHP مقدماتی</li>\n          <li>ساخت پوسته اختصاصی</li>\n          <li>کار با template hierarchy</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه افزونه (Plugin Development)</strong>\n        <ul>\n          <li>یادگیری PHP پیشرفته</li>\n          <li>آشنایی با hooks (actions/filters)</li>\n          <li>ساخت افزونه‌های سفارشی</li>\n          <li>کار با custom post types</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>کار با WooCommerce (فروشگاه ساز)</li>\n          <li>ساخت صفحه‌ساز اختصاصی</li>\n          <li>بهینه‌سازی سرعت و سئو</li>\n          <li>امنیت وردپرس</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت پوسته و افزونه حرفه‌ای</li>\n      <li>مدیریت کامل پروژه‌های وردپرسی</li>\n      <li>توسعه وبسایت‌های فروشگاهی</li>\n      <li>فریلنسینگ در بازار وردپرس</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n  ","courses":[{"title":"مبانی وردپرس","duration":"4 جلسه","price":390000,"rating":4.7,"link":"#","image":"https://images.unsplash.com/photo-1593720213428-28a5b9e94613"},{"title":"توسعه پوسته وردپرس","duration":"8 جلسه","price":890000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1563013544-824ae1b704d3"},{"title":"توسعه افزونه وردپرس","duration":"8 جلسه","price":890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"WooCommerce پیشرفته","duration":"6 جلسه","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"}]}},{"id":"uiux","title":"UI / UX","description":"طراحی تجربه و رابط کاربری","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر طراحی UI/UX","description":"\n    <p>مسیر تخصصی <strong>طراحی UI/UX (User Interface/User Experience)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری UI/UX:</h4>\n    <ol>\n      <li><strong>اصول اولیه طراحی</strong>\n        <ul>\n          <li>رنگ‌شناسی و تئوری رنگ</li>\n          <li>تایپوگرافی و فونت‌شناسی</li>\n          <li>ترکیب‌بندی و Grid Systems</li>\n        </ul>\n      </li>\n      \n      <li><strong>تحقیق و آنالیز کاربر (UX)</strong>\n        <ul>\n          <li>User Research و Persona</li>\n          <li>User Journey Mapping</li>\n          <li>Wireframing و Prototyping</li>\n          <li>Usability Testing</li>\n        </ul>\n      </li>\n      \n      <li><strong>طراحی رابط کاربری (UI)</strong>\n        <ul>\n          <li>یادگیری ابزارهای طراحی (Figma)</li>\n          <li>طراحی سیستم (Design System)</li>\n          <li>UI Patterns و Components</li>\n          <li>طراحی موبایل و وب</li>\n        </ul>\n      </li>\n      \n      <li><strong>تخصص‌های پیشرفته</strong>\n        <ul>\n          <li>Interaction Design</li>\n          <li>طراحی برای Accessibility</li>\n          <li>Motion Design با After Effects</li>\n          <li>Collaboration با توسعه‌دهندگان</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>تحقیق و تحلیل نیازهای کاربر</li>\n      <li>طراحی رابط‌های کاربرپسند و زیبا</li>\n      <li>ساخت Prototype تعاملی</li>\n      <li>همکاری مؤثر با تیم توسعه</li>\n      <li>ساخت Design System حرفه‌ای</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n  ","courses":[{"title":"اصول طراحی UI/UX","duration":"6 جلسه","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1561070791-2526d30994b5"},{"title":"کار با Figma حرفه‌ای","duration":"8 جلسه","price":890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1611224923853-80b023f02d71"},{"title":"طراحی سیستم (Design System)","duration":"6 جلسه","price":790000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1558655146-364adaf1fcc9"},{"title":"پروژه عملی UI/UX","duration":"10 جلسه","price":990000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1563013544-824ae1b704d3"}]}},{"id":"devops","title":"DevOps","description":"استقرار، مانیتورینگ و اتوماسیون","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر DevOps","description":"\n    <p>مسیر تخصصی <strong>DevOps (Development & Operations)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری DevOps:</h4>\n    <ol>\n      <li><strong>پایه‌های سیستم‌عامل و شبکه</strong>\n        <ul>\n          <li>Linux Administration (Ubuntu/CentOS)</li>\n          <li>آشنایی با شبکه‌های کامپیوتری</li>\n          <li>Command Line و Shell Scripting</li>\n        </ul>\n      </li>\n      \n      <li><strong>زیرساخت کد (Infrastructure as Code)</strong>\n        <ul>\n          <li>Docker (کانتینریزاسیون)</li>\n          <li>Kubernetes (اورکستراسیون)</li>\n          <li>Terraform (مدیریت زیرساخت)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت کد و CI/CD</strong>\n        <ul>\n          <li>Git و Git workflows</li>\n          <li>Jenkins/GitLab CI/GitHub Actions</li>\n          <li>Continuous Integration & Deployment</li>\n        </ul>\n      </li>\n      \n      <li><strong>مانیتورینگ و لاگینگ</strong>\n        <ul>\n          <li>Prometheus و Grafana</li>\n          <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>\n          <li>Alerting و Performance Monitoring</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابر و زیرساخت ابری</strong>\n        <ul>\n          <li>AWS Services (EC2, S3, RDS)</li>\n          <li>Google Cloud Platform</li>\n          <li>Azure DevOps</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>مدیریت سرورها و زیرساخت</li>\n      <li>اتوماسیون فرآیندهای توسعه</li>\n      <li>پیاده‌سازی خطوط CI/CD</li>\n      <li>مانیتورینگ سیستم‌های بزرگ</li>\n      <li>کار با پلتفرم‌های ابری</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۲ تا ۱۸ ماه</p>\n  ","courses":[{"title":"Linux و شبکه برای DevOps","duration":"6 جلسه","price":790000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1620712943543-bcc4688e7485"},{"title":"Docker و Kubernetes","duration":"10 جلسه","price":1190000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"CI/CD با Jenkins و GitLab","duration":"8 جلسه","price":990000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1558494949-ef010cbdcc31"},{"title":"AWS برای DevOps","duration":"10 جلسه","price":1290000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1451187580459-43490279c0fa"}]}}]},{"id":"mobile","title":"برنامه‌نویسی موبایل","description":"","childhint":"مسیر برنامه‌نویسی موبایل را بر اساس علاقه خود انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","children":[{"id":"android","title":"اندروید","description":"توسعه اپلیکیشن‌های Android","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر برنامه‌نویسی اندروید (Android)","description":"\n    <p>مسیر تخصصی <strong>توسعه اپلیکیشن‌های اندروید (Android Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری برنامه‌نویسی اندروید:</h4>\n    <ol>\n      <li><strong>پایه‌های برنامه‌نویسی</strong>\n        <ul>\n          <li>یادگیری زبان Kotlin (زبان اصلی اندروید)</li>\n          <li>آشنایی با Java (برای پروژه‌های Legacy)</li>\n          <li>مفاهیم شیءگرایی (OOP)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مبانی اندروید</strong>\n        <ul>\n          <li>Activity و Fragment</li>\n          <li>Layouts و Views (XML)</li>\n          <li>Intent و Navigation</li>\n          <li>Lifecycle Components</li>\n        </ul>\n      </li>\n      \n      <li><strong>آرشیتکتور پیشرفته</strong>\n        <ul>\n          <li>MVVM Architecture</li>\n          <li>LiveData و ViewModel</li>\n          <li>Room Database (SQLite)</li>\n          <li>Retrofit (اتصال به API)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>کار با Firebase</li>\n          <li>Notification و Background Tasks</li>\n          <li>Testing (Unit Test, UI Test)</li>\n          <li>Publishing در Google Play</li>\n        </ul>\n      </li>\n      \n      <li><strong>Jetpack Compose (اختیاری)</strong>\n        <ul>\n          <li>یادگیری Modern UI Toolkit</li>\n          <li>Declarative UI Development</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن‌های حرفه‌ای اندروید</li>\n      <li>پیاده‌سازی آرشیتکتورهای مدرن</li>\n      <li>اتصال به سرویس‌های Backend</li>\n      <li>آمادگی برای انتشار در مارکت</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n  ","courses":[{"title":"Kotlin برای اندروید","duration":"6 جلسه","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"},{"title":"مبانی توسعه اندروید","duration":"8 جلسه","price":890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"},{"title":"آرشیتکتور MVVM در اندروید","duration":"8 جلسه","price":990000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"پروژه عملی اندروید","duration":"10 جلسه","price":1190000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"}]}},{"id":"ios","title":"iOS","description":"توسعه اپلیکیشن‌های iPhone","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر برنامه‌نویسی iOS","description":"\n    <p>مسیر تخصصی <strong>توسعه اپلیکیشن‌های iOS</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری برنامه‌نویسی iOS:</h4>\n    <ol>\n      <li><strong>پایه‌های برنامه‌نویسی</strong>\n        <ul>\n          <li>یادگیری زبان Swift (زبان اصلی iOS)</li>\n          <li>آشنایی با Objective-C (برای پروژه‌های قدیمی)</li>\n          <li>مفاهیم شیءگرایی و Protocol-Oriented</li>\n        </ul>\n      </li>\n      \n      <li><strong>مبانی iOS Development</strong>\n        <ul>\n          <li>UIKit Framework</li>\n          <li>Storyboard و Auto Layout</li>\n          <li>View Controllers</li>\n          <li>Delegates و Protocols</li>\n        </ul>\n      </li>\n      \n      <li><strong>SwiftUI (راه مدرن)</strong>\n        <ul>\n          <li>یادگیری Declarative UI</li>\n          <li>State و Data Flow</li>\n          <li>Custom Views و Modifiers</li>\n        </ul>\n      </li>\n      \n      <li><strong>داده‌ها و Networking</strong>\n        <ul>\n          <li>Core Data</li>\n          <li>URLSession و Networking</li>\n          <li>Codable Protocol</li>\n          <li>UserDefaults</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>Concurrency با async/await</li>\n          <li>Testing (Unit Test, UI Test)</li>\n          <li>Publishing در App Store</li>\n          <li>In-App Purchases</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن‌های iOS با SwiftUI و UIKit</li>\n      <li>کار با API و مدیریت داده</li>\n      <li>پیاده‌سازی معماری‌های Clean Architecture</li>\n      <li>آمادگی برای انتشار در App Store</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n    <p>💡 نیاز: سیستم مک (macOS) برای توسعه iOS</p>\n  ","courses":[{"title":"زبان Swift مقدماتی","duration":"6 جلسه","price":790000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"},{"title":"توسعه iOS با UIKit","duration":"8 جلسه","price":990000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"},{"title":"SwiftUI پیشرفته","duration":"8 جلسه","price":1090000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"پروژه عملی iOS","duration":"10 جلسه","price":1290000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"}]}},{"id":"cross","title":"کراس‌پلتفرم","description":"Flutter / React Native","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر کراس پلتفرم (Cross-Platform)","description":"\n    <p>مسیر تخصصی <strong>توسعه کراس پلتفرم (Cross-Platform Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری کراس پلتفرم:</h4>\n    <ol>\n      <li><strong>انتخاب فریم‌ورک اصلی</strong>\n        <ul>\n          <li><strong>React Native:</strong> برای توسعه‌دهندگان وب</li>\n          <li><strong>Flutter:</strong> با زبان Dart و performance بالا</li>\n          <li><strong>Xamarin:</strong> برای توسعه‌دهندگان .NET</li>\n        </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر Flutter</strong>\n        <ol type=\"a\">\n          <li>یادگیری زبان Dart</li>\n          <li>Widgets و Layout در Flutter</li>\n          <li>State Management (Provider, Riverpod, Bloc)</li>\n          <li>Navigation و Routing</li>\n          <li>کار با API و Local Storage</li>\n          <li>Publishing برای Android و iOS</li>\n        </ol>\n      </li>\n      \n      <li><strong>مثال: مسیر React Native</strong>\n        <ol type=\"a\">\n          <li>تسلط بر JavaScript/TypeScript</li>\n          <li>Components و JSX</li>\n          <li>State Management (Redux, Context API)</li>\n          <li>Native Modules و Bridge</li>\n          <li>کار با Expo یا CLI</li>\n        </ol>\n      </li>\n      \n      <li><strong>مهارت‌های مشترک</strong>\n        <ul>\n          <li>Native Features (دوربین، GPS، Notifications)</li>\n          <li>Testing و Debugging</li>\n          <li>Performance Optimization</li>\n          <li>Code Push و OTA Updates</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن برای Android و iOS با یک کدبیس</li>\n      <li>استفاده از Native Features</li>\n      <li>Performance Optimization</li>\n      <li>Publishing در دو پلتفرم</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۱۰ ماه</p>\n    <p>💡 مزیت: صرفه‌جویی در زمان و منابع</p>\n  ","courses":[{"title":"Flutter و Dart مقدماتی","duration":"8 جلسه","price":890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"},{"title":"State Management در Flutter","duration":"6 جلسه","price":790000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"React Native مقدماتی","duration":"8 جلسه","price":890000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"},{"title":"پروژه کراس پلتفرم","duration":"10 جلسه","price":1190000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"}]}},{"id":"mobile-uiux","title":"UI/UX موبایل","description":"طراحی رابط کاربری اپلیکیشن","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر UI/UX موبایل","description":"\n    <p>مسیر تخصصی <strong>طراحی UI/UX موبایل (Mobile Design)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری طراحی موبایل:</h4>\n    <ol>\n      <li><strong>اصول طراحی موبایل</strong>\n        <ul>\n          <li>تفاوت طراحی موبایل و وب</li>\n          <li>Platform Guidelines (Material Design, Human Interface)</li>\n          <li>Mobile-First Design</li>\n          <li>Touch Targets و Gestures</li>\n        </ul>\n      </li>\n      \n      <li><strong>تحقیق کاربر موبایل</strong>\n        <ul>\n          <li>Mobile User Behavior</li>\n          <li>Context of Use (در حال حرکت)</li>\n          <li>Mobile Usability Testing</li>\n          <li>Onboarding و Empty States</li>\n        </ul>\n      </li>\n      \n      <li><strong>طراحی رابط موبایل</strong>\n        <ul>\n          <li>Mobile Layout Patterns</li>\n          <li>Navigation Patterns (Tab Bar, Drawer)</li>\n          <li>Mobile Components Design</li>\n          <li>Responsive vs Adaptive Design</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارها و Prototyping</strong>\n        <ul>\n          <li>Figma برای موبایل Design</li>\n          <li>Interactive Prototyping</li>\n          <li>Design Handoff به توسعه‌دهندگان</li>\n          <li>Design Systems برای موبایل</li>\n        </ul>\n      </li>\n      \n      <li><strong>تخصص‌های پیشرفته</strong>\n        <ul>\n          <li>Animation و Microinteractions</li>\n          <li>Accessibility در موبایل</li>\n          <li>Dark Mode Design</li>\n          <li>Cross-Platform Design Consistency</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>طراحی اپلیکیشن‌های زیبا و کاربرپسند</li>\n      <li>تسلط بر Platform Guidelines</li>\n      <li>ساخت Interactive Prototypes</li>\n      <li>همکاری مؤثر با توسعه‌دهندگان موبایل</li>\n      <li>طراحی برای Android و iOS</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n  ","courses":[{"title":"اصول طراحی موبایل","duration":"6 جلسه","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1561070791-2526d30994b5"},{"title":"Material Design و iOS HIG","duration":"5 جلسه","price":590000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1611224923853-80b023f02d71"},{"title":"طراحی با Figma برای موبایل","duration":"8 جلسه","price":890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1558655146-364adaf1fcc9"},{"title":"پروژه UI/UX موبایل","duration":"8 جلسه","price":990000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1563013544-824ae1b704d3"}]}}]},{"id":"desktop","title":"برنامه‌نویسی دسکتاپ","description":"توسعه نرم‌افزارهای ویندوز، مک و لینوکس","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر برنامه‌نویسی دسکتاپ/ویندوز","description":"\n    <p>مسیر تخصصی <strong>توسعه نرم‌افزارهای دسکتاپ و ویندوز</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری توسعه دسکتاپ:</h4>\n    <ol>\n      <li><strong>انتخاب پلتفرم و تکنولوژی</strong>\n        <ul>\n          <li><strong>C# و .NET:</strong> بهترین انتخاب برای ویندوز (Windows Forms, WPF)</li>\n          <li><strong>Java:</strong> برای برنامه‌های cross-platform (JavaFX)</li>\n          <li><strong>Python:</strong> با PyQt/PySide یا Tkinter</li>\n          <li><strong>C++:</strong> برای برنامه‌های high-performance</li>\n          <li><strong>Electron:</strong> با JavaScript/TypeScript برای برنامه‌های وب-بیس</li>\n        </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر C# و WPF (.NET)</strong>\n        <ol type=\"a\">\n          <li>یادگیری زبان C# و مفاهیم OOP پیشرفته</li>\n          <li>آشنایی با .NET Framework/.NET Core</li>\n          <li>Windows Forms برای برنامه‌های ساده</li>\n          <li>WPF (Windows Presentation Foundation) برای برنامه‌های مدرن</li>\n          <li>XAML برای طراحی UI</li>\n          <li>MVVM Pattern در WPF</li>\n          <li>Entity Framework برای دیتابیس</li>\n          <li>Deployment و Installer (MSI, ClickOnce)</li>\n        </ol>\n      </li>\n      \n      <li><strong>مهارت‌های ضروری</strong>\n        <ul>\n          <li>Working with Files و System.IO</li>\n          <li>Multi-threading و async programming</li>\n          <li>Windows API و Registry (در صورت نیاز)</li>\n          <li>Local Database Integration (SQLite, SQL Server Local)</li>\n          <li>Logging و Error Handling</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه Cross-Platform دسکتاپ</strong>\n        <ul>\n          <li>Avalonia UI (برای .NET cross-platform)</li>\n          <li>Qt با C++ یا Python</li>\n          <li>Electron برای توسعه‌دهندگان وب</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 بازار کار و پروژه‌ها:</h4>\n    <ul>\n      <li>نرم‌افزارهای اداری و سازمانی</li>\n      <li>ابزارهای مدیریت و آنالیز داده</li>\n      <li>نرم‌افزارهای مالی و حسابداری</li>\n      <li>ابزارهای مهندسی و صنعتی</li>\n      <li>برنامه‌های utility و system tools</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت برنامه‌های دسکتاپ حرفه‌ای برای ویندوز</li>\n      <li>طراحی UI با WPF و XAML</li>\n      <li>کار با دیتابیس و فایل‌سیستم</li>\n      <li>ایجاد installer و deploy نرم‌افزار</li>\n      <li>آماده‌سازی برای بازار کار سنتی و سازمانی</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۰ تا ۱۴ ماه</p>\n    <p>💡 نکته: بازار برنامه‌های دسکتاپ در سازمان‌ها و شرکت‌های بزرگ همچنان پررونق است</p>\n  ","courses":[{"title":"C# پیشرفته و .NET","duration":"8 جلسه","price":990000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1616401784845-180882ba9ba8"},{"title":"WPF و XAML","duration":"10 جلسه","price":1190000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1555066931-4365d14bab8c"},{"title":"الگوهای طراحی در دسکتاپ","duration":"6 جلسه","price":790000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1633356122544-f134324a6cee"},{"title":"پروژه جامع دسکتاپ","duration":"12 جلسه","price":1490000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1551650975-87deedd944c3"}]}}]},{"id":"ai","title":"هوش مصنوعی","description":"مسیر یادگیری هوش مصنوعی","childhint":"مشخص کنید هدف شما از هوش مصنوعی چیست.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","children":[{"id":"ai-business","title":"هوش مصنوعی در کسب‌وکار","description":"اتوماسیون و افزایش بهره‌وری","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر هوش مصنوعی در کسب‌وکار (AI in Business)","description":"\n    <p>مسیر تخصصی <strong>کاربرد هوش مصنوعی در کسب‌وکار</strong> برای مدیران، کارآفرینان و تحلیل‌گران کسب‌وکار شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری هوش مصنوعی در کسب‌وکار:</h4>\n    <ol>\n      <li><strong>مبانی هوش مصنوعی برای غیرفنی‌ها</strong>\n        <ul>\n          <li>درک مفاهیم پایه: ML، DL، NLP، Computer Vision</li>\n          <li>انواع کاربردهای AI در صنایع مختلف</li>\n          <li>محدودیت‌ها و قابلیت‌های واقعی AI</li>\n          <li>تفاوت هوش مصنوعی، یادگیری ماشین و یادگیری عمیق</li>\n        </ul>\n      </li>\n      \n      <li><strong>شناسایی فرصت‌های AI در کسب‌وکار</strong>\n        <ul>\n          <li>تحلیل صنعت و شناسایی pain points</li>\n          <li>کاربردهای AI در بخش‌های مختلف:\n            <ul>\n              <li><strong>بازاریابی:</strong> شخصی‌سازی، پیش‌بینی رفتار مشتری</li>\n              <li><strong>فروش:</strong> پیش‌بینی فروش، Lead Scoring</li>\n              <li><strong>مالی:</strong> تشخیص تقلب، ارزیابی اعتبار</li>\n              <li><strong>عملیات:</strong> بهینه‌سازی زنجیره تأمین، نگهداری پیش‌بینانه</li>\n              <li><strong>منابع انسانی:</strong> غربالگری رزومه، تحلیل engagement</li>\n              <li><strong>خدمات مشتری:</strong> چت‌بات‌های هوشمند</li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت پروژه‌های AI</strong>\n        <ul>\n          <li>چرخه حیات پروژه هوش مصنوعی</li>\n          <li>تعریف مسئله کسب‌وکار به مسئله فنی</li>\n          <li>تعیین معیارهای موفقیت و ROI</li>\n          <li>مدیریت تیم‌های متشکل از فنی و غیرفنی</li>\n          <li>اخلاق و مسئولیت‌پذیری در AI</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارهای No-Code/Low-Code AI</strong>\n        <ul>\n          <li>پلتفرم‌های ساخت مدل بدون کدنویسی</li>\n          <li>سرویس‌های ابری AI (AWS AI Services، Google Cloud AI)</li>\n          <li>ابزارهای تحلیل داده بصری</li>\n          <li>چت‌بات‌سازها و اتوماسیون‌سازها</li>\n        </ul>\n      </li>\n      \n      <li><strong>پیاده‌سازی و یکپارچه‌سازی</strong>\n        <ul>\n          <li>انتخاب راه‌حل مناسب (ساخت، خرید یا ترکیبی)</li>\n          <li>یکپارچه‌سازی با سیستم‌های موجود</li>\n          <li>مدیریت تغییر و پذیرش در سازمان</li>\n          <li>آموزش کارکنان برای استفاده از ابزارهای AI</li>\n        </ul>\n      </li>\n      \n      <li><strong>مباحث پیشرفته کسب‌وکار با AI</strong>\n        <ul>\n          <li>AI Strategy و Digital Transformation</li>\n          <li>مدل‌های درآمدی جدید با AI</li>\n          <li>Competitive Advantage با هوش مصنوعی</li>\n          <li>Data Governance و مدیریت داده برای AI</li>\n          <li>Compliance و مقررات AI در صنایع مختلف</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مخاطبان این مسیر:</h4>\n    <ul>\n      <li>مدیران و تصمیم‌گیران سازمانی</li>\n      <li>کارآفرینان و استارتاپ‌ها</li>\n      <li>مدیران محصول (Product Managers)</li>\n      <li>تحلیل‌گران کسب‌وکار (Business Analysts)</li>\n      <li>مدیران بازاریابی و فروش</li>\n      <li>مشاوران مدیریت و استراتژی</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>شناسایی و اولویت‌بندی فرصت‌های AI در سازمان</li>\n      <li>مدیریت و هدایت پروژه‌های هوش مصنوعی</li>\n      <li>برقراری ارتباط مؤثر بین تیم فنی و کسب‌وکار</li>\n      <li>محاسبه ROI و ارزش‌آفرینی AI</li>\n      <li>ایجاد استراتژی هوش مصنوعی برای سازمان</li>\n      <li>استفاده از ابزارهای Low-Code برای پیاده‌سازی راه‌حل‌ها</li>\n    </ul>\n    \n    <h4>📊 نمونه پروژه‌های عملی:</h4>\n    <ul>\n      <li>طراحی سیستم پیشنهاددهنده محصول (Recommender System)</li>\n      <li>پیاده‌سازی چت‌بات برای خدمات مشتری</li>\n      <li>تحلیل احساسات مشتریان از نظرات و بازخوردها</li>\n      <li>پیش‌بینی تقاضا و بهینه‌سازی موجودی</li>\n      <li>تشخیص تقلب در تراکنش‌های مالی</li>\n      <li>اتوماسیون فرآیندهای اداری با RPA و AI</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n    <p>💡 نکته: نیازی به دانش برنامه‌نویسی پیشرفته نیست، اما درک مفاهیم ضروری است</p>\n    <p>🌟 مزیت: ترکیب دانش کسب‌وکار و AI یکی از پردرآمدترین مهارت‌های حال حاضر است</p>\n    <p>💰 ROI: سازمان‌هایی که هوش مصنوعی را به‌درستی پیاده‌سازی می‌کنند، تا ۴۰٪ افزایش بهره‌وری گزارش داده‌اند</p>\n  ","courses":[{"title":"مبانی هوش مصنوعی برای مدیران","duration":"6 جلسه","price":890000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"},{"title":"استراتژی هوش مصنوعی در کسب‌وکار","duration":"8 جلسه","price":1190000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1552664730-d307ca884978"},{"title":"ابزارهای No-Code AI","duration":"6 جلسه","price":990000,"rating":4.7,"link":"#","image":"https://images.unsplash.com/photo-1555949963-aa79dcee981c"},{"title":"مدیریت پروژه‌های هوش مصنوعی","duration":"8 جلس点","price":1090000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1542744095-fcf48d80b0fd"},{"title":"تحلیل ROI در پروژه‌های AI","duration":"4 جلس点","price":690000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"},{"title":"پروژه عملی AI در کسب‌وکار","duration":"10 جلسه","price":1490000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1552664730-d307ca884978"}]}},{"id":"ai-dev","title":"توسعه هوش مصنوعی","description":"یادگیری ماشین و شبکه‌های عصبی","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088","path":{"title":"مسیر هوش مصنوعی (Artificial Intelligence)","description":"\n    <p>مسیر تخصصی <strong>هوش مصنوعی (Artificial Intelligence)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری هوش مصنوعی:</h4>\n    <ol>\n      <li><strong>پایه‌های ریاضی پیشرفته</strong>\n        <ul>\n          <li>جبر خطی (ماتریس‌ها، بردارها، مقادیر ویژه)</li>\n          <li>حسابان (مشتقات، گرادیان، بهینه‌سازی)</li>\n          <li>احتمال و آمار (توزیع‌ها، Bayesian)</li>\n          <li>بهینه‌سازی (گرادیان نزولی، محدب)</li>\n        </ul>\n      </li>\n      \n      <li><strong>برنامه‌نویسی و ابزارها</strong>\n        <ul>\n          <li>Python پیشرفته</li>\n          <li>NumPy، Pandas، Matplotlib</li>\n          <li>Jupyter Notebook/Lab</li>\n          <li>محیط‌های توسعه (VS Code، PyCharm)</li>\n        </ul>\n      </li>\n      \n      <li><strong>یادگیری ماشین (Machine Learning)</strong>\n        <ul>\n          <li>مدل‌های Supervised (Regression، Classification)</li>\n          <li>مدل‌های Unsupervised (Clustering، Dimensionality Reduction)</li>\n          <li>Scikit-learn برای پیاده‌سازی</li>\n          <li>ارزیابی مدل و Hyperparameter Tuning</li>\n          <li>Ensemble Methods و Boosting</li>\n        </ul>\n      </li>\n      \n      <li><strong>یادگیری عمیق (Deep Learning)</strong>\n        <ul>\n          <li>شبکه‌های عصبی (Neural Networks)</li>\n          <li>TensorFlow یا PyTorch (انتخاب یکی)</li>\n          <li>شبکه‌های کانولوشنی (CNN) برای بینایی کامپیوتر</li>\n          <li>شبکه‌های بازگشتی (RNN/LSTM) برای داده‌های سری زمانی</li>\n          <li>Transformers برای پردازش زبان طبیعی</li>\n          <li>Generative AI و GANs</li>\n        </ul>\n      </li>\n      \n      <li><strong>زیرشاخه‌های تخصصی AI</strong>\n        <ul>\n          <li><strong>پردازش زبان طبیعی (NLP):</strong> تحلیل متن، ترجمه، chatbots</li>\n          <li><strong>بینایی کامپیوتر (Computer Vision):</strong> تشخیص اشیاء، تصویر</li>\n          <li><strong>سیستم‌های توصیه‌گر (Recommender Systems):</strong> فیلم، محصول</li>\n          <li><strong>رباتیک و کنترل هوشمند</strong></li>\n          <li><strong>مدل‌های زبانی بزرگ (LLMs):</strong> GPT، LLaMA، fine-tuning</li>\n        </ul>\n      </li>\n      \n      <li><strong>پیاده‌سازی و استقرار</strong>\n        <ul>\n          <li>MLOps (مدیریت چرخه حیات مدل)</li>\n          <li>Deployment مدل‌ها (Docker، FastAPI، Flask)</li>\n          <li>Cloud Platforms (AWS SageMaker، Google AI Platform)</li>\n          <li>Monitoring و Maintenance مدل‌ها</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 بازار کار و موقعیت‌ها:</h4>\n    <ul>\n      <li>Machine Learning Engineer</li>\n      <li>AI Researcher/ Scientist</li>\n      <li>Deep Learning Engineer</li>\n      <li>NLP Engineer</li>\n      <li>Computer Vision Engineer</li>\n      <li>AI Product Manager</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>طراحی و پیاده‌سازی مدل‌های ML/DL</li>\n      <li>کار با چارچوب‌های TensorFlow/PyTorch</li>\n      <li>توسعه سیستم‌های هوشمند در حوزه‌های تخصصی</li>\n      <li>استقرار و نگهداری مدل‌های هوش مصنوعی</li>\n      <li>حل مسائل پیچیده با راه‌حل‌های هوشمند</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۸ تا ۲۴ ماه (نیازمند پایه ریاضی قوی)</p>\n    <p>💡 نکته: هوش مصنوعی یکی از پردرآمدترین و آینده‌دارترین حوزه‌های تکنولوژی است</p>\n    <p>🌟 پیش‌نیاز: علاقه به ریاضی و حل مسائل پیچیده ضروری است</p>\n  ","courses":[{"title":"ریاضیات برای هوش مصنوعی","duration":"10 جلسه","price":1290000,"rating":4.8,"link":"#","image":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb"},{"title":"یادگیری ماشین پیشرفته","duration":"12 جلسه","price":1690000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1555949963-aa79dcee981c"},{"title":"یادگیری عمیق با PyTorch","duration":"14 جلسه","price":1890000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1620712943543-bcc4688e7485"},{"title":"پردازش زبان طبیعی (NLP)","duration":"10 جلسه","price":1490000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1555949963-aa79dcee981c"},{"title":"بینایی کامپیوتر","duration":"10 جلسه","price":1490000,"rating":4.9,"link":"#","image":"https://images.unsplash.com/photo-1555949963-aa79dcee981c"},{"title":"پروژه عملی هوش مصنوعی","duration":"12 جلسه","price":1790000,"rating":5,"link":"#","image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"}]}}]},{"id":"gr","title":"گرافیک و انیمیشن","description":"مسیر یادگیری هوش مصنوعی","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"id":"content","title":"تولید محتوا","description":"مسیر یادگیری تولید محتوا ","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"id":"marketing","title":"بازاریابی و تبلیغات","description":"مسیر یادگیری تولید محتوا ","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"},{"id":"beauty","title":"مراقبت زیبایی","description":"مسیر یادگیری تولید محتوا ","childhint":"علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.","image":"https://images.unsplash.com/photo-1543353071-873f17a7a088"}]}</textarea>
+                        <div class="flex gap-2 mt-2">
+                            <button id="loadJson" class="btn btn-primary flex-1">
+                                بارگذاری JSON
+                            </button>
+                            <button id="clearJson" class="btn btn-secondary">
+                                پاک کردن
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="form-label">JSON خروجی:</label>
+                        <pre id="jsonOutput" class="json-output" style="height: 200px; overflow: auto;">{}</pre>
+                        <div class="flex gap-2 mt-2">
+                            <button id="copyJson" class="btn btn-success flex-1">
+                                کپی JSON
+                            </button>
+                            <button id="exportJson" class="btn btn-warning flex-1">
+                                دریافت فایل JSON
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">
+                        راهنمای استفاده
+                    </h2>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• برای ویرایش یک گره، روی دکمه "ویرایش" کلیک کنید</li>
+                        <li>• برای افزودن زیرگره، روی دکمه "افزودن فرزند" کلیک کنید</li>
+                        <li>• برای جابجایی گره، روی دکمه "جابجایی" کلیک کنید</li>
+                        <li>• می‌توانید JSON را بارگذاری کرده یا خروجی بگیرید</li>
+                        <li>• هر گره می‌تواند دوره‌ها و مسیر آموزشی داشته باشد</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- مودال ویرایش گره -->
+        <div id="editModal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">ویرایش گره</h3>
+                    
+                    <div id="editTabs" class="mb-6">
+                        <div class="flex border-b border-gray-200 mb-4">
+                            <button class="tab-btn active px-4 py-2 font-medium border-b-2 border-blue-500 text-blue-600" data-tab="node">
+                                اطلاعات گره
+                            </button>
+                            <button class="tab-btn px-4 py-2 font-medium text-gray-500" data-tab="path">
+                                مسیر آموزشی
+                            </button>
+                            <button class="tab-btn px-4 py-2 font-medium text-gray-500" data-tab="courses">
+                                دوره‌ها
+                            </button>
+                            <button class="tab-btn px-4 py-2 font-medium text-gray-500" data-tab="move">
+                                جابجایی
+                            </button>
+                        </div>
+                        
+                        <!-- تب اطلاعات گره -->
+                        <div id="tab-node" class="tab-content">
+                            <div class="form-group">
+                                <label class="form-label">عنوان:</label>
+                                <input type="text" id="editTitle" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">شناسه (ID):</label>
+                                <input type="text" id="editId" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">توضیحات:</label>
+                                <textarea id="editDescription" class="form-textarea"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">راهنمای فرزندان:</label>
+                                <textarea id="editChildhint" class="form-textarea"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">آدرس تصویر:</label>
+                                <input type="text" id="editImage" class="form-input" value="https://images.unsplash.com/photo-1543353071-873f17a7a088">
+                            </div>
+                        </div>
+                        
+                        <!-- تب مسیر آموزشی -->
+                        <div id="tab-path" class="tab-content hidden">
+                            <div class="form-group">
+                                <div class="flex items-center mb-4">
+                                    <input type="checkbox" id="pathEnabled" class="h-5 w-5 ml-2">
+                                    <label class="form-label mb-0">فعال بودن مسیر آموزشی</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">عنوان مسیر:</label>
+                                <input type="text" id="editPathTitle" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">توضیحات مسیر (HTML):</label>
+                                <textarea id="editPathDescription" class="form-textarea" rows="6"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- تب دوره‌ها -->
+                        <div id="tab-courses" class="tab-content hidden">
+                            <div id="coursesList" class="course-list">
+                                <!-- لیست دوره‌ها -->
+                            </div>
+                            
+                            <button id="addCourseBtn" class="btn btn-success w-full mt-4">
+                                افزودن دوره جدید
+                            </button>
+                        </div>
+                        
+                        <!-- تب جابجایی -->
+                        <div id="tab-move" class="tab-content hidden">
+                            <div class="form-group">
+                                <label class="form-label">انتخاب والد جدید:</label>
+                                <select id="parentSelect" class="form-input">
+                                    <option value="root">ریشه (سطح اصلی)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">موقعیت در فرزندان:</label>
+                                <select id="positionSelect" class="form-input">
+                                    <option value="first">اولین فرزند</option>
+                                    <option value="last">آخرین فرزند</option>
+                                    <option value="after">بعد از گره خاص</option>
+                                    <option value="before">قبل از گره خاص</option>
+                                </select>
+                            </div>
+                            
+                            <div id="siblingSelectContainer" class="form-group hidden">
+                                <label class="form-label">انتخاب گره مرجع:</label>
+                                <select id="siblingSelect" class="form-input">
+                                </select>
+                            </div>
+                            
+                            <div class="p-4 bg-blue-50 rounded-lg mt-4">
+                                <p class="text-blue-800 text-sm">
+                                    توجه: با جابجایی گره، تمام زیرگره‌های آن نیز جابجا می‌شوند.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3 pt-4 border-t border-gray-200">
+                        <button id="saveEdit" class="btn btn-primary flex-1">
+                            ذخیره تغییرات
+                        </button>
+                        <button id="cancelEdit" class="btn btn-secondary">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- مودال ویرایش دوره -->
+        <div id="courseModal" class="modal-overlay hidden">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="p-6">
+                    <h3 id="courseModalTitle" class="text-xl font-bold text-gray-800 mb-4">افزودن دوره جدید</h3>
+                    
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="form-label">عنوان دوره:</label>
+                            <input type="text" id="courseTitle" class="form-input" placeholder="عنوان دوره">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">مدت زمان:</label>
+                            <input type="text" id="courseDuration" class="form-input" placeholder="مثال: 4 جلسه">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">قیمت (تومان):</label>
+                            <input type="number" id="coursePrice" class="form-input" placeholder="0" value="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">امتیاز (0-5):</label>
+                            <input type="number" id="courseRating" class="form-input" placeholder="0" value="0" min="0" max="5" step="0.1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">لینک دوره:</label>
+                            <input type="text" id="courseLink" class="form-input" placeholder="https://example.com/course" value="#">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">آدرس تصویر:</label>
+                            <input type="text" id="courseImage" class="form-input" placeholder="https://example.com/image.jpg" value="https://images.unsplash.com/photo-1543353071-873f17a7a088">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">توضیحات دوره:</label>
+                        <textarea id="courseDescription" class="form-textarea" placeholder="توضیحات کامل دوره" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">سطح دوره:</label>
+                        <select id="courseLevel" class="form-input">
+                            <option value="مقدماتی">مقدماتی</option>
+                            <option value="متوسط" selected>متوسط</option>
+                            <option value="پیشرفته">پیشرفته</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" id="courseFeatured" class="h-5 w-5 ml-2">
+                        <label class="form-label mb-0">دوره ویژه</label>
+                    </div>
+                    
+                    <div class="flex gap-3 pt-4 border-t border-gray-200">
+                        <button id="saveCourse" class="btn btn-primary flex-1">
+                            ذخیره دوره
+                        </button>
+                        <button id="cancelCourse" class="btn btn-secondary">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // داده‌های اولیه خالی
+        let currentTreeData = { categories: [] };
+        let currentNodeBeingEdited = null;
+        let currentCoursesBeingEdited = [];
+        let allNodes = {}; // برای ذخیره همه گره‌ها برای جابجایی
+        let currentCourseIndex = -1; // -1 برای افزودن جدید، عدد برای ویرایش
+
+        // تابع برای تولید یک شناسه منحصر به فرد
+        function generateUniqueId() {
+            return 'node_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
+        }
+
+        // تابع برای ایجاد یک گره جدید خالی
+        function createNewNode() {
+            return {
+                id: generateUniqueId(),
+                title: 'عنوان جدید',
+                description: '',
+                childhint: '',
+                image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088',
+                children: []
+            };
+        }
+
+        // تابع برای ایجاد یک دوره جدید خالی
+        function createNewCourse() {
+            return {
+                title: 'دوره جدید',
+                duration: '4 جلسه',
+                price: 0,
+                rating: 0,
+                link: '#',
+                image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088',
+                description: '',
+                level: 'متوسط',
+                featured: false
+            };
+        }
+
+        // تابع بازگشتی برای ایجاد ساختار درخت در DOM
+        function renderTree(node, parentElement, level = 0) {
+            if (!node || !node.id) return;
+            
+            const nodeElement = document.createElement('div');
+            nodeElement.className = `tree-node tree-level-${level}`;
+            nodeElement.dataset.nodeId = node.id;
+            nodeElement.dataset.level = level;
+            
+            // هدر گره
+            const header = document.createElement('div');
+            header.className = 'node-header';
+            
+            const title = document.createElement('div');
+            title.className = 'font-bold text-gray-800';
+            title.textContent = node.title || 'بدون عنوان';
+            
+            const actions = document.createElement('div');
+            actions.className = 'flex gap-2';
+            
+            // دکمه ویرایش
+            const editButton = document.createElement('button');
+            editButton.className = 'btn btn-primary text-sm';
+            editButton.textContent = 'ویرایش';
+            editButton.onclick = () => editNode(nodeElement, node);
+            
+            // دکمه افزودن فرزند
+            const addButton = document.createElement('button');
+            addButton.className = 'btn btn-success text-sm';
+            addButton.textContent = 'افزودن فرزند';
+            addButton.onclick = () => addChildNode(nodeElement, node, level);
+            
+            // دکمه جابجایی
+            const moveButton = document.createElement('button');
+            moveButton.className = 'btn btn-warning text-sm';
+            moveButton.textContent = 'جابجایی';
+            moveButton.onclick = () => {
+                editNode(nodeElement, node);
+                document.querySelector('[data-tab="move"]').click();
+            };
+            
+            // دکمه حذف
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'btn btn-danger text-sm';
+            deleteButton.textContent = 'حذف';
+            deleteButton.onclick = () => deleteNode(nodeElement, node, parentElement);
+            
+            actions.appendChild(editButton);
+            actions.appendChild(addButton);
+            actions.appendChild(moveButton);
+            actions.appendChild(deleteButton);
+            
+            header.appendChild(title);
+            header.appendChild(actions);
+            
+            // محتوای گره
+            const content = document.createElement('div');
+            content.className = 'node-content';
+            
+            const details = document.createElement('div');
+            details.className = 'text-sm text-gray-600 mb-3';
+            
+            if (node.description) {
+                const desc = document.createElement('p');
+                desc.className = 'mb-2';
+                desc.textContent = `توضیحات: ${node.description.substring(0, 60)}${node.description.length > 60 ? '...' : ''}`;
+                details.appendChild(desc);
+            }
+            
+            if (node.childhint) {
+                const hint = document.createElement('p');
+                hint.className = 'text-blue-600 mb-2';
+                hint.textContent = `راهنما: ${node.childhint.substring(0, 80)}${node.childhint.length > 80 ? '...' : ''}`;
+                details.appendChild(hint);
+            }
+            
+            const idLabel = document.createElement('p');
+            idLabel.className = 'text-xs text-gray-500';
+            idLabel.textContent = `شناسه: ${node.id}`;
+            details.appendChild(idLabel);
+            
+            // نمایش اطلاعات مسیر اگر وجود دارد
+            if (node.path) {
+                const pathSection = document.createElement('div');
+                pathSection.className = 'path-section mt-4';
+                
+                const pathTitle = document.createElement('h4');
+                pathTitle.className = 'font-bold text-blue-800 mb-2';
+                pathTitle.textContent = `مسیر: ${node.path.title}`;
+                pathSection.appendChild(pathTitle);
+                
+                if (node.path.courses && node.path.courses.length > 0) {
+                    const coursesCount = document.createElement('p');
+                    coursesCount.className = 'text-sm text-blue-700 mb-2';
+                    coursesCount.textContent = `تعداد دوره‌ها: ${node.path.courses.length}`;
+                    pathSection.appendChild(coursesCount);
+                    
+                    // نمایش چند دوره اول
+                    const coursesPreview = document.createElement('div');
+                    coursesPreview.className = 'text-xs text-gray-600';
+                    node.path.courses.slice(0, 3).forEach(course => {
+                        const courseItem = document.createElement('p');
+                        courseItem.textContent = `• ${course.title}`;
+                        coursesPreview.appendChild(courseItem);
+                    });
+                    if (node.path.courses.length > 3) {
+                        const more = document.createElement('p');
+                        more.textContent = `و ${node.path.courses.length - 3} دوره دیگر...`;
+                        coursesPreview.appendChild(more);
+                    }
+                    pathSection.appendChild(coursesPreview);
+                }
+                
+                details.appendChild(pathSection);
+            }
+            
+            content.appendChild(details);
+            
+            // کانتینر فرزندان
+            const childrenContainer = document.createElement('div');
+            childrenContainer.className = 'children-container';
+            childrenContainer.dataset.parentId = node.id;
+            
+            // اگر فرزندی وجود دارد، آنها را رندر کن
+            if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                    renderTree(child, childrenContainer, level + 1);
+                });
+            } else {
+                // پیام خالی
+                const emptyMsg = document.createElement('div');
+                emptyMsg.className = 'empty-message';
+                emptyMsg.textContent = 'هیچ زیرگره‌ای وجود ندارد';
+                childrenContainer.appendChild(emptyMsg);
+            }
+            
+            // مونتاژ نهایی گره
+            nodeElement.appendChild(header);
+            nodeElement.appendChild(content);
+            nodeElement.appendChild(childrenContainer);
+            
+            parentElement.appendChild(nodeElement);
+            
+            // ذخیره گره برای دسترسی سریع
+            allNodes[node.id] = node;
+        }
+
+        // تابع برای رندر کل درخت
+        function renderFullTree() {
+            const treeContainer = document.getElementById('categoryTree');
+            treeContainer.innerHTML = '';
+            allNodes = {}; // ریست کردن لیست گره‌ها
+            
+            if (currentTreeData.categories && currentTreeData.categories.length > 0) {
+                currentTreeData.categories.forEach(category => {
+                    renderTree(category, treeContainer, 0);
+                });
+            } else {
+                treeContainer.innerHTML = '<div class="empty-message">هیچ دسته‌بندی وجود ندارد. یک دسته‌بندی ریشه اضافه کنید.</div>';
+            }
+            
+            // به‌روزرسانی JSON خروجی
+            updateJsonOutput();
+        }
+
+        // تابع برای به‌روزرسانی JSON خروجی
+        function updateJsonOutput() {
+            const jsonOutput = document.getElementById('jsonOutput');
+            jsonOutput.textContent = JSON.stringify(currentTreeData, null, 2);
+        }
+
+        // تابع برای افزودن یک گره فرزند
+        function addChildNode(parentElement, parentNode, level) {
+            const childrenContainer = parentElement.querySelector('.children-container');
+            
+            // اگر پیام خالی وجود دارد، حذفش کن
+            const emptyMsg = childrenContainer.querySelector('.empty-message');
+            if (emptyMsg) {
+                emptyMsg.remove();
+            }
+            
+            // ایجاد گره جدید
+            const newNode = createNewNode();
+            
+            // اضافه کردن به داده‌های درخت
+            if (!parentNode.children) {
+                parentNode.children = [];
+            }
+            parentNode.children.push(newNode);
+            
+            // رندر گره جدید
+            renderTree(newNode, childrenContainer, level + 1);
+            
+            // به‌روزرسانی JSON خروجی
+            updateJsonOutput();
+        }
+
+        // تابع برای ویرایش یک گره
+        function editNode(nodeElement, node) {
+            currentNodeBeingEdited = node;
+            
+            // پر کردن فرم مودال
+            document.getElementById('editTitle').value = node.title || '';
+            document.getElementById('editId').value = node.id || '';
+            document.getElementById('editDescription').value = node.description || '';
+            document.getElementById('editChildhint').value = node.childhint || '';
+            document.getElementById('editImage').value = node.image || '';
+            
+            // پر کردن اطلاعات مسیر
+            document.getElementById('pathEnabled').checked = node.path ? true : false;
+            document.getElementById('editPathTitle').value = node.path?.title || '';
+            document.getElementById('editPathDescription').value = node.path?.description || '';
+            
+            // پر کردن دوره‌ها
+            currentCoursesBeingEdited = node.path ? [...node.path.courses] : [];
+            renderCoursesList();
+            
+            // پر کردن لیست والدین برای جابجایی
+            populateParentSelect(node.id);
+            
+            // نمایش مودال
+            document.getElementById('editModal').classList.remove('hidden');
+        }
+
+        // تابع برای پر کردن لیست والدین برای جابجایی
+        function populateParentSelect(excludeNodeId) {
+            const parentSelect = document.getElementById('parentSelect');
+            parentSelect.innerHTML = '<option value="root">ریشه (سطح اصلی)</option>';
+            
+            // جمع‌آوری همه گره‌ها به جز گره فعلی و فرزندانش
+            function collectNodes(node, path = '') {
+                if (node.id === excludeNodeId) return;
+                
+                const option = document.createElement('option');
+                option.value = node.id;
+                option.textContent = path + node.title;
+                parentSelect.appendChild(option);
+                
+                if (node.children) {
+                    node.children.forEach(child => {
+                        collectNodes(child, path + '  →  ');
+                    });
+                }
+            }
+            
+            currentTreeData.categories.forEach(category => {
+                collectNodes(category);
+            });
+        }
+
+        // تابع برای رندر لیست دوره‌ها
+        function renderCoursesList() {
+            const coursesList = document.getElementById('coursesList');
+            coursesList.innerHTML = '';
+            
+            if (currentCoursesBeingEdited.length === 0) {
+                coursesList.innerHTML = '<div class="empty-message">هیچ دوره‌ای اضافه نشده است</div>';
+                return;
+            }
+            
+            currentCoursesBeingEdited.forEach((course, index) => {
+                const courseItem = document.createElement('div');
+                courseItem.className = 'course-item';
+                
+                const header = document.createElement('div');
+                header.className = 'flex justify-between items-center mb-2';
+                
+                const title = document.createElement('div');
+                title.className = 'font-bold text-gray-800';
+                title.textContent = course.title || 'دوره بدون عنوان';
+                
+                // نمایش برچسب سطح
+                const levelBadge = document.createElement('span');
+                levelBadge.className = `px-2 py-1 text-xs rounded ${getLevelBadgeClass(course.level)}`;
+                levelBadge.textContent = course.level;
+                
+                // نمایش ویژه بودن
+                if (course.featured) {
+                    const featuredBadge = document.createElement('span');
+                    featuredBadge.className = 'px-2 py-1 text-xs rounded bg-yellow-100 text-yellow-800 mr-2';
+                    featuredBadge.textContent = 'ویژه';
+                    header.appendChild(featuredBadge);
+                }
+                
+                header.appendChild(levelBadge);
+                
+                const actions = document.createElement('div');
+                actions.className = 'flex gap-2';
+                
+                const editBtn = document.createElement('button');
+                editBtn.className = 'btn btn-primary text-xs';
+                editBtn.textContent = 'ویرایش';
+                editBtn.onclick = () => openCourseModal(index);
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'btn btn-danger text-xs';
+                deleteBtn.textContent = 'حذف';
+                deleteBtn.onclick = () => deleteCourse(index);
+                
+                // دکمه‌های تغییر ترتیب
+                const moveUpBtn = document.createElement('button');
+                moveUpBtn.className = 'btn btn-secondary text-xs';
+                moveUpBtn.textContent = 'بالا';
+                moveUpBtn.onclick = () => moveCourseUp(index);
+                
+                const moveDownBtn = document.createElement('button');
+                moveDownBtn.className = 'btn btn-secondary text-xs';
+                moveDownBtn.textContent = 'پایین';
+                moveDownBtn.onclick = () => moveCourseDown(index);
+                
+                actions.appendChild(editBtn);
+                actions.appendChild(moveUpBtn);
+                actions.appendChild(moveDownBtn);
+                actions.appendChild(deleteBtn);
+                
+                header.appendChild(actions);
+                
+                const details = document.createElement('div');
+                details.className = 'text-sm text-gray-600';
+                
+                if (course.duration) {
+                    const duration = document.createElement('p');
+                    duration.textContent = `مدت زمان: ${course.duration}`;
+                    details.appendChild(duration);
+                }
+                
+                if (course.price) {
+                    const price = document.createElement('p');
+                    price.textContent = `قیمت: ${course.price.toLocaleString()} تومان`;
+                    details.appendChild(price);
+                }
+                
+                if (course.rating) {
+                    const rating = document.createElement('p');
+                    rating.textContent = `امتیاز: ${course.rating}`;
+                    details.appendChild(rating);
+                }
+                
+                if (course.description) {
+                    const desc = document.createElement('p');
+                    desc.className = 'text-gray-500 text-xs mt-2';
+                    desc.textContent = `${course.description.substring(0, 80)}${course.description.length > 80 ? '...' : ''}`;
+                    details.appendChild(desc);
+                }
+                
+                courseItem.appendChild(header);
+                courseItem.appendChild(details);
+                
+                coursesList.appendChild(courseItem);
+            });
+        }
+
+        // تابع برای کلاس badge سطح دوره
+        function getLevelBadgeClass(level) {
+            switch(level) {
+                case 'مقدماتی': return 'bg-green-100 text-green-800';
+                case 'متوسط': return 'bg-blue-100 text-blue-800';
+                case 'پیشرفته': return 'bg-red-100 text-red-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        // تابع برای باز کردن مودال دوره
+        function openCourseModal(index = -1) {
+            currentCourseIndex = index;
+            
+            const modalTitle = document.getElementById('courseModalTitle');
+            if (index === -1) {
+                modalTitle.textContent = 'افزودن دوره جدید';
+                clearCourseForm();
+            } else {
+                modalTitle.textContent = 'ویرایش دوره';
+                const course = currentCoursesBeingEdited[index];
+                fillCourseForm(course);
+            }
+            
+            document.getElementById('courseModal').classList.remove('hidden');
+        }
+
+        // تابع برای پاک کردن فرم دوره
+        function clearCourseForm() {
+            document.getElementById('courseTitle').value = '';
+            document.getElementById('courseDuration').value = '4 جلسه';
+            document.getElementById('coursePrice').value = '0';
+            document.getElementById('courseRating').value = '0';
+            document.getElementById('courseLink').value = '#';
+            document.getElementById('courseImage').value = 'https://images.unsplash.com/photo-1543353071-873f17a7a088';
+            document.getElementById('courseDescription').value = '';
+            document.getElementById('courseLevel').value = 'متوسط';
+            document.getElementById('courseFeatured').checked = false;
+        }
+
+        // تابع برای پر کردن فرم دوره
+        function fillCourseForm(course) {
+            document.getElementById('courseTitle').value = course.title || '';
+            document.getElementById('courseDuration').value = course.duration || '';
+            document.getElementById('coursePrice').value = course.price || 0;
+            document.getElementById('courseRating').value = course.rating || 0;
+            document.getElementById('courseLink').value = course.link || '#';
+            document.getElementById('courseImage').value = course.image || '';
+            document.getElementById('courseDescription').value = course.description || '';
+            document.getElementById('courseLevel').value = course.level || 'متوسط';
+            document.getElementById('courseFeatured').checked = course.featured || false;
+        }
+
+        // تابع برای ذخیره دوره
+        function saveCourse() {
+            const course = {
+                title: document.getElementById('courseTitle').value,
+                duration: document.getElementById('courseDuration').value,
+                price: parseInt(document.getElementById('coursePrice').value) || 0,
+                rating: parseFloat(document.getElementById('courseRating').value) || 0,
+                link: document.getElementById('courseLink').value,
+                image: document.getElementById('courseImage').value,
+                description: document.getElementById('courseDescription').value,
+                level: document.getElementById('courseLevel').value,
+                featured: document.getElementById('courseFeatured').checked
+            };
+            
+            if (!course.title.trim()) {
+                alert('لطفا عنوان دوره را وارد کنید');
+                return;
+            }
+            
+            if (currentCourseIndex === -1) {
+                // افزودن دوره جدید
+                currentCoursesBeingEdited.push(course);
+            } else {
+                // ویرایش دوره موجود
+                currentCoursesBeingEdited[currentCourseIndex] = course;
+            }
+            
+            renderCoursesList();
+            closeCourseModal();
+        }
+
+        // تابع برای بستن مودال دوره
+        function closeCourseModal() {
+            document.getElementById('courseModal').classList.add('hidden');
+            currentCourseIndex = -1;
+        }
+
+        // تابع برای حذف یک دوره
+        function deleteCourse(index) {
+            if (confirm('آیا از حذف این دوره اطمینان دارید؟')) {
+                currentCoursesBeingEdited.splice(index, 1);
+                renderCoursesList();
+            }
+        }
+
+        // تابع برای جابجایی دوره به بالا
+        function moveCourseUp(index) {
+            if (index > 0) {
+                const temp = currentCoursesBeingEdited[index];
+                currentCoursesBeingEdited[index] = currentCoursesBeingEdited[index - 1];
+                currentCoursesBeingEdited[index - 1] = temp;
+                renderCoursesList();
+            }
+        }
+
+        // تابع برای جابجایی دوره به پایین
+        function moveCourseDown(index) {
+            if (index < currentCoursesBeingEdited.length - 1) {
+                const temp = currentCoursesBeingEdited[index];
+                currentCoursesBeingEdited[index] = currentCoursesBeingEdited[index + 1];
+                currentCoursesBeingEdited[index + 1] = temp;
+                renderCoursesList();
+            }
+        }
+
+        // تابع برای افزودن یک دوره جدید
+        function addNewCourse() {
+            openCourseModal(-1);
+        }
+
+        // تابع برای حذف یک گره
+        function deleteNode(nodeElement, node, parentElement) {
+            if (confirm('آیا از حذف این گره اطمینان دارید؟')) {
+                // حذف از DOM
+                nodeElement.remove();
+                
+                // حذف از داده‌های درخت
+                removeNodeFromTree(currentTreeData, node.id);
+                
+                // به‌روزرسانی JSON خروجی
+                updateJsonOutput();
+                
+                // اگر کانتینر فرزندان خالی شد، پیام خالی اضافه کن
+                if (parentElement.classList.contains('children-container')) {
+                    const childNodes = parentElement.querySelectorAll('.tree-node');
+                    if (childNodes.length === 0) {
+                        const emptyMsg = document.createElement('div');
+                        emptyMsg.className = 'empty-message';
+                        emptyMsg.textContent = 'هیچ زیرگره‌ای وجود ندارد';
+                        parentElement.appendChild(emptyMsg);
+                    }
+                }
+            }
+        }
+
+        // تابع برای حذف گره از ساختار درخت
+        function removeNodeFromTree(tree, nodeId) {
+            // جستجو در گره‌های ریشه
+            for (let i = 0; i < tree.categories.length; i++) {
+                if (tree.categories[i].id === nodeId) {
+                    tree.categories.splice(i, 1);
+                    return true;
+                }
+                
+                // جستجو در فرزندان
+                if (removeNodeFromChildren(tree.categories[i], nodeId)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        // تابع بازگشتی برای حذف گره از فرزندان
+        function removeNodeFromChildren(node, nodeId) {
+            if (node.children) {
+                for (let i = 0; i < node.children.length; i++) {
+                    if (node.children[i].id === nodeId) {
+                        node.children.splice(i, 1);
+                        return true;
+                    }
+                    
+                    if (removeNodeFromChildren(node.children[i], nodeId)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // تابع برای بارگذاری JSON از ورودی
+        function loadJsonFromInput() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            
+            try {
+                if (!jsonInput.trim()) {
+                    alert('لطفا JSON را وارد کنید');
+                    return;
+                }
+                
+                const parsedData = JSON.parse(jsonInput);
+                currentTreeData = parsedData;
+                renderFullTree();
+                
+            } catch (error) {
+                alert('خطا در پارس JSON: ' + error.message);
+            }
+        }
+
+        // تابع برای کپی JSON به کلیپ‌بورد
+        function copyJsonToClipboard() {
+            const jsonOutput = document.getElementById('jsonOutput');
+            const text = jsonOutput.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('JSON با موفقیت کپی شد');
+            }).catch(err => {
+                console.error('خطا در کپی کردن: ', err);
+                alert('خطا در کپی کردن JSON');
+            });
+        }
+
+        // تابع برای جابجایی گره
+        function moveNodeToNewParent(nodeId, newParentId, position, siblingId = null) {
+            // پیدا کردن گره و والد فعلی آن
+            let nodeToMove = null;
+            let oldParent = null;
+            
+            // جستجو برای پیدا کردن گره و والدش
+            function findNodeAndParent(tree, nodeId, parent = null) {
+                for (let i = 0; i < tree.categories.length; i++) {
+                    if (tree.categories[i].id === nodeId) {
+                        nodeToMove = tree.categories[i];
+                        oldParent = { container: tree.categories, index: i };
+                        return true;
+                    }
+                    
+                    if (findNodeInChildren(tree.categories[i], nodeId, tree.categories[i])) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            
+            function findNodeInChildren(node, nodeId, parent) {
+                if (node.children) {
+                    for (let i = 0; i < node.children.length; i++) {
+                        if (node.children[i].id === nodeId) {
+                            nodeToMove = node.children[i];
+                            oldParent = { container: node.children, index: i, parent: parent };
+                            return true;
+                        }
+                        
+                        if (findNodeInChildren(node.children[i], nodeId, node.children[i])) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            
+            findNodeAndParent(currentTreeData, nodeId);
+            
+            if (!nodeToMove) return false;
+            
+            // حذف گره از مکان فعلی
+            oldParent.container.splice(oldParent.index, 1);
+            
+            // پیدا کردن والد جدید
+            let newParentContainer = null;
+            let newParentNode = null;
+            
+            if (newParentId === 'root') {
+                newParentContainer = currentTreeData.categories;
+                newParentNode = null;
+            } else {
+                // پیدا کردن والد جدید در درخت
+                function findParentNode(tree, parentId) {
+                    for (let category of tree.categories) {
+                        if (category.id === parentId) {
+                            return { node: category, container: category.children || [] };
+                        }
+                        
+                        const found = findParentInChildren(category, parentId);
+                        if (found) return found;
+                    }
+                    return null;
+                }
+                
+                function findParentInChildren(node, parentId) {
+                    if (node.children) {
+                        for (let child of node.children) {
+                            if (child.id === parentId) {
+                                return { node: child, container: child.children || [] };
+                            }
+                            
+                            const found = findParentInChildren(child, parentId);
+                            if (found) return found;
+                        }
+                    }
+                    return null;
+                }
+                
+                const parentInfo = findParentNode(currentTreeData, newParentId);
+                if (!parentInfo) return false;
+                
+                newParentNode = parentInfo.node;
+                newParentContainer = parentInfo.container;
+                
+                // اگر والد جدید children نداشته باشد، ایجاد کن
+                if (!newParentNode.children) {
+                    newParentNode.children = [];
+                    newParentContainer = newParentNode.children;
+                }
+            }
+            
+            // قرار دادن گره در مکان جدید
+            if (position === 'first') {
+                newParentContainer.unshift(nodeToMove);
+            } else if (position === 'last') {
+                newParentContainer.push(nodeToMove);
+            } else if (position === 'after' && siblingId) {
+                const siblingIndex = newParentContainer.findIndex(n => n.id === siblingId);
+                if (siblingIndex !== -1) {
+                    newParentContainer.splice(siblingIndex + 1, 0, nodeToMove);
+                } else {
+                    newParentContainer.push(nodeToMove);
+                }
+            } else if (position === 'before' && siblingId) {
+                const siblingIndex = newParentContainer.findIndex(n => n.id === siblingId);
+                if (siblingIndex !== -1) {
+                    newParentContainer.splice(siblingIndex, 0, nodeToMove);
+                } else {
+                    newParentContainer.unshift(nodeToMove);
+                }
+            } else {
+                newParentContainer.push(nodeToMove);
+            }
+            
+            return true;
+        }
+
+        // راه‌اندازی اولیه
+        $(document).ready(function() {
+            // رندر درخت خالی
+            renderFullTree();
+            
+            // مدیریت تب‌ها
+            document.querySelectorAll('.tab-btn').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // غیرفعال کردن همه تب‌ها
+                    document.querySelectorAll('.tab-btn').forEach(btn => {
+                        btn.classList.remove('active', 'border-blue-500', 'text-blue-600');
+                        btn.classList.add('text-gray-500');
+                    });
+                    
+                    // مخفی کردن همه محتواها
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // فعال کردن تب انتخاب شده
+                    this.classList.add('active', 'border-blue-500', 'text-blue-600');
+                    this.classList.remove('text-gray-500');
+                    document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+                    
+                    // مدیریت نمایش فیلدهای مربوطه برای جابجایی
+                    if (tabId === 'move') {
+                        const positionSelect = document.getElementById('positionSelect');
+                        const siblingContainer = document.getElementById('siblingSelectContainer');
+                        
+                        if (positionSelect.value === 'after' || positionSelect.value === 'before') {
+                            siblingContainer.classList.remove('hidden');
+                        } else {
+                            siblingContainer.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // مدیریت تغییر position در تب جابجایی
+            document.getElementById('positionSelect').addEventListener('change', function() {
+                const siblingContainer = document.getElementById('siblingSelectContainer');
+                if (this.value === 'after' || this.value === 'before') {
+                    siblingContainer.classList.remove('hidden');
+                } else {
+                    siblingContainer.classList.add('hidden');
+                }
+            });
+            
+            // افزودن گره ریشه
+            document.getElementById('addRootNode').addEventListener('click', function() {
+                const newNode = createNewNode();
+                currentTreeData.categories.push(newNode);
+                renderFullTree();
+            });
+            
+            // بارگذاری JSON از ورودی
+            document.getElementById('loadJson').addEventListener('click', loadJsonFromInput);
+            
+            // پاک کردن ورودی JSON
+            document.getElementById('clearJson').addEventListener('click', function() {
+                document.getElementById('jsonInput').value = '';
+            });
+            
+            // کپی JSON
+            document.getElementById('copyJson').addEventListener('click', copyJsonToClipboard);
+            
+            // دریافت خروجی JSON
+            document.getElementById('exportJson').addEventListener('click', function() {
+                const dataStr = JSON.stringify(currentTreeData, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                const exportFileDefaultName = 'educational_tree.json';
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            });
+            
+            // ذخیره تغییرات ویرایش گره
+            document.getElementById('saveEdit').addEventListener('click', function() {
+                if (!currentNodeBeingEdited) return;
+                
+                // به‌روزرسانی داده‌های گره
+                currentNodeBeingEdited.title = document.getElementById('editTitle').value;
+                currentNodeBeingEdited.id = document.getElementById('editId').value;
+                currentNodeBeingEdited.description = document.getElementById('editDescription').value;
+                currentNodeBeingEdited.childhint = document.getElementById('editChildhint').value;
+                currentNodeBeingEdited.image = document.getElementById('editImage').value;
+                
+                // به‌روزرسانی مسیر
+                const pathEnabled = document.getElementById('pathEnabled').checked;
+                if (pathEnabled) {
+                    if (!currentNodeBeingEdited.path) {
+                        currentNodeBeingEdited.path = {
+                            title: '',
+                            description: '',
+                            courses: []
+                        };
+                    }
+                    currentNodeBeingEdited.path.title = document.getElementById('editPathTitle').value;
+                    currentNodeBeingEdited.path.description = document.getElementById('editPathDescription').value;
+                    currentNodeBeingEdited.path.courses = currentCoursesBeingEdited;
+                } else {
+                    delete currentNodeBeingEdited.path;
+                }
+                
+                // بررسی اگر در تب جابجایی هستیم
+                const activeTab = document.querySelector('.tab-btn.active').getAttribute('data-tab');
+                if (activeTab === 'move') {
+                    const newParentId = document.getElementById('parentSelect').value;
+                    const position = document.getElementById('positionSelect').value;
+                    const siblingId = document.getElementById('siblingSelect').value;
+                    
+                    if (moveNodeToNewParent(currentNodeBeingEdited.id, newParentId, position, siblingId)) {
+                        alert('گره با موفقیت جابجا شد');
+                    }
+                }
+                
+                // رندر مجدد درخت
+                renderFullTree();
+                
+                // بستن مودال
+                document.getElementById('editModal').classList.add('hidden');
+                currentNodeBeingEdited = null;
+                currentCoursesBeingEdited = [];
+            });
+            
+            // انصراف از ویرایش گره
+            document.getElementById('cancelEdit').addEventListener('click', function() {
+                document.getElementById('editModal').classList.add('hidden');
+                currentNodeBeingEdited = null;
+                currentCoursesBeingEdited = [];
+            });
+            
+            // افزودن دوره جدید
+            document.getElementById('addCourseBtn').addEventListener('click', addNewCourse);
+            
+            // ذخیره دوره
+            document.getElementById('saveCourse').addEventListener('click', saveCourse);
+            
+            // انصراف از ویرایش دوره
+            document.getElementById('cancelCourse').addEventListener('click', closeCourseModal);
+            
+            // بستن مودال گره با کلیک خارج از آن
+            document.getElementById('editModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    document.getElementById('editModal').classList.add('hidden');
+                    currentNodeBeingEdited = null;
+                    currentCoursesBeingEdited = [];
+                }
+            });
+            
+            // بستن مودال دوره با کلیک خارج از آن
+            document.getElementById('courseModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeCourseModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
