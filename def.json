@@ -1,1 +1,1660 @@
- { "categories": [ { "id": "computer", "title": "کامپیوتر", "description": "شروع مسیر کامپیوتر", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png" }, { "id": "accounting", "title": "مالی و حسابداری", "description": "شروع مسیر حسابداری", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-23.webp" }, { "id": "accounting", "title": "آشپزی و شیرینی پزی", "description": "", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-1.png" }, { "id": "webdesign", "title": "طراحی سایت", "description": "مسیر ورود به طراحی سایت", "childhint": "طراحی وبسایت به دو طریق میسر است. با برنامه نویسی و بدون برنامه نویسی. لطفا انتخاب کنید که از کدام طریق میخواهید طراحی وبسایت را شروع کنید", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg", "children": [ { "id": "wordpress", "title": "یادگیری طراحی سایت بدون برنامه نویسی", "description": "", "childhint": "", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-2.png", "path": { "title": "مسیر طراحی سایت بدون کدنویسی با وردپرس", "description": "\n    <p>مسیر تخصصی <strong>طراحی سایت بدون کدنویسی با وردپرس</strong> برای افرادی که می‌خواهند بدون دانش برنامه‌نویسی سایت‌های حرفه‌ای ایجاد کنند:</p>\n    \n    <h4>📚 مراحل کامل یادگیری:</h4>\n    <ol>\n      <li><strong>مبانی وب و اینترنت</strong>\n        <ul>\n          <li>درک مفاهیم پایه: دامنه (Domain)، هاست (Hosting)</li>\n          <li>آشنایی با انواع سایت‌ها: شرکتی، فروشگاهی، شخصی، وبلاگ</li>\n          <li>مفاهیم سئو (SEO) پایه برای بهینه‌سازی سایت</li>\n          <li>امنیت وب‌سایت‌ها و راه‌های محافظت</li>\n        </ul>\n      </li>\n      \n      <li><strong>مقدمات HTML و CSS (ضروری برای کنترل بیشتر)</strong>\n        <ul>\n          <li>آشنایی با ساختار HTML تگ‌های اصلی</li>\n          <li>مفاهیم CSS برای استایل‌دهی ساده</li>\n          <li>کار با کلاس‌ها و ID در CSS</li>\n          <li>ویرایش ظاهری سایت با کدهای ساده</li>\n          <li><strong>نکته:</strong> نیازی به تسلط کامل نیست، فقط برای سفارشی‌سازی</li>\n        </ul>\n      </li>\n      \n      <li><strong>آشنایی کامل با وردپرس</strong>\n        <ul>\n          <li>نصب وردپرس روی هاست (cPanel، DirectAdmin)</li>\n          <li>آشنایی با پیشخوان مدیریت وردپرس (Dashboard)</li>\n          <li>مدیریت کاربران و نقش‌ها (Roles)</li>\n          <li>تنظیمات عمومی وردپرس</li>\n        </ul>\n      </li>\n      \n      <li><strong>کار با پوسته‌ها (Themes) و صفحه‌سازها</strong>\n        <ul>\n          <li><strong>انتخاب پوسته مناسب:</strong>\n            <ul>\n              <li>پوسته‌های رایگان و پرمیوم</li>\n              <li>پوسته‌های چندمنظوره (Multipurpose)</li>\n              <li>پوسته‌های تخصصی (فروشگاهی، شرکتی)</li>\n            </ul>\n          </li>\n          \n          <li><strong>صفحه‌سازهای حرفه‌ای:</strong>\n            <ul>\n              <li><strong>Elementor:</strong> محبوب‌ترین و قدرتمندترین</li>\n              <li><strong>Divi Builder:</strong> با کتابخانه گسترده</li>\n              <li><strong>WP Bakery:</strong> قدیمی اما قدرتمند</li>\n              <li><strong>Beaver Builder:</strong> برای توسعه سریع</li>\n            </ul>\n          </li>\n          \n          <li><strong>مهارت‌های صفحه‌سازی:</strong>\n            <ul>\n              <li>طراحی صفحه اصلی (Homepage)</li>\n              <li>ساخت صفحات داخلی (About، Contact، Services)</li>\n              <li>طراحی هدر و فوتر</li>\n              <li>مدیریت منوها و ناوبری</li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت محتوا در وردپرس</strong>\n        <ul>\n          <li>ایجاد و مدیریت پست‌ها (مقالات)</li>\n          <li>ایجاد و مدیریت صفحات (Pages)</li>\n          <li>مدیریت دسته‌بندی‌ها و تگ‌ها</li>\n          <li>کار با رسانه‌ها (عکس، ویدئو، فایل)</li>\n          <li>بلاگ‌نویسی و مدیریت نظرات</li>\n        </ul>\n      </li>\n      \n      <li><strong>افزونه‌های ضروری (Plugins)</strong>\n        <ul>\n          <li><strong>افزونه‌های امنیتی:</strong> Wordfence، iThemes Security</li>\n          <li><strong>افزونه‌های سئو:</strong> Yoast SEO، Rank Math</li>\n          <li><strong>افزونه‌های کش:</strong> W3 Total Cache، WP Rocket</li>\n          <li><strong>فرم‌سازها:</strong> Contact Form 7، WPForms</li>\n          <li><strong>فروشگاه ساز:</strong> WooCommerce (برای سایت فروشگاهی)</li>\n          <li><strong>پشتیبان‌گیری:</strong> UpdraftPlus، BackWPup</li>\n        </ul>\n      </li>\n      \n      <li><strong>سایت فروشگاهی با WooCommerce</strong>\n        <ul>\n          <li>نصب و راه‌اندازی WooCommerce</li>\n          <li>تنظیمات فروشگاه (درگاه پرداخت، حمل و نقل)</li>\n          <li>مدیریت محصولات و دسته‌بندی‌ها</li>\n          <li>تنظیم تخفیف‌ها و کوپن‌ها</li>\n          <li>مدیریت سفارشات و مشتریان</li>\n        </ul>\n      </li>\n      \n      <li><strong>بهینه‌سازی و نگهداری</strong>\n        <ul>\n          <li>بهینه‌سازی سرعت سایت</li>\n          <li>سئوی فنی (Technical SEO)</li>\n          <li>پشتیبان‌گیری دوره‌ای</li>\n          <li>بروزرسانی پوسته و افزونه‌ها</li>\n          <li>مانیتورینگ سلامت سایت</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های کسب‌وکار و فروش</strong>\n        <ul>\n          <li>تحلیل نیاز مشتری</li>\n          <li>تعیین قیمت‌گذاری پروژه‌ها</li>\n          <li>مدیریت ارتباط با مشتری</li>\n          <li>بازاریابی خدمات طراحی سایت</li>\n          <li>پشتیبانی پس از تحویل</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مخاطبان این مسیر:</h4>\n    <ul>\n      <li>افراد غیرفنی که می‌خواهند سایت داشته باشند</li>\n      <li>کارآفرینان و صاحبان کسب‌وکارهای کوچک</li>\n      <li>فریلنسرهایی که می‌خواهند طراحی سایت ارائه دهند</li>\n      <li>دانشجویان برای افزایش مهارت‌های شغلی</li>\n      <li>مشاغل آزاد برای توسعه کسب‌وکار آنلاین</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت سایت‌های کاملاً حرفه‌ای بدون کدنویسی</li>\n      <li>مدیریت کامل محتوا و ظاهر سایت</li>\n      <li>راه‌اندازی فروشگاه اینترنتی با WooCommerce</li>\n      <li>بهینه‌سازی سرعت و سئوی سایت</li>\n      <li>مدیریت امنیت و پشتیبان‌گیری</li>\n      <li>توانایی طراحی سایت برای مشتریان و کسب درآمد</li>\n    </ul>\n    \n    <h4>💰 بازار کار و درآمد:</h4>\n    <ul>\n      <li>طراحی سایت برای مشتریان (پروژه‌ای)</li>\n      <li>پشتیبانی و نگهداری سایت‌ها (ماهانه)</li>\n      <li>فروش سایت‌های آماده (قالب وردپرس)</li>\n      <li>آموزش طراحی سایت به دیگران</li>\n      <li>مدیریت سایت سازمان‌ها</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۳ تا ۶ ماه (بسته به زمان تمرین)</p>\n    <p>💡 نکته: با این مسیر می‌توانید در کمتر از ۶ ماه به درآمدزایی برسید</p>\n    <p>🌟 مزیت: نیاز به پیش‌نیاز خاصی ندارد و برای همه قابل یادگیری است</p>\n  ", "courses": [ { "title": "مبانی وب و هاستینگ", "duration": "4 جلسه", "price": 490000, "rating": 4.7, "link": "#", "image": "https://images.unsplash.com/photo-1547658719-da2b51169166" }, { "title": "HTML و CSS مقدماتی برای وردپرس", "duration": "6 جلسه", "price": 690000, "rating": 4.8, "link": "#", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg" }, { "title": "وردپرس از صفر تا صد", "duration": "10 جلسه", "price": 1190000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613" }, { "title": "طراحی حرفه‌ای با Elementor", "duration": "8 جلسه", "price": 990000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3" }, { "title": "سئوی وردپرس با Yoast SEO", "duration": "5 جلسه", "price": 590000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71" }, { "title": "فروشگاه اینترنتی با WooCommerce", "duration": "8 جلسه", "price": 1090000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d" }, { "title": "امنیت وردپرس", "duration": "4 جلسه", "price": 490000, "rating": 4.7, "link": "#", "image": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe" }, { "title": "پروژه عملی طراحی سایت", "duration": "10 جلسه", "price": 1290000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1552664730-d307ca884978" } ] } }, { "id": "accounting", "title": "طراحی سایت با برنامه نویسی", "description": "", "childhint": "یادگیری طراحی وبسایت از طریق برنامه نویسی شامل مفاهیم مستقل و بزرگی است. انتخاب کنید که علاقه مند به چه چیزی هستید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg", "path": { "title": "مسیر طراحی سایت با برنامه‌نویسی (Developer)", "description": "\n    <p><strong>مسیر فنی و حرفه‌ای</strong> - کنترل کامل، انعطاف نامحدود، درآمد بالا</p>\n    \n    <h4>🚀 مسیر سریع (Crash Course):</h4>\n    <ol>\n      <li><strong>ماه ۱-۲: پایه‌ها</strong>\n        <ul>\n          <li>HTML5 + CSS3 + JavaScript ES6</li>\n          <li>Git + GitHub</li>\n          <li>Responsive Design</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۳-۴: فرانت‌اند</strong>\n        <ul>\n          <li>React.js (پیشنهاد اول) یا Vue.js</li>\n          <li>State Management (Redux/Vuex)</li>\n          <li>API Calls + Routing</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۵-۶: بک‌اند</strong>\n        <ul>\n          <li>Node.js + Express یا Python + Django</li>\n          <li>دیتابیس (PostgreSQL/MongoDB)</li>\n          <li>RESTful APIs + Authentication</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۷-۸: تکمیل</strong>\n        <ul>\n          <li>TypeScript برای کیفیت کد</li>\n          <li>Deployment و DevOps مقدماتی</li>\n          <li>Testing + Security Basics</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 تفاوت با وردپرس:</h4>\n    <ul>\n      <li>✅ کنترل ۱۰۰٪ روی کدها</li>\n      <li>✅ انعطاف نامحدود در پیاده‌سازی</li>\n      <li>✅ بهینه‌سازی سرعت و امنیت بالا</li>\n      <li>✅ درآمد ۲-۳ برابر بیشتر</li>\n      <li>❌ زمان یادگیری طولانی‌تر (۸-۱۲ ماه)</li>\n      <li>❌ پیچیدگی فنی بیشتر</li>\n    </ul>\n    \n    <h4>💰 بازار کار:</h4>\n    <ul>\n      <li>Frontend Developer</li>\n      <li>Backend Developer</li>\n      <li>Fullstack Developer</li>\n      <li>در شرکت‌های تکنولوژی و استارتاپ‌ها</li>\n    </ul>\n    \n    <p>⏱ زمان: ۸-۱۲ ماه تا بازار کار</p>\n    <p>💡 انتخاب کنید اگر: عاشق تکنولوژی، حل مسئله و چالش‌های فنی هستید</p>\n  ", "courses": [ { "title": "HTML/CSS/JS فشرده", "duration": "8 جلسه", "price": 890000, "rating": 4.8, "link": "#", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg" }, { "title": "React.js سریع", "duration": "10 جلسه", "price": 1190000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "Node.js و Express", "duration": "8 جلسه", "price": 990000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c" }, { "title": "پروژه Fullstack", "duration": "12 جلسه", "price": 1490000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" } ] } } ] }, { "id": "programing", "title": "برنامه نویسی", "description": "مسیر ورود به برنامه نویسی", "childhint": "از آنجایی که حوزه برنامه نویسی حوزه بزرگی می باشد. لطفا مشخص کنید که دقیقا به برنامه نویسی کدام بخش علاقه مند هستید", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-18.png", "children": [ { "id": "web", "title": "برنامه‌نویسی و طراحی وب", "description": "", "childhint": "برنامه‌نویسی وب شامل مسیرهای تخصصی مختلفی است. انتخاب کنید به کدام علاقه‌مند هستید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg", "children": [ { "id": "frontend", "title": "فرانت‌اند", "description": "طراحی و پیاده‌سازی ظاهر وب‌سایت", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-9.png", "path": { "title": "مسیر فرانت اند", "description": "\n                    <img src=\"https://img.freepik.com/premium-vector/front-end-developer-course-infographic-chart-design-template_106317-14547.jpg\" />\n    <p>با توجه به انتخاب‌های شما، مسیر یادگیری <strong>فرانت‌اند (Frontend Development)</strong> به صورت زیر خواهد بود:</p>\n    \n    <h4>📚 مراحل یادگیری فرانت‌اند:</h4>\n    <ol>\n      <li><strong>HTML & CSS</strong> - پایه و اساس ساختار و ظاهر وب‌سایت</li>\n      <li><strong>JavaScript</strong> - افزودن تعامل و منطق به صفحات وب</li>\n      <li><strong>Responsive Design</strong> - طراحی واکنش‌گرا برای تمام دستگاه‌ها</li>\n      <li><strong>Version Control (Git)</strong> - مدیریت کدها و همکاری تیمی</li>\n      <li><strong>CSS Frameworks</strong> - Bootstrap یا Tailwind CSS</li>\n      <li><strong>JavaScript Libraries/Frameworks</strong> - React.js (پیشنهاد اصلی)</li>\n      <li><strong>State Management</strong> - مدیریت state در اپلیکیشن‌های بزرگ</li>\n      <li><strong>Modern Tools</strong> - Webpack, npm/yarn, API Integration</li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های کسب شده پس از پایان مسیر:</h4>\n    <ul>\n      <li>ساخت وب‌سایت‌های زیبا و واکنش‌گرا</li>\n      <li>ایجاد اپلیکیشن‌های وب پویا و تعاملی</li>\n      <li>توانایی کار با APIها و داده‌های واقعی</li>\n      <li>آمادگی برای ورود به بازار کار فرانت‌اند</li>\n      <li>پایه قوی برای یادگیری فریم‌ورک‌های پیشرفته‌تر</li>\n    </ul>\n    \n    <p>⏱ مدت زمان تقریبی برای تسلط: ۶ تا ۹ ماه (با تمرین روزانه)</p>\n  ", "courses": [ { "title": "HTML/CSS مقدماتی", "duration": "4 جلسه", "price": 490000, "rating": 4.8, "link": "#", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg" }, { "title": "JavaScript پایه", "duration": "6 جلسه", "price": 690000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479" }, { "title": "React.js مقدماتی", "duration": "8 جلسه", "price": 890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "طراحی واکنش‌گرا (Responsive)", "duration": "3 جلسه", "price": 390000, "rating": 4.7, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" }, { "title": "Git & GitHub برای فرانت‌اند", "duration": "3 جلسه", "price": 290000, "rating": 4.6, "link": "#", "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb" }, { "title": "پروژه محور فرانت‌اند", "duration": "10 جلسه", "price": 990000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c" } ] }, "childhint": "" }, { "id": "backend", "title": "بک‌اند", "description": "مدیریت داده‌ها، سرور و منطق سیستم", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-11.png", "path": { "title": "مسیر بک اند", "description": "\n    <p>با توجه به انتخاب‌های شما، مسیر یادگیری <strong>بک‌اند (Backend Development)</strong> به صورت زیر خواهد بود:</p>\n    \n    <h4>📚 مراحل اصلی یادگیری بک‌اند:</h4>\n    <ol>\n      <li><strong>انتخاب زبان برنامه‌نویسی سمت سرور</strong><br>\n      ابتدا باید یکی از زبان‌های بک‌اند را انتخاب و یاد بگیرید. گزینه‌های رایج:\n      <ul>\n        <li>PHP (برای شروع آسان و بازار کار گسترده)</li>\n        <li>Python (برای توسعه سریع و هوش مصنوعی)</li>\n        <li>Node.js (جاوااسکریپت برای همه‌کاره بودن)</li>\n        <li>Java (برای سیستم‌های سازمانی بزرگ)</li>\n        <li>C# (برای توسعه تحت ویندوز)</li>\n      </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر کامل با PHP</strong><br>\n      اگر PHP را انتخاب کنید:\n      <ol type=\"a\">\n        <li>یادگیری مبانی PHP (سینتکس، توابع، شیءگرایی)</li>\n        <li>کار با دیتابیس (MySQL یا PostgreSQL)</li>\n        <li>یادگیری یک فریم‌ورک (Laravel یا Symfony)</li>\n        <li>ساخت RESTful API</li>\n        <li>احراز هویت و امنیت</li>\n        <li>کار با Composer (مدیریت پکیج‌ها)</li>\n      </ol>\n      </li>\n      \n      <li><strong>پایگاه داده‌ها</strong><br>\n      یادگیری هر دو نوع:\n      <ul>\n        <li>دیتابیس‌های رابطه‌ای (SQL): MySQL، PostgreSQL</li>\n        <li>دیتابیس‌های غیررابطه‌ای (NoSQL): MongoDB، Redis</li>\n      </ul>\n      </li>\n      \n      <li><strong>فریم‌ورک‌ها</strong><br>\n      انتخاب یک فریم‌ورک اصلی برای افزایش سرعت و کیفیت توسعه:\n      <ul>\n        <li>PHP: Laravel، Symfony</li>\n        <li>Python: Django، Flask</li>\n        <li>Node.js: Express.js، NestJS</li>\n      </ul>\n      </li>\n      \n      <li><strong>API Development</strong><br>\n      ساخت APIهای RESTful یا GraphQL برای ارتباط با فرانت‌اند</li>\n      \n      <li><strong>احراز هویت و امنیت</strong><br>\n      پیاده‌سازی JWT، OAuth، hash کردن پسوردها، جلوگیری از حملات رایج</li>\n      \n      <li><strong>ابزارهای کمکی</strong><br>\n      Git، Docker، Redis (برای کش)، تست‌نویسی، مستندسازی API</li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی پس از پایان مسیر:</h4>\n    <ul>\n      <li>ساخت سرورهای قدرتمند و امن</li>\n      <li>طراحی و بهینه‌سازی پایگاه داده</li>\n      <li>ایجاد APIهای کامل و مستند</li>\n      <li>پیاده‌سازی سیستم‌های احراز هویت پیچیده</li>\n      <li>استقرار (Deploy) پروژه‌ها روی سرور</li>\n      <li>آمادگی کامل برای ورود به بازار کار بک‌اند</li>\n    </ul>\n    \n    <p>⏱ مدت زمان تقریبی برای تسلط: ۸ تا ۱۲ ماه (با تمرین مداوم)</p>\n    <p>💡 نکته: انتخاب یک زبان و فریم‌ورک و تسلط کامل روی آن بهتر از یادگیری سطحی چندین تکنولوژی است.</p>\n  ", "courses": [ { "title": "PHP مقدماتی", "duration": "6 جلسه", "price": 590000, "rating": 4.7, "link": "#", "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c" }, { "title": "MySQL و طراحی دیتابیس", "duration": "5 جلسه", "price": 490000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1543946602-c0516cd30c8c" }, { "title": "فریم‌ورک Laravel", "duration": "10 جلسه", "price": 990000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "API Development با PHP", "duration": "6 جلسه", "price": 690000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31" }, { "title": "امنیت در بک‌اند", "duration": "4 جلسه", "price": 490000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe" }, { "title": "پروژه عملی بک‌اند", "duration": "12 جلسه", "price": 1190000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" } ] }, "childhint": "" }, { "id": "fullstack", "title": "فول‌استک", "description": "ترکیب فرانت‌اند و بک‌اند", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-24.png", "path": { "title": "مسیر Fullstack (مثال PHP)", "description": "\n    <p>با انتخاب مسیر <strong>فول‌استک (Fullstack Development)</strong>، شما هم فرانت‌اند و هم بک‌اند را یاد می‌گیرید:</p>\n    \n    <h4>📚 مراحل یادگیری Fullstack با PHP:</h4>\n    <ol>\n      <li><strong>پایه‌های فرانت‌اند</strong>\n        <ul>\n          <li>HTML & CSS (ساختار و استایل)</li>\n          <li>JavaScript (تعامل و منطق)</li>\n          <li>Responsive Design (واکنش‌گرا)</li>\n        </ul>\n      </li>\n      \n      <li><strong>بک‌اند با PHP</strong>\n        <ul>\n          <li>مبانی PHP و شیءگرایی</li>\n          <li>کار با دیتابیس MySQL</li>\n          <li>فریم‌ورک Laravel</li>\n        </ul>\n      </li>\n      \n      <li><strong>اتصال فرانت و بک</strong>\n        <ul>\n          <li>ساخت API با Laravel</li>\n          <li>فراخوانی API با JavaScript</li>\n          <li>مدیریت state و session</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارهای پیشرفته</strong>\n        <ul>\n          <li>Git & GitHub</li>\n          <li>Docker</li>\n          <li>Deployment و هاستینگ</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت کامل وب‌اپلیکیشن از صفر</li>\n      <li>مدیریت همزمان فرانت‌اند و بک‌اند</li>\n      <li>تسلط بر چرخه کامل توسعه وب</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۰ تا ۱۴ ماه</p>\n  ", "courses": [ { "title": "HTML/CSS & JavaScript", "duration": "8 جلسه", "price": 790000, "rating": 4.8, "link": "#", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg" }, { "title": "PHP و MySQL", "duration": "8 جلسه", "price": 890000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c" }, { "title": "فریم‌ورک Laravel", "duration": "10 جلسه", "price": 990000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "پروژه Fullstack", "duration": "12 جلسه", "price": 1190000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" } ] }, "childhint": "" }, { "id": "wordpress", "title": "توسعه وردپرس  ", "description": "", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-22.png", "path": { "title": "مسیر توسعه وردپرس", "description": "\n    <p>مسیر تخصصی <strong>توسعه وردپرس (WordPress Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری توسعه وردپرس:</h4>\n    <ol>\n      <li><strong>آشنایی با وردپرس</strong>\n        <ul>\n          <li>نصب و راه‌اندازی وردپرس</li>\n          <li>کار با پنل مدیریت</li>\n          <li>نصب پوسته و افزونه</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه پوسته (Theme Development)</strong>\n        <ul>\n          <li>یادگیری HTML/CSS/JavaScript</li>\n          <li>آشنایی با PHP مقدماتی</li>\n          <li>ساخت پوسته اختصاصی</li>\n          <li>کار با template hierarchy</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه افزونه (Plugin Development)</strong>\n        <ul>\n          <li>یادگیری PHP پیشرفته</li>\n          <li>آشنایی با hooks (actions/filters)</li>\n          <li>ساخت افزونه‌های سفارشی</li>\n          <li>کار با custom post types</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>کار با WooCommerce (فروشگاه ساز)</li>\n          <li>ساخت صفحه‌ساز اختصاصی</li>\n          <li>بهینه‌سازی سرعت و سئو</li>\n          <li>امنیت وردپرس</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت پوسته و افزونه حرفه‌ای</li>\n      <li>مدیریت کامل پروژه‌های وردپرسی</li>\n      <li>توسعه وبسایت‌های فروشگاهی</li>\n      <li>فریلنسینگ در بازار وردپرس</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n  ", "courses": [ { "title": "مبانی وردپرس", "duration": "4 جلسه", "price": 390000, "rating": 4.7, "link": "#", "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613" }, { "title": "توسعه پوسته وردپرس", "duration": "8 جلسه", "price": 890000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3" }, { "title": "توسعه افزونه وردپرس", "duration": "8 جلسه", "price": 890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "WooCommerce پیشرفته", "duration": "6 جلسه", "price": 690000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d" } ] }, "childhint": "" }, { "id": "uiux", "title": "UI / UX", "description": "طراحی تجربه و رابط کاربری", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-10.png", "path": { "title": "مسیر طراحی UI/UX", "description": "\n    <p>مسیر تخصصی <strong>طراحی UI/UX (User Interface/User Experience)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری UI/UX:</h4>\n    <ol>\n      <li><strong>اصول اولیه طراحی</strong>\n        <ul>\n          <li>رنگ‌شناسی و تئوری رنگ</li>\n          <li>تایپوگرافی و فونت‌شناسی</li>\n          <li>ترکیب‌بندی و Grid Systems</li>\n        </ul>\n      </li>\n      \n      <li><strong>تحقیق و آنالیز کاربر (UX)</strong>\n        <ul>\n          <li>User Research و Persona</li>\n          <li>User Journey Mapping</li>\n          <li>Wireframing و Prototyping</li>\n          <li>Usability Testing</li>\n        </ul>\n      </li>\n      \n      <li><strong>طراحی رابط کاربری (UI)</strong>\n        <ul>\n          <li>یادگیری ابزارهای طراحی (Figma)</li>\n          <li>طراحی سیستم (Design System)</li>\n          <li>UI Patterns و Components</li>\n          <li>طراحی موبایل و وب</li>\n        </ul>\n      </li>\n      \n      <li><strong>تخصص‌های پیشرفته</strong>\n        <ul>\n          <li>Interaction Design</li>\n          <li>طراحی برای Accessibility</li>\n          <li>Motion Design با After Effects</li>\n          <li>Collaboration با توسعه‌دهندگان</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>تحقیق و تحلیل نیازهای کاربر</li>\n      <li>طراحی رابط‌های کاربرپسند و زیبا</li>\n      <li>ساخت Prototype تعاملی</li>\n      <li>همکاری مؤثر با تیم توسعه</li>\n      <li>ساخت Design System حرفه‌ای</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n  ", "courses": [ { "title": "اصول طراحی UI/UX", "duration": "6 جلسه", "price": 690000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5" }, { "title": "کار با Figma حرفه‌ای", "duration": "8 جلسه", "price": 890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71" }, { "title": "طراحی سیستم (Design System)", "duration": "6 جلسه", "price": 790000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1558655146-364adaf1fcc9" }, { "title": "پروژه عملی UI/UX", "duration": "10 جلسه", "price": 990000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3" } ] }, "childhint": "" }, { "id": "devops", "title": "DevOps", "description": "استقرار، مانیتورینگ و اتوماسیون", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-7.png", "path": { "title": "مسیر DevOps", "description": "\n    <p>مسیر تخصصی <strong>DevOps (Development & Operations)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری DevOps:</h4>\n    <ol>\n      <li><strong>پایه‌های سیستم‌عامل و شبکه</strong>\n        <ul>\n          <li>Linux Administration (Ubuntu/CentOS)</li>\n          <li>آشنایی با شبکه‌های کامپیوتری</li>\n          <li>Command Line و Shell Scripting</li>\n        </ul>\n      </li>\n      \n      <li><strong>زیرساخت کد (Infrastructure as Code)</strong>\n        <ul>\n          <li>Docker (کانتینریزاسیون)</li>\n          <li>Kubernetes (اورکستراسیون)</li>\n          <li>Terraform (مدیریت زیرساخت)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت کد و CI/CD</strong>\n        <ul>\n          <li>Git و Git workflows</li>\n          <li>Jenkins/GitLab CI/GitHub Actions</li>\n          <li>Continuous Integration & Deployment</li>\n        </ul>\n      </li>\n      \n      <li><strong>مانیتورینگ و لاگینگ</strong>\n        <ul>\n          <li>Prometheus و Grafana</li>\n          <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>\n          <li>Alerting و Performance Monitoring</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابر و زیرساخت ابری</strong>\n        <ul>\n          <li>AWS Services (EC2, S3, RDS)</li>\n          <li>Google Cloud Platform</li>\n          <li>Azure DevOps</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>مدیریت سرورها و زیرساخت</li>\n      <li>اتوماسیون فرآیندهای توسعه</li>\n      <li>پیاده‌سازی خطوط CI/CD</li>\n      <li>مانیتورینگ سیستم‌های بزرگ</li>\n      <li>کار با پلتفرم‌های ابری</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۲ تا ۱۸ ماه</p>\n  ", "courses": [ { "title": "Linux و شبکه برای DevOps", "duration": "6 جلسه", "price": 790000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485" }, { "title": "Docker و Kubernetes", "duration": "10 جلسه", "price": 1190000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "CI/CD با Jenkins و GitLab", "duration": "8 جلسه", "price": 990000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31" }, { "title": "AWS برای DevOps", "duration": "10 جلسه", "price": 1290000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa" } ] }, "childhint": "" } ] }, { "id": "mobile", "title": "برنامه‌نویسی موبایل", "description": "", "childhint": "مسیر برنامه‌نویسی موبایل را بر اساس علاقه خود انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-26.avif", "children": [ { "id": "android", "title": "اندروید", "description": "توسعه اپلیکیشن‌های Android", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-19.jpg", "path": { "title": "مسیر برنامه‌نویسی اندروید (Android)", "description": "\n    <p>مسیر تخصصی <strong>توسعه اپلیکیشن‌های اندروید (Android Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری برنامه‌نویسی اندروید:</h4>\n    <ol>\n      <li><strong>پایه‌های برنامه‌نویسی</strong>\n        <ul>\n          <li>یادگیری زبان Kotlin (زبان اصلی اندروید)</li>\n          <li>آشنایی با Java (برای پروژه‌های Legacy)</li>\n          <li>مفاهیم شیءگرایی (OOP)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مبانی اندروید</strong>\n        <ul>\n          <li>Activity و Fragment</li>\n          <li>Layouts و Views (XML)</li>\n          <li>Intent و Navigation</li>\n          <li>Lifecycle Components</li>\n        </ul>\n      </li>\n      \n      <li><strong>آرشیتکتور پیشرفته</strong>\n        <ul>\n          <li>MVVM Architecture</li>\n          <li>LiveData و ViewModel</li>\n          <li>Room Database (SQLite)</li>\n          <li>Retrofit (اتصال به API)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>کار با Firebase</li>\n          <li>Notification و Background Tasks</li>\n          <li>Testing (Unit Test, UI Test)</li>\n          <li>Publishing در Google Play</li>\n        </ul>\n      </li>\n      \n      <li><strong>Jetpack Compose (اختیاری)</strong>\n        <ul>\n          <li>یادگیری Modern UI Toolkit</li>\n          <li>Declarative UI Development</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن‌های حرفه‌ای اندروید</li>\n      <li>پیاده‌سازی آرشیتکتورهای مدرن</li>\n      <li>اتصال به سرویس‌های Backend</li>\n      <li>آمادگی برای انتشار در مارکت</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n  ", "courses": [ { "title": "Kotlin برای اندروید", "duration": "6 جلسه", "price": 690000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" }, { "title": "مبانی توسعه اندروید", "duration": "8 جلسه", "price": 890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" }, { "title": "آرشیتکتور MVVM در اندروید", "duration": "8 جلسه", "price": 990000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "پروژه عملی اندروید", "duration": "10 جلسه", "price": 1190000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" } ] }, "childhint": "" }, { "id": "ios", "title": "iOS", "description": "توسعه اپلیکیشن‌های iPhone", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-25.jpg", "path": { "title": "مسیر برنامه‌نویسی iOS", "description": "\n    <p>مسیر تخصصی <strong>توسعه اپلیکیشن‌های iOS</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری برنامه‌نویسی iOS:</h4>\n    <ol>\n      <li><strong>پایه‌های برنامه‌نویسی</strong>\n        <ul>\n          <li>یادگیری زبان Swift (زبان اصلی iOS)</li>\n          <li>آشنایی با Objective-C (برای پروژه‌های قدیمی)</li>\n          <li>مفاهیم شیءگرایی و Protocol-Oriented</li>\n        </ul>\n      </li>\n      \n      <li><strong>مبانی iOS Development</strong>\n        <ul>\n          <li>UIKit Framework</li>\n          <li>Storyboard و Auto Layout</li>\n          <li>View Controllers</li>\n          <li>Delegates و Protocols</li>\n        </ul>\n      </li>\n      \n      <li><strong>SwiftUI (راه مدرن)</strong>\n        <ul>\n          <li>یادگیری Declarative UI</li>\n          <li>State و Data Flow</li>\n          <li>Custom Views و Modifiers</li>\n        </ul>\n      </li>\n      \n      <li><strong>داده‌ها و Networking</strong>\n        <ul>\n          <li>Core Data</li>\n          <li>URLSession و Networking</li>\n          <li>Codable Protocol</li>\n          <li>UserDefaults</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>Concurrency با async/await</li>\n          <li>Testing (Unit Test, UI Test)</li>\n          <li>Publishing در App Store</li>\n          <li>In-App Purchases</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن‌های iOS با SwiftUI و UIKit</li>\n      <li>کار با API و مدیریت داده</li>\n      <li>پیاده‌سازی معماری‌های Clean Architecture</li>\n      <li>آمادگی برای انتشار در App Store</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n    <p>💡 نیاز: سیستم مک (macOS) برای توسعه iOS</p>\n  ", "courses": [ { "title": "زبان Swift مقدماتی", "duration": "6 جلسه", "price": 790000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" }, { "title": "توسعه iOS با UIKit", "duration": "8 جلسه", "price": 990000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" }, { "title": "SwiftUI پیشرفته", "duration": "8 جلسه", "price": 1090000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "پروژه عملی iOS", "duration": "10 جلسه", "price": 1290000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" } ] }, "childhint": "" }, { "id": "cross", "title": "کراس‌پلتفرم", "description": "Flutter / React Native", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-21.png", "path": { "title": "مسیر کراس پلتفرم (Cross-Platform)", "description": "\n    <p>مسیر تخصصی <strong>توسعه کراس پلتفرم (Cross-Platform Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری کراس پلتفرم:</h4>\n    <ol>\n      <li><strong>انتخاب فریم‌ورک اصلی</strong>\n        <ul>\n          <li><strong>React Native:</strong> برای توسعه‌دهندگان وب</li>\n          <li><strong>Flutter:</strong> با زبان Dart و performance بالا</li>\n          <li><strong>Xamarin:</strong> برای توسعه‌دهندگان .NET</li>\n        </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر Flutter</strong>\n        <ol type=\"a\">\n          <li>یادگیری زبان Dart</li>\n          <li>Widgets و Layout در Flutter</li>\n          <li>State Management (Provider, Riverpod, Bloc)</li>\n          <li>Navigation و Routing</li>\n          <li>کار با API و Local Storage</li>\n          <li>Publishing برای Android و iOS</li>\n        </ol>\n      </li>\n      \n      <li><strong>مثال: مسیر React Native</strong>\n        <ol type=\"a\">\n          <li>تسلط بر JavaScript/TypeScript</li>\n          <li>Components و JSX</li>\n          <li>State Management (Redux, Context API)</li>\n          <li>Native Modules و Bridge</li>\n          <li>کار با Expo یا CLI</li>\n        </ol>\n      </li>\n      \n      <li><strong>مهارت‌های مشترک</strong>\n        <ul>\n          <li>Native Features (دوربین، GPS، Notifications)</li>\n          <li>Testing و Debugging</li>\n          <li>Performance Optimization</li>\n          <li>Code Push و OTA Updates</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن برای Android و iOS با یک کدبیس</li>\n      <li>استفاده از Native Features</li>\n      <li>Performance Optimization</li>\n      <li>Publishing در دو پلتفرم</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۱۰ ماه</p>\n    <p>💡 مزیت: صرفه‌جویی در زمان و منابع</p>\n  ", "courses": [ { "title": "Flutter و Dart مقدماتی", "duration": "8 جلسه", "price": 890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" }, { "title": "State Management در Flutter", "duration": "6 جلسه", "price": 790000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "React Native مقدماتی", "duration": "8 جلسه", "price": 890000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" }, { "title": "پروژه کراس پلتفرم", "duration": "10 جلسه", "price": 1190000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" } ] }, "childhint": "" }, { "id": "mobile-uiux", "title": "UI/UX موبایل", "description": "طراحی رابط کاربری اپلیکیشن", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-6.png", "path": { "title": "مسیر UI/UX موبایل", "description": "\n    <p>مسیر تخصصی <strong>طراحی UI/UX موبایل (Mobile Design)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری طراحی موبایل:</h4>\n    <ol>\n      <li><strong>اصول طراحی موبایل</strong>\n        <ul>\n          <li>تفاوت طراحی موبایل و وب</li>\n          <li>Platform Guidelines (Material Design, Human Interface)</li>\n          <li>Mobile-First Design</li>\n          <li>Touch Targets و Gestures</li>\n        </ul>\n      </li>\n      \n      <li><strong>تحقیق کاربر موبایل</strong>\n        <ul>\n          <li>Mobile User Behavior</li>\n          <li>Context of Use (در حال حرکت)</li>\n          <li>Mobile Usability Testing</li>\n          <li>Onboarding و Empty States</li>\n        </ul>\n      </li>\n      \n      <li><strong>طراحی رابط موبایل</strong>\n        <ul>\n          <li>Mobile Layout Patterns</li>\n          <li>Navigation Patterns (Tab Bar, Drawer)</li>\n          <li>Mobile Components Design</li>\n          <li>Responsive vs Adaptive Design</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارها و Prototyping</strong>\n        <ul>\n          <li>Figma برای موبایل Design</li>\n          <li>Interactive Prototyping</li>\n          <li>Design Handoff به توسعه‌دهندگان</li>\n          <li>Design Systems برای موبایل</li>\n        </ul>\n      </li>\n      \n      <li><strong>تخصص‌های پیشرفته</strong>\n        <ul>\n          <li>Animation و Microinteractions</li>\n          <li>Accessibility در موبایل</li>\n          <li>Dark Mode Design</li>\n          <li>Cross-Platform Design Consistency</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>طراحی اپلیکیشن‌های زیبا و کاربرپسند</li>\n      <li>تسلط بر Platform Guidelines</li>\n      <li>ساخت Interactive Prototypes</li>\n      <li>همکاری مؤثر با توسعه‌دهندگان موبایل</li>\n      <li>طراحی برای Android و iOS</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n  ", "courses": [ { "title": "اصول طراحی موبایل", "duration": "6 جلسه", "price": 690000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5" }, { "title": "Material Design و iOS HIG", "duration": "5 جلسه", "price": 590000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71" }, { "title": "طراحی با Figma برای موبایل", "duration": "8 جلسه", "price": 890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1558655146-364adaf1fcc9" }, { "title": "پروژه UI/UX موبایل", "duration": "8 جلسه", "price": 990000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3" } ] }, "childhint": "" } ] }, { "id": "desktop", "title": "برنامه‌نویسی دسکتاپ", "description": "توسعه نرم‌افزارهای ویندوز، مک و لینوکس", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-16.png", "path": { "title": "مسیر برنامه‌نویسی دسکتاپ/ویندوز", "description": "\n    <p>مسیر تخصصی <strong>توسعه نرم‌افزارهای دسکتاپ و ویندوز</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری توسعه دسکتاپ:</h4>\n    <ol>\n      <li><strong>انتخاب پلتفرم و تکنولوژی</strong>\n        <ul>\n          <li><strong>C# و .NET:</strong> بهترین انتخاب برای ویندوز (Windows Forms, WPF)</li>\n          <li><strong>Java:</strong> برای برنامه‌های cross-platform (JavaFX)</li>\n          <li><strong>Python:</strong> با PyQt/PySide یا Tkinter</li>\n          <li><strong>C++:</strong> برای برنامه‌های high-performance</li>\n          <li><strong>Electron:</strong> با JavaScript/TypeScript برای برنامه‌های وب-بیس</li>\n        </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر C# و WPF (.NET)</strong>\n        <ol type=\"a\">\n          <li>یادگیری زبان C# و مفاهیم OOP پیشرفته</li>\n          <li>آشنایی با .NET Framework/.NET Core</li>\n          <li>Windows Forms برای برنامه‌های ساده</li>\n          <li>WPF (Windows Presentation Foundation) برای برنامه‌های مدرن</li>\n          <li>XAML برای طراحی UI</li>\n          <li>MVVM Pattern در WPF</li>\n          <li>Entity Framework برای دیتابیس</li>\n          <li>Deployment و Installer (MSI, ClickOnce)</li>\n        </ol>\n      </li>\n      \n      <li><strong>مهارت‌های ضروری</strong>\n        <ul>\n          <li>Working with Files و System.IO</li>\n          <li>Multi-threading و async programming</li>\n          <li>Windows API و Registry (در صورت نیاز)</li>\n          <li>Local Database Integration (SQLite, SQL Server Local)</li>\n          <li>Logging و Error Handling</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه Cross-Platform دسکتاپ</strong>\n        <ul>\n          <li>Avalonia UI (برای .NET cross-platform)</li>\n          <li>Qt با C++ یا Python</li>\n          <li>Electron برای توسعه‌دهندگان وب</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 بازار کار و پروژه‌ها:</h4>\n    <ul>\n      <li>نرم‌افزارهای اداری و سازمانی</li>\n      <li>ابزارهای مدیریت و آنالیز داده</li>\n      <li>نرم‌افزارهای مالی و حسابداری</li>\n      <li>ابزارهای مهندسی و صنعتی</li>\n      <li>برنامه‌های utility و system tools</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت برنامه‌های دسکتاپ حرفه‌ای برای ویندوز</li>\n      <li>طراحی UI با WPF و XAML</li>\n      <li>کار با دیتابیس و فایل‌سیستم</li>\n      <li>ایجاد installer و deploy نرم‌افزار</li>\n      <li>آماده‌سازی برای بازار کار سنتی و سازمانی</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۰ تا ۱۴ ماه</p>\n    <p>💡 نکته: بازار برنامه‌های دسکتاپ در سازمان‌ها و شرکت‌های بزرگ همچنان پررونق است</p>\n  ", "courses": [ { "title": "C# پیشرفته و .NET", "duration": "8 جلسه", "price": 990000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1616401784845-180882ba9ba8" }, { "title": "WPF و XAML", "duration": "10 جلسه", "price": 1190000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c" }, { "title": "الگوهای طراحی در دسکتاپ", "duration": "6 جلسه", "price": 790000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee" }, { "title": "پروژه جامع دسکتاپ", "duration": "12 جلسه", "price": 1490000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3" } ] }, "childhint": "" } ] }, { "id": "ai", "title": "هوش مصنوعی", "description": "مسیر یادگیری هوش مصنوعی", "childhint": "مشخص کنید هدف شما از هوش مصنوعی چیست.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-17.png", "children": [ { "id": "ai-business", "title": "هوش مصنوعی در کسب‌وکار", "description": "اتوماسیون و افزایش بهره‌وری", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-15.png", "path": { "title": "مسیر هوش مصنوعی در کسب‌وکار (AI in Business)", "description": "\n    <p>مسیر تخصصی <strong>کاربرد هوش مصنوعی در کسب‌وکار</strong> برای مدیران، کارآفرینان و تحلیل‌گران کسب‌وکار شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری هوش مصنوعی در کسب‌وکار:</h4>\n    <ol>\n      <li><strong>مبانی هوش مصنوعی برای غیرفنی‌ها</strong>\n        <ul>\n          <li>درک مفاهیم پایه: ML، DL، NLP، Computer Vision</li>\n          <li>انواع کاربردهای AI در صنایع مختلف</li>\n          <li>محدودیت‌ها و قابلیت‌های واقعی AI</li>\n          <li>تفاوت هوش مصنوعی، یادگیری ماشین و یادگیری عمیق</li>\n        </ul>\n      </li>\n      \n      <li><strong>شناسایی فرصت‌های AI در کسب‌وکار</strong>\n        <ul>\n          <li>تحلیل صنعت و شناسایی pain points</li>\n          <li>کاربردهای AI در بخش‌های مختلف:\n            <ul>\n              <li><strong>بازاریابی:</strong> شخصی‌سازی، پیش‌بینی رفتار مشتری</li>\n              <li><strong>فروش:</strong> پیش‌بینی فروش، Lead Scoring</li>\n              <li><strong>مالی:</strong> تشخیص تقلب، ارزیابی اعتبار</li>\n              <li><strong>عملیات:</strong> بهینه‌سازی زنجیره تأمین، نگهداری پیش‌بینانه</li>\n              <li><strong>منابع انسانی:</strong> غربالگری رزومه، تحلیل engagement</li>\n              <li><strong>خدمات مشتری:</strong> چت‌بات‌های هوشمند</li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت پروژه‌های AI</strong>\n        <ul>\n          <li>چرخه حیات پروژه هوش مصنوعی</li>\n          <li>تعریف مسئله کسب‌وکار به مسئله فنی</li>\n          <li>تعیین معیارهای موفقیت و ROI</li>\n          <li>مدیریت تیم‌های متشکل از فنی و غیرفنی</li>\n          <li>اخلاق و مسئولیت‌پذیری در AI</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارهای No-Code/Low-Code AI</strong>\n        <ul>\n          <li>پلتفرم‌های ساخت مدل بدون کدنویسی</li>\n          <li>سرویس‌های ابری AI (AWS AI Services، Google Cloud AI)</li>\n          <li>ابزارهای تحلیل داده بصری</li>\n          <li>چت‌بات‌سازها و اتوماسیون‌سازها</li>\n        </ul>\n      </li>\n      \n      <li><strong>پیاده‌سازی و یکپارچه‌سازی</strong>\n        <ul>\n          <li>انتخاب راه‌حل مناسب (ساخت، خرید یا ترکیبی)</li>\n          <li>یکپارچه‌سازی با سیستم‌های موجود</li>\n          <li>مدیریت تغییر و پذیرش در سازمان</li>\n          <li>آموزش کارکنان برای استفاده از ابزارهای AI</li>\n        </ul>\n      </li>\n      \n      <li><strong>مباحث پیشرفته کسب‌وکار با AI</strong>\n        <ul>\n          <li>AI Strategy و Digital Transformation</li>\n          <li>مدل‌های درآمدی جدید با AI</li>\n          <li>Competitive Advantage با هوش مصنوعی</li>\n          <li>Data Governance و مدیریت داده برای AI</li>\n          <li>Compliance و مقررات AI در صنایع مختلف</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مخاطبان این مسیر:</h4>\n    <ul>\n      <li>مدیران و تصمیم‌گیران سازمانی</li>\n      <li>کارآفرینان و استارتاپ‌ها</li>\n      <li>مدیران محصول (Product Managers)</li>\n      <li>تحلیل‌گران کسب‌وکار (Business Analysts)</li>\n      <li>مدیران بازاریابی و فروش</li>\n      <li>مشاوران مدیریت و استراتژی</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>شناسایی و اولویت‌بندی فرصت‌های AI در سازمان</li>\n      <li>مدیریت و هدایت پروژه‌های هوش مصنوعی</li>\n      <li>برقراری ارتباط مؤثر بین تیم فنی و کسب‌وکار</li>\n      <li>محاسبه ROI و ارزش‌آفرینی AI</li>\n      <li>ایجاد استراتژی هوش مصنوعی برای سازمان</li>\n      <li>استفاده از ابزارهای Low-Code برای پیاده‌سازی راه‌حل‌ها</li>\n    </ul>\n    \n    <h4>📊 نمونه پروژه‌های عملی:</h4>\n    <ul>\n      <li>طراحی سیستم پیشنهاددهنده محصول (Recommender System)</li>\n      <li>پیاده‌سازی چت‌بات برای خدمات مشتری</li>\n      <li>تحلیل احساسات مشتریان از نظرات و بازخوردها</li>\n      <li>پیش‌بینی تقاضا و بهینه‌سازی موجودی</li>\n      <li>تشخیص تقلب در تراکنش‌های مالی</li>\n      <li>اتوماسیون فرآیندهای اداری با RPA و AI</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n    <p>💡 نکته: نیازی به دانش برنامه‌نویسی پیشرفته نیست، اما درک مفاهیم ضروری است</p>\n    <p>🌟 مزیت: ترکیب دانش کسب‌وکار و AI یکی از پردرآمدترین مهارت‌های حال حاضر است</p>\n    <p>💰 ROI: سازمان‌هایی که هوش مصنوعی را به‌درستی پیاده‌سازی می‌کنند، تا ۴۰٪ افزایش بهره‌وری گزارش داده‌اند</p>\n  ", "courses": [ { "title": "مبانی هوش مصنوعی برای مدیران", "duration": "6 جلسه", "price": 890000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71" }, { "title": "استراتژی هوش مصنوعی در کسب‌وکار", "duration": "8 جلسه", "price": 1190000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1552664730-d307ca884978" }, { "title": "ابزارهای No-Code AI", "duration": "6 جلسه", "price": 990000, "rating": 4.7, "link": "#", "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c" }, { "title": "مدیریت پروژه‌های هوش مصنوعی", "duration": "8 جلس点", "price": 1090000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd" }, { "title": "تحلیل ROI در پروژه‌های AI", "duration": "4 جلس点", "price": 690000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71" }, { "title": "پروژه عملی AI در کسب‌وکار", "duration": "10 جلسه", "price": 1490000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1552664730-d307ca884978" } ] }, "childhint": "" }, { "id": "ai-dev", "title": "توسعه هوش مصنوعی", "description": "یادگیری ماشین و شبکه‌های عصبی", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-12.png", "path": { "title": "مسیر هوش مصنوعی (Artificial Intelligence)", "description": "\n    <p>مسیر تخصصی <strong>هوش مصنوعی (Artificial Intelligence)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری هوش مصنوعی:</h4>\n    <ol>\n      <li><strong>پایه‌های ریاضی پیشرفته</strong>\n        <ul>\n          <li>جبر خطی (ماتریس‌ها، بردارها، مقادیر ویژه)</li>\n          <li>حسابان (مشتقات، گرادیان، بهینه‌سازی)</li>\n          <li>احتمال و آمار (توزیع‌ها، Bayesian)</li>\n          <li>بهینه‌سازی (گرادیان نزولی، محدب)</li>\n        </ul>\n      </li>\n      \n      <li><strong>برنامه‌نویسی و ابزارها</strong>\n        <ul>\n          <li>Python پیشرفته</li>\n          <li>NumPy، Pandas، Matplotlib</li>\n          <li>Jupyter Notebook/Lab</li>\n          <li>محیط‌های توسعه (VS Code، PyCharm)</li>\n        </ul>\n      </li>\n      \n      <li><strong>یادگیری ماشین (Machine Learning)</strong>\n        <ul>\n          <li>مدل‌های Supervised (Regression، Classification)</li>\n          <li>مدل‌های Unsupervised (Clustering، Dimensionality Reduction)</li>\n          <li>Scikit-learn برای پیاده‌سازی</li>\n          <li>ارزیابی مدل و Hyperparameter Tuning</li>\n          <li>Ensemble Methods و Boosting</li>\n        </ul>\n      </li>\n      \n      <li><strong>یادگیری عمیق (Deep Learning)</strong>\n        <ul>\n          <li>شبکه‌های عصبی (Neural Networks)</li>\n          <li>TensorFlow یا PyTorch (انتخاب یکی)</li>\n          <li>شبکه‌های کانولوشنی (CNN) برای بینایی کامپیوتر</li>\n          <li>شبکه‌های بازگشتی (RNN/LSTM) برای داده‌های سری زمانی</li>\n          <li>Transformers برای پردازش زبان طبیعی</li>\n          <li>Generative AI و GANs</li>\n        </ul>\n      </li>\n      \n      <li><strong>زیرشاخه‌های تخصصی AI</strong>\n        <ul>\n          <li><strong>پردازش زبان طبیعی (NLP):</strong> تحلیل متن، ترجمه، chatbots</li>\n          <li><strong>بینایی کامپیوتر (Computer Vision):</strong> تشخیص اشیاء، تصویر</li>\n          <li><strong>سیستم‌های توصیه‌گر (Recommender Systems):</strong> فیلم، محصول</li>\n          <li><strong>رباتیک و کنترل هوشمند</strong></li>\n          <li><strong>مدل‌های زبانی بزرگ (LLMs):</strong> GPT، LLaMA، fine-tuning</li>\n        </ul>\n      </li>\n      \n      <li><strong>پیاده‌سازی و استقرار</strong>\n        <ul>\n          <li>MLOps (مدیریت چرخه حیات مدل)</li>\n          <li>Deployment مدل‌ها (Docker، FastAPI، Flask)</li>\n          <li>Cloud Platforms (AWS SageMaker، Google AI Platform)</li>\n          <li>Monitoring و Maintenance مدل‌ها</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 بازار کار و موقعیت‌ها:</h4>\n    <ul>\n      <li>Machine Learning Engineer</li>\n      <li>AI Researcher/ Scientist</li>\n      <li>Deep Learning Engineer</li>\n      <li>NLP Engineer</li>\n      <li>Computer Vision Engineer</li>\n      <li>AI Product Manager</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>طراحی و پیاده‌سازی مدل‌های ML/DL</li>\n      <li>کار با چارچوب‌های TensorFlow/PyTorch</li>\n      <li>توسعه سیستم‌های هوشمند در حوزه‌های تخصصی</li>\n      <li>استقرار و نگهداری مدل‌های هوش مصنوعی</li>\n      <li>حل مسائل پیچیده با راه‌حل‌های هوشمند</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۸ تا ۲۴ ماه (نیازمند پایه ریاضی قوی)</p>\n    <p>💡 نکته: هوش مصنوعی یکی از پردرآمدترین و آینده‌دارترین حوزه‌های تکنولوژی است</p>\n    <p>🌟 پیش‌نیاز: علاقه به ریاضی و حل مسائل پیچیده ضروری است</p>\n  ", "courses": [ { "title": "ریاضیات برای هوش مصنوعی", "duration": "10 جلسه", "price": 1290000, "rating": 4.8, "link": "#", "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb" }, { "title": "یادگیری ماشین پیشرفته", "duration": "12 جلسه", "price": 1690000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c" }, { "title": "یادگیری عمیق با PyTorch", "duration": "14 جلسه", "price": 1890000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485" }, { "title": "پردازش زبان طبیعی (NLP)", "duration": "10 جلسه", "price": 1490000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c" }, { "title": "بینایی کامپیوتر", "duration": "10 جلسه", "price": 1490000, "rating": 4.9, "link": "#", "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c" }, { "title": "پروژه عملی هوش مصنوعی", "duration": "12 جلسه", "price": 1790000, "rating": 5, "link": "#", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71" } ] }, "childhint": "" } ] }, { "id": "gr", "title": "گرافیک و انیمیشن", "description": "مسیر یادگیری هوش مصنوعی", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-13.png" }, { "id": "content", "title": "تولید محتوا", "description": "مسیر یادگیری تولید محتوا ", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-6.png" }, { "id": "marketing", "title": "بازاریابی و تبلیغات", "description": "مسیر یادگیری تولید محتوا ", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-8.png" }, { "id": "beauty", "title": "مراقبت زیبایی", "description": "مسیر یادگیری تولید محتوا ", "childhint": "علم کامپیوتر شامل حوزه‌های متنوعی است. حوزه‌ای که به آن علاقه دارید را انتخاب کنید.", "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-5.png" } ] }
+{
+  "categories": [
+    {
+      "id": "computer",
+      "title": "کامپیوتر",
+      "description": "مسیر ورود به مهارت‌های کاربردی کامپیوتر",
+      "childhint": "کامپیوتر شامل مهارت‌های عمومی، نرم‌افزارهای اداری و مباحث فنی‌تر است. مسیر مناسب خود را انتخاب کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+      "children": [
+        {
+          "id": "computer-basics",
+          "title": "مهارت‌های پایه کامپیوتر",
+          "description": "شروع کار با رایانه، ویندوز و اینترنت",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر مهارت‌های پایه کامپیوتر",
+            "description": "\n    <p>این مسیر برای افرادی طراحی شده که می‌خواهند کار با رایانه را از سطح مقدماتی تا استفاده روزمره و حرفه‌ای یاد بگیرند.</p>\n\n    <h4>📚 مراحل یادگیری مهارت‌های پایه کامپیوتر:</h4>\n    <ol>\n      <li><strong>آشنایی با رایانه و سیستم‌عامل</strong>\n        <ul><li>شناخت اجزای اصلی کامپیوتر</li><li>کار با ویندوز، فایل‌ها و پوشه‌ها</li><li>نصب و حذف برنامه‌ها</li><li>مدیریت حافظه و ابزارهای پایه</li></ul>\n      </li>\n      <li><strong>اینترنت و ابزارهای آنلاین</strong>\n        <ul><li>جستجوی مؤثر در وب</li><li>ایمیل و مدیریت فایل‌های آنلاین</li><li>امنیت پایه در اینترنت</li><li>کار با مرورگرها و حساب‌های کاربری</li></ul>\n      </li>\n      <li><strong>مهارت‌های کاربردی روزمره</strong>\n        <ul><li>فشرده‌سازی و انتقال فایل</li><li>اتصال پرینتر و ابزارهای جانبی</li><li>پشتیبان‌گیری اطلاعات</li><li>رفع خطاهای ساده و نگهداری سیستم</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>افراد مبتدی</li><li>دانش‌آموزان و دانشجویان</li><li>کارمندان اداری</li><li>افرادی که می‌خواهند مستقل با کامپیوتر کار کنند</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>کار مستقل با رایانه</li><li>مدیریت فایل‌ها و برنامه‌ها</li><li>استفاده امن از اینترنت</li><li>آمادگی برای یادگیری نرم‌افزارهای تخصصی</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "مبانی کامپیوتر و ویندوز",
+                "duration": "6 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "اینترنت، ایمیل و امنیت پایه",
+                "duration": "4 جلسه",
+                "price": 390000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "عیب‌یابی مقدماتی کامپیوتر",
+                "duration": "5 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "office-software",
+          "title": "نرم‌افزارهای اداری",
+          "description": "Word، Excel، PowerPoint و کارهای اداری",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر نرم‌افزارهای اداری",
+            "description": "\n    <p>این مسیر برای ورود به کارهای اداری، گزارش‌نویسی، محاسبات و ارائه‌های حرفه‌ای طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری نرم‌افزارهای اداری:</h4>\n    <ol>\n      <li><strong>Word و مستندسازی</strong>\n        <ul><li>صفحه‌آرایی و تایپ حرفه‌ای</li><li>ساخت فرم، جدول و فهرست</li><li>استانداردسازی نامه‌ها و گزارش‌ها</li></ul>\n      </li>\n      <li><strong>Excel و تحلیل داده</strong>\n        <ul><li>فرمول‌نویسی کاربردی</li><li>جدول‌ها و نمودارها</li><li>گزارش‌گیری و داشبوردهای ساده</li></ul>\n      </li>\n      <li><strong>PowerPoint و ارائه</strong>\n        <ul><li>طراحی اسلاید حرفه‌ای</li><li>ساخت نمودار و اینفوگرافیک ساده</li><li>آماده‌سازی ارائه برای جلسه و کلاس</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>کارجویان اداری</li><li>دانشجویان</li><li>کارمندان سازمان‌ها</li><li>مدیران و کارشناسان</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>تهیه گزارش استاندارد</li><li>تحلیل داده‌های اداری</li><li>ارائه حرفه‌ای</li><li>افزایش بهره‌وری در محیط کار</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "Word کاربردی",
+                "duration": "5 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "Excel از مقدماتی تا کاربردی",
+                "duration": "8 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "PowerPoint حرفه‌ای",
+                "duration": "4 جلسه",
+                "price": 390000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "hardware-network",
+          "title": "سخت‌افزار و شبکه مقدماتی",
+          "description": "آشنایی با قطعات، اسمبل و شبکه‌های کوچک",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر سخت‌افزار و شبکه مقدماتی",
+            "description": "\n    <p>این مسیر پایه مناسبی برای ورود به تعمیرات کامپیوتر، پشتیبانی فنی و شبکه‌های کوچک خانگی یا اداری است.</p>\n\n    <h4>📚 مراحل یادگیری سخت‌افزار و شبکه مقدماتی:</h4>\n    <ol>\n      <li><strong>شناخت سخت‌افزار</strong>\n        <ul><li>قطعات اصلی رایانه و کاربرد هرکدام</li><li>اسمبل و ارتقای سیستم</li><li>نصب سیستم‌عامل و درایورها</li></ul>\n      </li>\n      <li><strong>نگهداری و عیب‌یابی</strong>\n        <ul><li>تشخیص خطاهای رایج</li><li>پاک‌سازی و بهینه‌سازی سیستم</li><li>تهیه نسخه پشتیبان و بازیابی</li></ul>\n      </li>\n      <li><strong>شبکه مقدماتی</strong>\n        <ul><li>IP، مودم و روتر</li><li>اشتراک‌گذاری فایل و پرینتر</li><li>امنیت شبکه‌های کوچک</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان پشتیبانی فنی</li><li>تکنسین‌های تازه‌کار</li><li>کاربران خانگی و اداری</li><li>افراد علاقه‌مند به شبکه</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>اسمبل و نگهداری سیستم</li><li>رفع مشکلات رایج</li><li>راه‌اندازی شبکه کوچک</li><li>آمادگی برای دوره‌های شبکه پیشرفته</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "سخت‌افزار و اسمبل کامپیوتر",
+                "duration": "8 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "نصب ویندوز و عیب‌یابی",
+                "duration": "5 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "مبانی شبکه‌های کوچک",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "accounting",
+      "title": "مالی و حسابداری",
+      "description": "مسیر ورود به مالی و حسابداری",
+      "childhint": "حسابداری شامل مفاهیم پایه، مالیات و نرم‌افزارهای کاربردی است. مسیر مناسب نیاز خود را انتخاب کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-23.webp",
+      "children": [
+        {
+          "id": "accounting-basics",
+          "title": "حسابداری مقدماتی",
+          "description": "مفاهیم پایه حسابداری و ثبت اسناد",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر حسابداری مقدماتی",
+            "description": "\n    <p>این مسیر برای شروع اصولی حسابداری از مفاهیم پایه تا ثبت سند و تهیه گزارش‌های ساده طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری حسابداری مقدماتی:</h4>\n    <ol>\n      <li><strong>مفاهیم پایه</strong>\n        <ul><li>دارایی، بدهی، سرمایه و درآمد</li><li>ماهیت حساب‌ها</li><li>دفتر روزنامه و کل</li></ul>\n      </li>\n      <li><strong>ثبت اسناد</strong>\n        <ul><li>ثبت رویدادهای مالی</li><li>اصلاح و بستن حساب‌ها</li><li>کنترل مانده حساب‌ها</li></ul>\n      </li>\n      <li><strong>گزارش‌های مالی ساده</strong>\n        <ul><li>تراز آزمایشی</li><li>صورت سود و زیان مقدماتی</li><li>گزارش‌گیری برای کسب‌وکارهای کوچک</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>افراد مبتدی</li><li>صاحبان کسب‌وکار کوچک</li><li>دانشجویان حسابداری</li><li>کارآموزان مالی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>ثبت اسناد پایه</li><li>درک گزارش‌های مالی</li><li>کنترل حساب‌ها</li><li>آمادگی برای مالیات و نرم‌افزار</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "اصول حسابداری ۱",
+                "duration": "8 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "ثبت اسناد حسابداری",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "گزارش‌گیری مالی مقدماتی",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "tax-finance",
+          "title": "حسابداری مالی و مالیاتی",
+          "description": "مالیات، ارزش افزوده و گزارش‌های قانونی",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر حسابداری مالی و مالیاتی",
+            "description": "\n    <p>این مسیر برای افرادی است که می‌خواهند وارد امور مالی شرکت‌ها، مالیات و گزارش‌های قانونی شوند.</p>\n\n    <h4>📚 مراحل یادگیری حسابداری مالی و مالیاتی:</h4>\n    <ol>\n      <li><strong>حسابداری مالی</strong>\n        <ul><li>صورت‌های مالی</li><li>کنترل حساب‌های دریافتنی و پرداختنی</li><li>حقوق و دستمزد مقدماتی</li></ul>\n      </li>\n      <li><strong>مالیات و ارزش افزوده</strong>\n        <ul><li>اظهارنامه مالیاتی</li><li>گزارش ارزش افزوده</li><li>قوانین و جرایم رایج</li></ul>\n      </li>\n      <li><strong>آماده‌سازی گزارش قانونی</strong>\n        <ul><li>دفاتر قانونی</li><li>گزارش فصلی</li><li>مستندسازی و بایگانی مالی</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>حسابداران تازه‌کار</li><li>مدیران مالی کوچک</li><li>صاحبان کسب‌وکار</li><li>افراد آماده ورود به بازار کار</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>تهیه گزارش مالی</li><li>درک قوانین مالیاتی</li><li>محاسبه حقوق و دستمزد</li><li>آمادگی برای کار در واحد مالی</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "حسابداری مالی کاربردی",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "مالیات و ارزش افزوده",
+                "duration": "6 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "حقوق و دستمزد",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "accounting-software",
+          "title": "نرم‌افزارهای حسابداری",
+          "description": "کار با نرم‌افزارهای مالی و گزارش‌گیری",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر نرم‌افزارهای حسابداری",
+            "description": "\n    <p>این مسیر تمرکز عملی روی ورود اطلاعات، صدور سند و گزارش‌گیری در نرم‌افزارهای حسابداری دارد.</p>\n\n    <h4>📚 مراحل یادگیری نرم‌افزارهای حسابداری:</h4>\n    <ol>\n      <li><strong>راه‌اندازی نرم‌افزار</strong>\n        <ul><li>تعریف کدینگ حساب‌ها</li><li>تعریف اشخاص و کالاها</li><li>تنظیمات اولیه شرکت</li></ul>\n      </li>\n      <li><strong>عملیات روزانه</strong>\n        <ul><li>صدور فاکتور و سند</li><li>دریافت و پرداخت</li><li>انبار و خزانه‌داری مقدماتی</li></ul>\n      </li>\n      <li><strong>گزارش‌گیری</strong>\n        <ul><li>گزارش بدهکار و بستانکار</li><li>گزارش فروش و خرید</li><li>خروجی اکسل و کنترل اطلاعات</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>حسابداران عملیاتی</li><li>کارآموزان مالی</li><li>صاحبان فروشگاه</li><li>کاربران نرم‌افزارهای مالی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>کار عملی با نرم‌افزار مالی</li><li>صدور اسناد و فاکتورها</li><li>گزارش‌گیری مدیریتی</li><li>کاهش خطای ثبت اطلاعات</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "نرم‌افزار حسابداری مقدماتی",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "عملیات خرید، فروش و خزانه",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "گزارش‌گیری پیشرفته حسابداری",
+                "duration": "4 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cooking",
+      "title": "آشپزی و شیرینی پزی",
+      "description": "مسیر یادگیری آشپزی و شیرینی‌پزی",
+      "childhint": "برای ورود به دنیای آشپزی، مسیرهای غذای خانگی، شیرینی‌پزی و کافی‌شاپ را می‌توانید انتخاب کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-1.png",
+      "children": [
+        {
+          "id": "iranian-international-cooking",
+          "title": "آشپزی ایرانی و ملل",
+          "description": "پخت غذاهای خانگی، رستورانی و بین‌المللی",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر آشپزی ایرانی و ملل",
+            "description": "\n    <p>این مسیر برای یادگیری اصول آشپزی، آماده‌سازی مواد و پخت غذاهای متنوع ایرانی و بین‌المللی طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری آشپزی ایرانی و ملل:</h4>\n    <ol>\n      <li><strong>اصول اولیه آشپزی</strong>\n        <ul><li>شناخت مواد اولیه</li><li>کار با ابزار آشپزخانه</li><li>برش‌ها، مزه‌سازی و آماده‌سازی</li></ul>\n      </li>\n      <li><strong>غذاهای ایرانی</strong>\n        <ul><li>خورشت‌ها و پلوها</li><li>کباب و غذاهای مجلسی</li><li>سوپ، آش و پیش‌غذا</li></ul>\n      </li>\n      <li><strong>غذاهای ملل</strong>\n        <ul><li>پاستا و غذاهای ایتالیایی</li><li>غذاهای آسیایی ساده</li><li>سس‌ها و چاشنی‌های کاربردی</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان آشپزی خانگی</li><li>افراد آماده ورود به بازار غذا</li><li>صاحبان کافه و رستوران کوچک</li><li>کارآموزان آشپزی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>پخت غذاهای متنوع</li><li>مدیریت زمان آشپزی</li><li>تزئین و سرو حرفه‌ای</li><li>آمادگی برای کار عملی در آشپزخانه</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "آشپزی ایرانی مقدماتی",
+                "duration": "8 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "غذاهای ملل کاربردی",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "آشپزی رستورانی",
+                "duration": "8 جلسه",
+                "price": 1090000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "pastry-bakery",
+          "title": "شیرینی‌پزی و قنادی",
+          "description": "کیک، دسر، شیرینی خشک و تر",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر شیرینی‌پزی و قنادی",
+            "description": "\n    <p>این مسیر از اصول اندازه‌گیری و کار با فر تا ساخت کیک، شیرینی و دسرهای قابل فروش را پوشش می‌دهد.</p>\n\n    <h4>📚 مراحل یادگیری شیرینی‌پزی و قنادی:</h4>\n    <ol>\n      <li><strong>مبانی قنادی</strong>\n        <ul><li>شناخت آرد، کره، خامه و شکلات</li><li>اندازه‌گیری دقیق</li><li>کار با فر و کنترل دما</li></ul>\n      </li>\n      <li><strong>کیک و دسر</strong>\n        <ul><li>کیک اسفنجی و خامه‌کشی</li><li>دسرهای لیوانی و قالبی</li><li>تزئینات پایه</li></ul>\n      </li>\n      <li><strong>شیرینی قابل فروش</strong>\n        <ul><li>شیرینی خشک</li><li>شیرینی تر</li><li>بسته‌بندی و نگهداری</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان قنادی</li><li>کسب‌وکارهای خانگی</li><li>کارآموزان کافی‌شاپ</li><li>افراد علاقه‌مند به فروش شیرینی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>پخت کیک و شیرینی</li><li>تزئین و آماده‌سازی فروش</li><li>کنترل کیفیت محصول</li><li>شروع کسب‌وکار خانگی</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "کیک و خامه‌کشی مقدماتی",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "شیرینی خشک و تر",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "دسر و تزئینات قنادی",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "cafe-drinks",
+          "title": "کافی‌شاپ و نوشیدنی",
+          "description": "قهوه، نوشیدنی سرد و گرم و منوی کافه",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر کافی‌شاپ و نوشیدنی",
+            "description": "\n    <p>این مسیر برای ورود به کار کافی‌شاپ، شناخت قهوه و آماده‌سازی نوشیدنی‌های پرطرفدار طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری کافی‌شاپ و نوشیدنی:</h4>\n    <ol>\n      <li><strong>مبانی قهوه</strong>\n        <ul><li>شناخت دانه و آسیاب</li><li>اسپرسو و دستگاه قهوه</li><li>فوم‌گیری شیر و لاته آرت مقدماتی</li></ul>\n      </li>\n      <li><strong>نوشیدنی‌های سرد و گرم</strong>\n        <ul><li>اسموتی و شیک</li><li>چای و دمنوش</li><li>نوشیدنی‌های فصلی</li></ul>\n      </li>\n      <li><strong>مدیریت منو</strong>\n        <ul><li>استانداردسازی دستورها</li><li>کنترل هزینه مواد اولیه</li><li>سرو و چیدمان حرفه‌ای</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان باریستا</li><li>کارکنان کافی‌شاپ</li><li>صاحبان کافه کوچک</li><li>افراد علاقه‌مند به نوشیدنی‌های حرفه‌ای</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>آماده‌سازی قهوه و نوشیدنی</li><li>کار با تجهیزات کافه</li><li>طراحی منوی ساده</li><li>آمادگی برای کار در کافی‌شاپ</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "باریستا مقدماتی",
+                "duration": "6 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "نوشیدنی‌های سرد و گرم",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "منوی کافی‌شاپ و سرو",
+                "duration": "4 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "webdesign",
+      "title": "طراحی سایت",
+      "description": "مسیر ورود به طراحی سایت",
+      "childhint": "طراحی وبسایت به دو طریق میسر است. با برنامه نویسی و بدون برنامه نویسی. لطفا انتخاب کنید که از کدام طریق میخواهید طراحی وبسایت را شروع کنید",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg",
+      "children": [
+        {
+          "id": "wordpress",
+          "title": "یادگیری طراحی سایت بدون برنامه نویسی",
+          "description": "",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-2.png",
+          "path": {
+            "title": "مسیر طراحی سایت بدون کدنویسی با وردپرس",
+            "description": "\n    <p>مسیر تخصصی <strong>طراحی سایت بدون کدنویسی با وردپرس</strong> برای افرادی که می‌خواهند بدون دانش برنامه‌نویسی سایت‌های حرفه‌ای ایجاد کنند:</p>\n    \n    <h4>📚 مراحل کامل یادگیری:</h4>\n    <ol>\n      <li><strong>مبانی وب و اینترنت</strong>\n        <ul>\n          <li>درک مفاهیم پایه: دامنه (Domain)، هاست (Hosting)</li>\n          <li>آشنایی با انواع سایت‌ها: شرکتی، فروشگاهی، شخصی، وبلاگ</li>\n          <li>مفاهیم سئو (SEO) پایه برای بهینه‌سازی سایت</li>\n          <li>امنیت وب‌سایت‌ها و راه‌های محافظت</li>\n        </ul>\n      </li>\n      \n      <li><strong>مقدمات HTML و CSS (ضروری برای کنترل بیشتر)</strong>\n        <ul>\n          <li>آشنایی با ساختار HTML تگ‌های اصلی</li>\n          <li>مفاهیم CSS برای استایل‌دهی ساده</li>\n          <li>کار با کلاس‌ها و ID در CSS</li>\n          <li>ویرایش ظاهری سایت با کدهای ساده</li>\n          <li><strong>نکته:</strong> نیازی به تسلط کامل نیست، فقط برای سفارشی‌سازی</li>\n        </ul>\n      </li>\n      \n      <li><strong>آشنایی کامل با وردپرس</strong>\n        <ul>\n          <li>نصب وردپرس روی هاست (cPanel، DirectAdmin)</li>\n          <li>آشنایی با پیشخوان مدیریت وردپرس (Dashboard)</li>\n          <li>مدیریت کاربران و نقش‌ها (Roles)</li>\n          <li>تنظیمات عمومی وردپرس</li>\n        </ul>\n      </li>\n      \n      <li><strong>کار با پوسته‌ها (Themes) و صفحه‌سازها</strong>\n        <ul>\n          <li><strong>انتخاب پوسته مناسب:</strong>\n            <ul>\n              <li>پوسته‌های رایگان و پرمیوم</li>\n              <li>پوسته‌های چندمنظوره (Multipurpose)</li>\n              <li>پوسته‌های تخصصی (فروشگاهی، شرکتی)</li>\n            </ul>\n          </li>\n          \n          <li><strong>صفحه‌سازهای حرفه‌ای:</strong>\n            <ul>\n              <li><strong>Elementor:</strong> محبوب‌ترین و قدرتمندترین</li>\n              <li><strong>Divi Builder:</strong> با کتابخانه گسترده</li>\n              <li><strong>WP Bakery:</strong> قدیمی اما قدرتمند</li>\n              <li><strong>Beaver Builder:</strong> برای توسعه سریع</li>\n            </ul>\n          </li>\n          \n          <li><strong>مهارت‌های صفحه‌سازی:</strong>\n            <ul>\n              <li>طراحی صفحه اصلی (Homepage)</li>\n              <li>ساخت صفحات داخلی (About، Contact، Services)</li>\n              <li>طراحی هدر و فوتر</li>\n              <li>مدیریت منوها و ناوبری</li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت محتوا در وردپرس</strong>\n        <ul>\n          <li>ایجاد و مدیریت پست‌ها (مقالات)</li>\n          <li>ایجاد و مدیریت صفحات (Pages)</li>\n          <li>مدیریت دسته‌بندی‌ها و تگ‌ها</li>\n          <li>کار با رسانه‌ها (عکس، ویدئو، فایل)</li>\n          <li>بلاگ‌نویسی و مدیریت نظرات</li>\n        </ul>\n      </li>\n      \n      <li><strong>افزونه‌های ضروری (Plugins)</strong>\n        <ul>\n          <li><strong>افزونه‌های امنیتی:</strong> Wordfence، iThemes Security</li>\n          <li><strong>افزونه‌های سئو:</strong> Yoast SEO، Rank Math</li>\n          <li><strong>افزونه‌های کش:</strong> W3 Total Cache، WP Rocket</li>\n          <li><strong>فرم‌سازها:</strong> Contact Form 7، WPForms</li>\n          <li><strong>فروشگاه ساز:</strong> WooCommerce (برای سایت فروشگاهی)</li>\n          <li><strong>پشتیبان‌گیری:</strong> UpdraftPlus، BackWPup</li>\n        </ul>\n      </li>\n      \n      <li><strong>سایت فروشگاهی با WooCommerce</strong>\n        <ul>\n          <li>نصب و راه‌اندازی WooCommerce</li>\n          <li>تنظیمات فروشگاه (درگاه پرداخت، حمل و نقل)</li>\n          <li>مدیریت محصولات و دسته‌بندی‌ها</li>\n          <li>تنظیم تخفیف‌ها و کوپن‌ها</li>\n          <li>مدیریت سفارشات و مشتریان</li>\n        </ul>\n      </li>\n      \n      <li><strong>بهینه‌سازی و نگهداری</strong>\n        <ul>\n          <li>بهینه‌سازی سرعت سایت</li>\n          <li>سئوی فنی (Technical SEO)</li>\n          <li>پشتیبان‌گیری دوره‌ای</li>\n          <li>بروزرسانی پوسته و افزونه‌ها</li>\n          <li>مانیتورینگ سلامت سایت</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های کسب‌وکار و فروش</strong>\n        <ul>\n          <li>تحلیل نیاز مشتری</li>\n          <li>تعیین قیمت‌گذاری پروژه‌ها</li>\n          <li>مدیریت ارتباط با مشتری</li>\n          <li>بازاریابی خدمات طراحی سایت</li>\n          <li>پشتیبانی پس از تحویل</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مخاطبان این مسیر:</h4>\n    <ul>\n      <li>افراد غیرفنی که می‌خواهند سایت داشته باشند</li>\n      <li>کارآفرینان و صاحبان کسب‌وکارهای کوچک</li>\n      <li>فریلنسرهایی که می‌خواهند طراحی سایت ارائه دهند</li>\n      <li>دانشجویان برای افزایش مهارت‌های شغلی</li>\n      <li>مشاغل آزاد برای توسعه کسب‌وکار آنلاین</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت سایت‌های کاملاً حرفه‌ای بدون کدنویسی</li>\n      <li>مدیریت کامل محتوا و ظاهر سایت</li>\n      <li>راه‌اندازی فروشگاه اینترنتی با WooCommerce</li>\n      <li>بهینه‌سازی سرعت و سئوی سایت</li>\n      <li>مدیریت امنیت و پشتیبان‌گیری</li>\n      <li>توانایی طراحی سایت برای مشتریان و کسب درآمد</li>\n    </ul>\n    \n    <h4>💰 بازار کار و درآمد:</h4>\n    <ul>\n      <li>طراحی سایت برای مشتریان (پروژه‌ای)</li>\n      <li>پشتیبانی و نگهداری سایت‌ها (ماهانه)</li>\n      <li>فروش سایت‌های آماده (قالب وردپرس)</li>\n      <li>آموزش طراحی سایت به دیگران</li>\n      <li>مدیریت سایت سازمان‌ها</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۳ تا ۶ ماه (بسته به زمان تمرین)</p>\n    <p>💡 نکته: با این مسیر می‌توانید در کمتر از ۶ ماه به درآمدزایی برسید</p>\n    <p>🌟 مزیت: نیاز به پیش‌نیاز خاصی ندارد و برای همه قابل یادگیری است</p>\n  ",
+            "courses": [
+              {
+                "title": "مبانی وب و هاستینگ",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.7,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1547658719-da2b51169166"
+              },
+              {
+                "title": "HTML و CSS مقدماتی برای وردپرس",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg"
+              },
+              {
+                "title": "وردپرس از صفر تا صد",
+                "duration": "10 جلسه",
+                "price": 1190000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613"
+              },
+              {
+                "title": "طراحی حرفه‌ای با Elementor",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3"
+              },
+              {
+                "title": "سئوی وردپرس با Yoast SEO",
+                "duration": "5 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              },
+              {
+                "title": "فروشگاه اینترنتی با WooCommerce",
+                "duration": "8 جلسه",
+                "price": 1090000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+              },
+              {
+                "title": "امنیت وردپرس",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.7,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe"
+              },
+              {
+                "title": "پروژه عملی طراحی سایت",
+                "duration": "10 جلسه",
+                "price": 1290000,
+                "rating": 5,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1552664730-d307ca884978"
+              }
+            ]
+          }
+        },
+        {
+          "id": "coded-webdesign",
+          "title": "طراحی سایت با برنامه نویسی",
+          "description": "",
+          "childhint": "یادگیری طراحی وبسایت از طریق برنامه نویسی شامل مفاهیم مستقل و بزرگی است. انتخاب کنید که علاقه مند به چه چیزی هستید.",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg",
+          "path": {
+            "title": "مسیر طراحی سایت با برنامه‌نویسی (Developer)",
+            "description": "\n    <p><strong>مسیر فنی و حرفه‌ای</strong> - کنترل کامل، انعطاف نامحدود، درآمد بالا</p>\n    \n    <h4>🚀 مسیر سریع (Crash Course):</h4>\n    <ol>\n      <li><strong>ماه ۱-۲: پایه‌ها</strong>\n        <ul>\n          <li>HTML5 + CSS3 + JavaScript ES6</li>\n          <li>Git + GitHub</li>\n          <li>Responsive Design</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۳-۴: فرانت‌اند</strong>\n        <ul>\n          <li>React.js (پیشنهاد اول) یا Vue.js</li>\n          <li>State Management (Redux/Vuex)</li>\n          <li>API Calls + Routing</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۵-۶: بک‌اند</strong>\n        <ul>\n          <li>Node.js + Express یا Python + Django</li>\n          <li>دیتابیس (PostgreSQL/MongoDB)</li>\n          <li>RESTful APIs + Authentication</li>\n        </ul>\n      </li>\n      \n      <li><strong>ماه ۷-۸: تکمیل</strong>\n        <ul>\n          <li>TypeScript برای کیفیت کد</li>\n          <li>Deployment و DevOps مقدماتی</li>\n          <li>Testing + Security Basics</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 تفاوت با وردپرس:</h4>\n    <ul>\n      <li>✅ کنترل ۱۰۰٪ روی کدها</li>\n      <li>✅ انعطاف نامحدود در پیاده‌سازی</li>\n      <li>✅ بهینه‌سازی سرعت و امنیت بالا</li>\n      <li>✅ درآمد ۲-۳ برابر بیشتر</li>\n      <li>❌ زمان یادگیری طولانی‌تر (۸-۱۲ ماه)</li>\n      <li>❌ پیچیدگی فنی بیشتر</li>\n    </ul>\n    \n    <h4>💰 بازار کار:</h4>\n    <ul>\n      <li>Frontend Developer</li>\n      <li>Backend Developer</li>\n      <li>Fullstack Developer</li>\n      <li>در شرکت‌های تکنولوژی و استارتاپ‌ها</li>\n    </ul>\n    \n    <p>⏱ زمان: ۸-۱۲ ماه تا بازار کار</p>\n    <p>💡 انتخاب کنید اگر: عاشق تکنولوژی، حل مسئله و چالش‌های فنی هستید</p>\n  ",
+            "courses": [
+              {
+                "title": "HTML/CSS/JS فشرده",
+                "duration": "8 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg"
+              },
+              {
+                "title": "React.js سریع",
+                "duration": "10 جلسه",
+                "price": 1190000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+              },
+              {
+                "title": "Node.js و Express",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+              },
+              {
+                "title": "پروژه Fullstack",
+                "duration": "12 جلسه",
+                "price": 1490000,
+                "rating": 5,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "programing",
+      "title": "برنامه نویسی",
+      "description": "مسیر ورود به برنامه نویسی",
+      "childhint": "از آنجایی که حوزه برنامه نویسی حوزه بزرگی می باشد. لطفا مشخص کنید که دقیقا به برنامه نویسی کدام بخش علاقه مند هستید",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-18.png",
+      "children": [
+        {
+          "id": "web",
+          "title": "برنامه‌نویسی و طراحی وب",
+          "description": "",
+          "childhint": "برنامه‌نویسی وب شامل مسیرهای تخصصی مختلفی است. انتخاب کنید به کدام علاقه‌مند هستید.",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg",
+          "children": [
+            {
+              "id": "frontend",
+              "title": "فرانت‌اند",
+              "description": "طراحی و پیاده‌سازی ظاهر وب‌سایت",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-9.png",
+              "path": {
+                "title": "مسیر فرانت اند",
+                "description": "\n                    <img src=\"https://img.freepik.com/premium-vector/front-end-developer-course-infographic-chart-design-template_106317-14547.jpg\" />\n    <p>با توجه به انتخاب‌های شما، مسیر یادگیری <strong>فرانت‌اند (Frontend Development)</strong> به صورت زیر خواهد بود:</p>\n    \n    <h4>📚 مراحل یادگیری فرانت‌اند:</h4>\n    <ol>\n      <li><strong>HTML & CSS</strong> - پایه و اساس ساختار و ظاهر وب‌سایت</li>\n      <li><strong>JavaScript</strong> - افزودن تعامل و منطق به صفحات وب</li>\n      <li><strong>Responsive Design</strong> - طراحی واکنش‌گرا برای تمام دستگاه‌ها</li>\n      <li><strong>Version Control (Git)</strong> - مدیریت کدها و همکاری تیمی</li>\n      <li><strong>CSS Frameworks</strong> - Bootstrap یا Tailwind CSS</li>\n      <li><strong>JavaScript Libraries/Frameworks</strong> - React.js (پیشنهاد اصلی)</li>\n      <li><strong>State Management</strong> - مدیریت state در اپلیکیشن‌های بزرگ</li>\n      <li><strong>Modern Tools</strong> - Webpack, npm/yarn, API Integration</li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های کسب شده پس از پایان مسیر:</h4>\n    <ul>\n      <li>ساخت وب‌سایت‌های زیبا و واکنش‌گرا</li>\n      <li>ایجاد اپلیکیشن‌های وب پویا و تعاملی</li>\n      <li>توانایی کار با APIها و داده‌های واقعی</li>\n      <li>آمادگی برای ورود به بازار کار فرانت‌اند</li>\n      <li>پایه قوی برای یادگیری فریم‌ورک‌های پیشرفته‌تر</li>\n    </ul>\n    \n    <p>⏱ مدت زمان تقریبی برای تسلط: ۶ تا ۹ ماه (با تمرین روزانه)</p>\n  ",
+                "courses": [
+                  {
+                    "title": "HTML/CSS مقدماتی",
+                    "duration": "4 جلسه",
+                    "price": 490000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg"
+                  },
+                  {
+                    "title": "JavaScript پایه",
+                    "duration": "6 جلسه",
+                    "price": 690000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479"
+                  },
+                  {
+                    "title": "React.js مقدماتی",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "طراحی واکنش‌گرا (Responsive)",
+                    "duration": "3 جلسه",
+                    "price": 390000,
+                    "rating": 4.7,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+                  },
+                  {
+                    "title": "Git & GitHub برای فرانت‌اند",
+                    "duration": "3 جلسه",
+                    "price": 290000,
+                    "rating": 4.6,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb"
+                  },
+                  {
+                    "title": "پروژه محور فرانت‌اند",
+                    "duration": "10 جلسه",
+                    "price": 990000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "backend",
+              "title": "بک‌اند",
+              "description": "مدیریت داده‌ها، سرور و منطق سیستم",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-11.png",
+              "path": {
+                "title": "مسیر بک اند",
+                "description": "\n    <p>با توجه به انتخاب‌های شما، مسیر یادگیری <strong>بک‌اند (Backend Development)</strong> به صورت زیر خواهد بود:</p>\n    \n    <h4>📚 مراحل اصلی یادگیری بک‌اند:</h4>\n    <ol>\n      <li><strong>انتخاب زبان برنامه‌نویسی سمت سرور</strong><br>\n      ابتدا باید یکی از زبان‌های بک‌اند را انتخاب و یاد بگیرید. گزینه‌های رایج:\n      <ul>\n        <li>PHP (برای شروع آسان و بازار کار گسترده)</li>\n        <li>Python (برای توسعه سریع و هوش مصنوعی)</li>\n        <li>Node.js (جاوااسکریپت برای همه‌کاره بودن)</li>\n        <li>Java (برای سیستم‌های سازمانی بزرگ)</li>\n        <li>C# (برای توسعه تحت ویندوز)</li>\n      </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر کامل با PHP</strong><br>\n      اگر PHP را انتخاب کنید:\n      <ol type=\"a\">\n        <li>یادگیری مبانی PHP (سینتکس، توابع، شیءگرایی)</li>\n        <li>کار با دیتابیس (MySQL یا PostgreSQL)</li>\n        <li>یادگیری یک فریم‌ورک (Laravel یا Symfony)</li>\n        <li>ساخت RESTful API</li>\n        <li>احراز هویت و امنیت</li>\n        <li>کار با Composer (مدیریت پکیج‌ها)</li>\n      </ol>\n      </li>\n      \n      <li><strong>پایگاه داده‌ها</strong><br>\n      یادگیری هر دو نوع:\n      <ul>\n        <li>دیتابیس‌های رابطه‌ای (SQL): MySQL، PostgreSQL</li>\n        <li>دیتابیس‌های غیررابطه‌ای (NoSQL): MongoDB، Redis</li>\n      </ul>\n      </li>\n      \n      <li><strong>فریم‌ورک‌ها</strong><br>\n      انتخاب یک فریم‌ورک اصلی برای افزایش سرعت و کیفیت توسعه:\n      <ul>\n        <li>PHP: Laravel، Symfony</li>\n        <li>Python: Django، Flask</li>\n        <li>Node.js: Express.js، NestJS</li>\n      </ul>\n      </li>\n      \n      <li><strong>API Development</strong><br>\n      ساخت APIهای RESTful یا GraphQL برای ارتباط با فرانت‌اند</li>\n      \n      <li><strong>احراز هویت و امنیت</strong><br>\n      پیاده‌سازی JWT، OAuth، hash کردن پسوردها، جلوگیری از حملات رایج</li>\n      \n      <li><strong>ابزارهای کمکی</strong><br>\n      Git، Docker، Redis (برای کش)، تست‌نویسی، مستندسازی API</li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی پس از پایان مسیر:</h4>\n    <ul>\n      <li>ساخت سرورهای قدرتمند و امن</li>\n      <li>طراحی و بهینه‌سازی پایگاه داده</li>\n      <li>ایجاد APIهای کامل و مستند</li>\n      <li>پیاده‌سازی سیستم‌های احراز هویت پیچیده</li>\n      <li>استقرار (Deploy) پروژه‌ها روی سرور</li>\n      <li>آمادگی کامل برای ورود به بازار کار بک‌اند</li>\n    </ul>\n    \n    <p>⏱ مدت زمان تقریبی برای تسلط: ۸ تا ۱۲ ماه (با تمرین مداوم)</p>\n    <p>💡 نکته: انتخاب یک زبان و فریم‌ورک و تسلط کامل روی آن بهتر از یادگیری سطحی چندین تکنولوژی است.</p>\n  ",
+                "courses": [
+                  {
+                    "title": "PHP مقدماتی",
+                    "duration": "6 جلسه",
+                    "price": 590000,
+                    "rating": 4.7,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+                  },
+                  {
+                    "title": "MySQL و طراحی دیتابیس",
+                    "duration": "5 جلسه",
+                    "price": 490000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1543946602-c0516cd30c8c"
+                  },
+                  {
+                    "title": "فریم‌ورک Laravel",
+                    "duration": "10 جلسه",
+                    "price": 990000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "API Development با PHP",
+                    "duration": "6 جلسه",
+                    "price": 690000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+                  },
+                  {
+                    "title": "امنیت در بک‌اند",
+                    "duration": "4 جلسه",
+                    "price": 490000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe"
+                  },
+                  {
+                    "title": "پروژه عملی بک‌اند",
+                    "duration": "12 جلسه",
+                    "price": 1190000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "fullstack",
+              "title": "فول‌استک",
+              "description": "ترکیب فرانت‌اند و بک‌اند",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-24.png",
+              "path": {
+                "title": "مسیر Fullstack (مثال PHP)",
+                "description": "\n    <p>با انتخاب مسیر <strong>فول‌استک (Fullstack Development)</strong>، شما هم فرانت‌اند و هم بک‌اند را یاد می‌گیرید:</p>\n    \n    <h4>📚 مراحل یادگیری Fullstack با PHP:</h4>\n    <ol>\n      <li><strong>پایه‌های فرانت‌اند</strong>\n        <ul>\n          <li>HTML & CSS (ساختار و استایل)</li>\n          <li>JavaScript (تعامل و منطق)</li>\n          <li>Responsive Design (واکنش‌گرا)</li>\n        </ul>\n      </li>\n      \n      <li><strong>بک‌اند با PHP</strong>\n        <ul>\n          <li>مبانی PHP و شیءگرایی</li>\n          <li>کار با دیتابیس MySQL</li>\n          <li>فریم‌ورک Laravel</li>\n        </ul>\n      </li>\n      \n      <li><strong>اتصال فرانت و بک</strong>\n        <ul>\n          <li>ساخت API با Laravel</li>\n          <li>فراخوانی API با JavaScript</li>\n          <li>مدیریت state و session</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارهای پیشرفته</strong>\n        <ul>\n          <li>Git & GitHub</li>\n          <li>Docker</li>\n          <li>Deployment و هاستینگ</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت کامل وب‌اپلیکیشن از صفر</li>\n      <li>مدیریت همزمان فرانت‌اند و بک‌اند</li>\n      <li>تسلط بر چرخه کامل توسعه وب</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۰ تا ۱۴ ماه</p>\n  ",
+                "courses": [
+                  {
+                    "title": "HTML/CSS & JavaScript",
+                    "duration": "8 جلسه",
+                    "price": 790000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-20.jpg"
+                  },
+                  {
+                    "title": "PHP و MySQL",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+                  },
+                  {
+                    "title": "فریم‌ورک Laravel",
+                    "duration": "10 جلسه",
+                    "price": 990000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "پروژه Fullstack",
+                    "duration": "12 جلسه",
+                    "price": 1190000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "wordpress-development",
+              "title": "توسعه وردپرس  ",
+              "description": "",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-22.png",
+              "path": {
+                "title": "مسیر توسعه وردپرس",
+                "description": "\n    <p>مسیر تخصصی <strong>توسعه وردپرس (WordPress Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری توسعه وردپرس:</h4>\n    <ol>\n      <li><strong>آشنایی با وردپرس</strong>\n        <ul>\n          <li>نصب و راه‌اندازی وردپرس</li>\n          <li>کار با پنل مدیریت</li>\n          <li>نصب پوسته و افزونه</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه پوسته (Theme Development)</strong>\n        <ul>\n          <li>یادگیری HTML/CSS/JavaScript</li>\n          <li>آشنایی با PHP مقدماتی</li>\n          <li>ساخت پوسته اختصاصی</li>\n          <li>کار با template hierarchy</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه افزونه (Plugin Development)</strong>\n        <ul>\n          <li>یادگیری PHP پیشرفته</li>\n          <li>آشنایی با hooks (actions/filters)</li>\n          <li>ساخت افزونه‌های سفارشی</li>\n          <li>کار با custom post types</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>کار با WooCommerce (فروشگاه ساز)</li>\n          <li>ساخت صفحه‌ساز اختصاصی</li>\n          <li>بهینه‌سازی سرعت و سئو</li>\n          <li>امنیت وردپرس</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت پوسته و افزونه حرفه‌ای</li>\n      <li>مدیریت کامل پروژه‌های وردپرسی</li>\n      <li>توسعه وبسایت‌های فروشگاهی</li>\n      <li>فریلنسینگ در بازار وردپرس</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n  ",
+                "courses": [
+                  {
+                    "title": "مبانی وردپرس",
+                    "duration": "4 جلسه",
+                    "price": 390000,
+                    "rating": 4.7,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613"
+                  },
+                  {
+                    "title": "توسعه پوسته وردپرس",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3"
+                  },
+                  {
+                    "title": "توسعه افزونه وردپرس",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "WooCommerce پیشرفته",
+                    "duration": "6 جلسه",
+                    "price": 690000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "uiux",
+              "title": "UI / UX",
+              "description": "طراحی تجربه و رابط کاربری",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-10.png",
+              "path": {
+                "title": "مسیر طراحی UI/UX",
+                "description": "\n    <p>مسیر تخصصی <strong>طراحی UI/UX (User Interface/User Experience)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری UI/UX:</h4>\n    <ol>\n      <li><strong>اصول اولیه طراحی</strong>\n        <ul>\n          <li>رنگ‌شناسی و تئوری رنگ</li>\n          <li>تایپوگرافی و فونت‌شناسی</li>\n          <li>ترکیب‌بندی و Grid Systems</li>\n        </ul>\n      </li>\n      \n      <li><strong>تحقیق و آنالیز کاربر (UX)</strong>\n        <ul>\n          <li>User Research و Persona</li>\n          <li>User Journey Mapping</li>\n          <li>Wireframing و Prototyping</li>\n          <li>Usability Testing</li>\n        </ul>\n      </li>\n      \n      <li><strong>طراحی رابط کاربری (UI)</strong>\n        <ul>\n          <li>یادگیری ابزارهای طراحی (Figma)</li>\n          <li>طراحی سیستم (Design System)</li>\n          <li>UI Patterns و Components</li>\n          <li>طراحی موبایل و وب</li>\n        </ul>\n      </li>\n      \n      <li><strong>تخصص‌های پیشرفته</strong>\n        <ul>\n          <li>Interaction Design</li>\n          <li>طراحی برای Accessibility</li>\n          <li>Motion Design با After Effects</li>\n          <li>Collaboration با توسعه‌دهندگان</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>تحقیق و تحلیل نیازهای کاربر</li>\n      <li>طراحی رابط‌های کاربرپسند و زیبا</li>\n      <li>ساخت Prototype تعاملی</li>\n      <li>همکاری مؤثر با تیم توسعه</li>\n      <li>ساخت Design System حرفه‌ای</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n  ",
+                "courses": [
+                  {
+                    "title": "اصول طراحی UI/UX",
+                    "duration": "6 جلسه",
+                    "price": 690000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5"
+                  },
+                  {
+                    "title": "کار با Figma حرفه‌ای",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71"
+                  },
+                  {
+                    "title": "طراحی سیستم (Design System)",
+                    "duration": "6 جلسه",
+                    "price": 790000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1558655146-364adaf1fcc9"
+                  },
+                  {
+                    "title": "پروژه عملی UI/UX",
+                    "duration": "10 جلسه",
+                    "price": 990000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "devops",
+              "title": "DevOps",
+              "description": "استقرار، مانیتورینگ و اتوماسیون",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-7.png",
+              "path": {
+                "title": "مسیر DevOps",
+                "description": "\n    <p>مسیر تخصصی <strong>DevOps (Development & Operations)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری DevOps:</h4>\n    <ol>\n      <li><strong>پایه‌های سیستم‌عامل و شبکه</strong>\n        <ul>\n          <li>Linux Administration (Ubuntu/CentOS)</li>\n          <li>آشنایی با شبکه‌های کامپیوتری</li>\n          <li>Command Line و Shell Scripting</li>\n        </ul>\n      </li>\n      \n      <li><strong>زیرساخت کد (Infrastructure as Code)</strong>\n        <ul>\n          <li>Docker (کانتینریزاسیون)</li>\n          <li>Kubernetes (اورکستراسیون)</li>\n          <li>Terraform (مدیریت زیرساخت)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت کد و CI/CD</strong>\n        <ul>\n          <li>Git و Git workflows</li>\n          <li>Jenkins/GitLab CI/GitHub Actions</li>\n          <li>Continuous Integration & Deployment</li>\n        </ul>\n      </li>\n      \n      <li><strong>مانیتورینگ و لاگینگ</strong>\n        <ul>\n          <li>Prometheus و Grafana</li>\n          <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>\n          <li>Alerting و Performance Monitoring</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابر و زیرساخت ابری</strong>\n        <ul>\n          <li>AWS Services (EC2, S3, RDS)</li>\n          <li>Google Cloud Platform</li>\n          <li>Azure DevOps</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>مدیریت سرورها و زیرساخت</li>\n      <li>اتوماسیون فرآیندهای توسعه</li>\n      <li>پیاده‌سازی خطوط CI/CD</li>\n      <li>مانیتورینگ سیستم‌های بزرگ</li>\n      <li>کار با پلتفرم‌های ابری</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۲ تا ۱۸ ماه</p>\n  ",
+                "courses": [
+                  {
+                    "title": "Linux و شبکه برای DevOps",
+                    "duration": "6 جلسه",
+                    "price": 790000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485"
+                  },
+                  {
+                    "title": "Docker و Kubernetes",
+                    "duration": "10 جلسه",
+                    "price": 1190000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "CI/CD با Jenkins و GitLab",
+                    "duration": "8 جلسه",
+                    "price": 990000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+                  },
+                  {
+                    "title": "AWS برای DevOps",
+                    "duration": "10 جلسه",
+                    "price": 1290000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa"
+                  }
+                ]
+              },
+              "childhint": ""
+            }
+          ]
+        },
+        {
+          "id": "mobile",
+          "title": "برنامه‌نویسی موبایل",
+          "description": "",
+          "childhint": "مسیر برنامه‌نویسی موبایل را بر اساس علاقه خود انتخاب کنید.",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-26.avif",
+          "children": [
+            {
+              "id": "android",
+              "title": "اندروید",
+              "description": "توسعه اپلیکیشن‌های Android",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-19.jpg",
+              "path": {
+                "title": "مسیر برنامه‌نویسی اندروید (Android)",
+                "description": "\n    <p>مسیر تخصصی <strong>توسعه اپلیکیشن‌های اندروید (Android Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری برنامه‌نویسی اندروید:</h4>\n    <ol>\n      <li><strong>پایه‌های برنامه‌نویسی</strong>\n        <ul>\n          <li>یادگیری زبان Kotlin (زبان اصلی اندروید)</li>\n          <li>آشنایی با Java (برای پروژه‌های Legacy)</li>\n          <li>مفاهیم شیءگرایی (OOP)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مبانی اندروید</strong>\n        <ul>\n          <li>Activity و Fragment</li>\n          <li>Layouts و Views (XML)</li>\n          <li>Intent و Navigation</li>\n          <li>Lifecycle Components</li>\n        </ul>\n      </li>\n      \n      <li><strong>آرشیتکتور پیشرفته</strong>\n        <ul>\n          <li>MVVM Architecture</li>\n          <li>LiveData و ViewModel</li>\n          <li>Room Database (SQLite)</li>\n          <li>Retrofit (اتصال به API)</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>کار با Firebase</li>\n          <li>Notification و Background Tasks</li>\n          <li>Testing (Unit Test, UI Test)</li>\n          <li>Publishing در Google Play</li>\n        </ul>\n      </li>\n      \n      <li><strong>Jetpack Compose (اختیاری)</strong>\n        <ul>\n          <li>یادگیری Modern UI Toolkit</li>\n          <li>Declarative UI Development</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن‌های حرفه‌ای اندروید</li>\n      <li>پیاده‌سازی آرشیتکتورهای مدرن</li>\n      <li>اتصال به سرویس‌های Backend</li>\n      <li>آمادگی برای انتشار در مارکت</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n  ",
+                "courses": [
+                  {
+                    "title": "Kotlin برای اندروید",
+                    "duration": "6 جلسه",
+                    "price": 690000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+                  },
+                  {
+                    "title": "مبانی توسعه اندروید",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+                  },
+                  {
+                    "title": "آرشیتکتور MVVM در اندروید",
+                    "duration": "8 جلسه",
+                    "price": 990000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "پروژه عملی اندروید",
+                    "duration": "10 جلسه",
+                    "price": 1190000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "ios",
+              "title": "iOS",
+              "description": "توسعه اپلیکیشن‌های iPhone",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-25.jpg",
+              "path": {
+                "title": "مسیر برنامه‌نویسی iOS",
+                "description": "\n    <p>مسیر تخصصی <strong>توسعه اپلیکیشن‌های iOS</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری برنامه‌نویسی iOS:</h4>\n    <ol>\n      <li><strong>پایه‌های برنامه‌نویسی</strong>\n        <ul>\n          <li>یادگیری زبان Swift (زبان اصلی iOS)</li>\n          <li>آشنایی با Objective-C (برای پروژه‌های قدیمی)</li>\n          <li>مفاهیم شیءگرایی و Protocol-Oriented</li>\n        </ul>\n      </li>\n      \n      <li><strong>مبانی iOS Development</strong>\n        <ul>\n          <li>UIKit Framework</li>\n          <li>Storyboard و Auto Layout</li>\n          <li>View Controllers</li>\n          <li>Delegates و Protocols</li>\n        </ul>\n      </li>\n      \n      <li><strong>SwiftUI (راه مدرن)</strong>\n        <ul>\n          <li>یادگیری Declarative UI</li>\n          <li>State و Data Flow</li>\n          <li>Custom Views و Modifiers</li>\n        </ul>\n      </li>\n      \n      <li><strong>داده‌ها و Networking</strong>\n        <ul>\n          <li>Core Data</li>\n          <li>URLSession و Networking</li>\n          <li>Codable Protocol</li>\n          <li>UserDefaults</li>\n        </ul>\n      </li>\n      \n      <li><strong>مهارت‌های تکمیلی</strong>\n        <ul>\n          <li>Concurrency با async/await</li>\n          <li>Testing (Unit Test, UI Test)</li>\n          <li>Publishing در App Store</li>\n          <li>In-App Purchases</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن‌های iOS با SwiftUI و UIKit</li>\n      <li>کار با API و مدیریت داده</li>\n      <li>پیاده‌سازی معماری‌های Clean Architecture</li>\n      <li>آمادگی برای انتشار در App Store</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۸ تا ۱۲ ماه</p>\n    <p>💡 نیاز: سیستم مک (macOS) برای توسعه iOS</p>\n  ",
+                "courses": [
+                  {
+                    "title": "زبان Swift مقدماتی",
+                    "duration": "6 جلسه",
+                    "price": 790000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+                  },
+                  {
+                    "title": "توسعه iOS با UIKit",
+                    "duration": "8 جلسه",
+                    "price": 990000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+                  },
+                  {
+                    "title": "SwiftUI پیشرفته",
+                    "duration": "8 جلسه",
+                    "price": 1090000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "پروژه عملی iOS",
+                    "duration": "10 جلسه",
+                    "price": 1290000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "cross",
+              "title": "کراس‌پلتفرم",
+              "description": "Flutter / React Native",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-21.png",
+              "path": {
+                "title": "مسیر کراس پلتفرم (Cross-Platform)",
+                "description": "\n    <p>مسیر تخصصی <strong>توسعه کراس پلتفرم (Cross-Platform Development)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری کراس پلتفرم:</h4>\n    <ol>\n      <li><strong>انتخاب فریم‌ورک اصلی</strong>\n        <ul>\n          <li><strong>React Native:</strong> برای توسعه‌دهندگان وب</li>\n          <li><strong>Flutter:</strong> با زبان Dart و performance بالا</li>\n          <li><strong>Xamarin:</strong> برای توسعه‌دهندگان .NET</li>\n        </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر Flutter</strong>\n        <ol type=\"a\">\n          <li>یادگیری زبان Dart</li>\n          <li>Widgets و Layout در Flutter</li>\n          <li>State Management (Provider, Riverpod, Bloc)</li>\n          <li>Navigation و Routing</li>\n          <li>کار با API و Local Storage</li>\n          <li>Publishing برای Android و iOS</li>\n        </ol>\n      </li>\n      \n      <li><strong>مثال: مسیر React Native</strong>\n        <ol type=\"a\">\n          <li>تسلط بر JavaScript/TypeScript</li>\n          <li>Components و JSX</li>\n          <li>State Management (Redux, Context API)</li>\n          <li>Native Modules و Bridge</li>\n          <li>کار با Expo یا CLI</li>\n        </ol>\n      </li>\n      \n      <li><strong>مهارت‌های مشترک</strong>\n        <ul>\n          <li>Native Features (دوربین، GPS، Notifications)</li>\n          <li>Testing و Debugging</li>\n          <li>Performance Optimization</li>\n          <li>Code Push و OTA Updates</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت اپلیکیشن برای Android و iOS با یک کدبیس</li>\n      <li>استفاده از Native Features</li>\n      <li>Performance Optimization</li>\n      <li>Publishing در دو پلتفرم</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۱۰ ماه</p>\n    <p>💡 مزیت: صرفه‌جویی در زمان و منابع</p>\n  ",
+                "courses": [
+                  {
+                    "title": "Flutter و Dart مقدماتی",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+                  },
+                  {
+                    "title": "State Management در Flutter",
+                    "duration": "6 جلسه",
+                    "price": 790000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+                  },
+                  {
+                    "title": "React Native مقدماتی",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+                  },
+                  {
+                    "title": "پروژه کراس پلتفرم",
+                    "duration": "10 جلسه",
+                    "price": 1190000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+                  }
+                ]
+              },
+              "childhint": ""
+            },
+            {
+              "id": "mobile-uiux",
+              "title": "UI/UX موبایل",
+              "description": "طراحی رابط کاربری اپلیکیشن",
+              "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-6.png",
+              "path": {
+                "title": "مسیر UI/UX موبایل",
+                "description": "\n    <p>مسیر تخصصی <strong>طراحی UI/UX موبایل (Mobile Design)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری طراحی موبایل:</h4>\n    <ol>\n      <li><strong>اصول طراحی موبایل</strong>\n        <ul>\n          <li>تفاوت طراحی موبایل و وب</li>\n          <li>Platform Guidelines (Material Design, Human Interface)</li>\n          <li>Mobile-First Design</li>\n          <li>Touch Targets و Gestures</li>\n        </ul>\n      </li>\n      \n      <li><strong>تحقیق کاربر موبایل</strong>\n        <ul>\n          <li>Mobile User Behavior</li>\n          <li>Context of Use (در حال حرکت)</li>\n          <li>Mobile Usability Testing</li>\n          <li>Onboarding و Empty States</li>\n        </ul>\n      </li>\n      \n      <li><strong>طراحی رابط موبایل</strong>\n        <ul>\n          <li>Mobile Layout Patterns</li>\n          <li>Navigation Patterns (Tab Bar, Drawer)</li>\n          <li>Mobile Components Design</li>\n          <li>Responsive vs Adaptive Design</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارها و Prototyping</strong>\n        <ul>\n          <li>Figma برای موبایل Design</li>\n          <li>Interactive Prototyping</li>\n          <li>Design Handoff به توسعه‌دهندگان</li>\n          <li>Design Systems برای موبایل</li>\n        </ul>\n      </li>\n      \n      <li><strong>تخصص‌های پیشرفته</strong>\n        <ul>\n          <li>Animation و Microinteractions</li>\n          <li>Accessibility در موبایل</li>\n          <li>Dark Mode Design</li>\n          <li>Cross-Platform Design Consistency</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>طراحی اپلیکیشن‌های زیبا و کاربرپسند</li>\n      <li>تسلط بر Platform Guidelines</li>\n      <li>ساخت Interactive Prototypes</li>\n      <li>همکاری مؤثر با توسعه‌دهندگان موبایل</li>\n      <li>طراحی برای Android و iOS</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n  ",
+                "courses": [
+                  {
+                    "title": "اصول طراحی موبایل",
+                    "duration": "6 جلسه",
+                    "price": 690000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5"
+                  },
+                  {
+                    "title": "Material Design و iOS HIG",
+                    "duration": "5 جلسه",
+                    "price": 590000,
+                    "rating": 4.8,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71"
+                  },
+                  {
+                    "title": "طراحی با Figma برای موبایل",
+                    "duration": "8 جلسه",
+                    "price": 890000,
+                    "rating": 4.9,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1558655146-364adaf1fcc9"
+                  },
+                  {
+                    "title": "پروژه UI/UX موبایل",
+                    "duration": "8 جلسه",
+                    "price": 990000,
+                    "rating": 5,
+                    "link": "#",
+                    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3"
+                  }
+                ]
+              },
+              "childhint": ""
+            }
+          ]
+        },
+        {
+          "id": "desktop",
+          "title": "برنامه‌نویسی دسکتاپ",
+          "description": "توسعه نرم‌افزارهای ویندوز، مک و لینوکس",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-16.png",
+          "path": {
+            "title": "مسیر برنامه‌نویسی دسکتاپ/ویندوز",
+            "description": "\n    <p>مسیر تخصصی <strong>توسعه نرم‌افزارهای دسکتاپ و ویندوز</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری توسعه دسکتاپ:</h4>\n    <ol>\n      <li><strong>انتخاب پلتفرم و تکنولوژی</strong>\n        <ul>\n          <li><strong>C# و .NET:</strong> بهترین انتخاب برای ویندوز (Windows Forms, WPF)</li>\n          <li><strong>Java:</strong> برای برنامه‌های cross-platform (JavaFX)</li>\n          <li><strong>Python:</strong> با PyQt/PySide یا Tkinter</li>\n          <li><strong>C++:</strong> برای برنامه‌های high-performance</li>\n          <li><strong>Electron:</strong> با JavaScript/TypeScript برای برنامه‌های وب-بیس</li>\n        </ul>\n      </li>\n      \n      <li><strong>مثال: مسیر C# و WPF (.NET)</strong>\n        <ol type=\"a\">\n          <li>یادگیری زبان C# و مفاهیم OOP پیشرفته</li>\n          <li>آشنایی با .NET Framework/.NET Core</li>\n          <li>Windows Forms برای برنامه‌های ساده</li>\n          <li>WPF (Windows Presentation Foundation) برای برنامه‌های مدرن</li>\n          <li>XAML برای طراحی UI</li>\n          <li>MVVM Pattern در WPF</li>\n          <li>Entity Framework برای دیتابیس</li>\n          <li>Deployment و Installer (MSI, ClickOnce)</li>\n        </ol>\n      </li>\n      \n      <li><strong>مهارت‌های ضروری</strong>\n        <ul>\n          <li>Working with Files و System.IO</li>\n          <li>Multi-threading و async programming</li>\n          <li>Windows API و Registry (در صورت نیاز)</li>\n          <li>Local Database Integration (SQLite, SQL Server Local)</li>\n          <li>Logging و Error Handling</li>\n        </ul>\n      </li>\n      \n      <li><strong>توسعه Cross-Platform دسکتاپ</strong>\n        <ul>\n          <li>Avalonia UI (برای .NET cross-platform)</li>\n          <li>Qt با C++ یا Python</li>\n          <li>Electron برای توسعه‌دهندگان وب</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 بازار کار و پروژه‌ها:</h4>\n    <ul>\n      <li>نرم‌افزارهای اداری و سازمانی</li>\n      <li>ابزارهای مدیریت و آنالیز داده</li>\n      <li>نرم‌افزارهای مالی و حسابداری</li>\n      <li>ابزارهای مهندسی و صنعتی</li>\n      <li>برنامه‌های utility و system tools</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>ساخت برنامه‌های دسکتاپ حرفه‌ای برای ویندوز</li>\n      <li>طراحی UI با WPF و XAML</li>\n      <li>کار با دیتابیس و فایل‌سیستم</li>\n      <li>ایجاد installer و deploy نرم‌افزار</li>\n      <li>آماده‌سازی برای بازار کار سنتی و سازمانی</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۰ تا ۱۴ ماه</p>\n    <p>💡 نکته: بازار برنامه‌های دسکتاپ در سازمان‌ها و شرکت‌های بزرگ همچنان پررونق است</p>\n  ",
+            "courses": [
+              {
+                "title": "C# پیشرفته و .NET",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1616401784845-180882ba9ba8"
+              },
+              {
+                "title": "WPF و XAML",
+                "duration": "10 جلسه",
+                "price": 1190000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+              },
+              {
+                "title": "الگوهای طراحی در دسکتاپ",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+              },
+              {
+                "title": "پروژه جامع دسکتاپ",
+                "duration": "12 جلسه",
+                "price": 1490000,
+                "rating": 5,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3"
+              }
+            ]
+          },
+          "childhint": ""
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "هوش مصنوعی",
+      "description": "مسیر یادگیری هوش مصنوعی",
+      "childhint": "مشخص کنید هدف شما از هوش مصنوعی چیست.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-17.png",
+      "children": [
+        {
+          "id": "ai-business",
+          "title": "هوش مصنوعی در کسب‌وکار",
+          "description": "اتوماسیون و افزایش بهره‌وری",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-15.png",
+          "path": {
+            "title": "مسیر هوش مصنوعی در کسب‌وکار (AI in Business)",
+            "description": "\n    <p>مسیر تخصصی <strong>کاربرد هوش مصنوعی در کسب‌وکار</strong> برای مدیران، کارآفرینان و تحلیل‌گران کسب‌وکار شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری هوش مصنوعی در کسب‌وکار:</h4>\n    <ol>\n      <li><strong>مبانی هوش مصنوعی برای غیرفنی‌ها</strong>\n        <ul>\n          <li>درک مفاهیم پایه: ML، DL، NLP، Computer Vision</li>\n          <li>انواع کاربردهای AI در صنایع مختلف</li>\n          <li>محدودیت‌ها و قابلیت‌های واقعی AI</li>\n          <li>تفاوت هوش مصنوعی، یادگیری ماشین و یادگیری عمیق</li>\n        </ul>\n      </li>\n      \n      <li><strong>شناسایی فرصت‌های AI در کسب‌وکار</strong>\n        <ul>\n          <li>تحلیل صنعت و شناسایی pain points</li>\n          <li>کاربردهای AI در بخش‌های مختلف:\n            <ul>\n              <li><strong>بازاریابی:</strong> شخصی‌سازی، پیش‌بینی رفتار مشتری</li>\n              <li><strong>فروش:</strong> پیش‌بینی فروش، Lead Scoring</li>\n              <li><strong>مالی:</strong> تشخیص تقلب، ارزیابی اعتبار</li>\n              <li><strong>عملیات:</strong> بهینه‌سازی زنجیره تأمین، نگهداری پیش‌بینانه</li>\n              <li><strong>منابع انسانی:</strong> غربالگری رزومه، تحلیل engagement</li>\n              <li><strong>خدمات مشتری:</strong> چت‌بات‌های هوشمند</li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n      \n      <li><strong>مدیریت پروژه‌های AI</strong>\n        <ul>\n          <li>چرخه حیات پروژه هوش مصنوعی</li>\n          <li>تعریف مسئله کسب‌وکار به مسئله فنی</li>\n          <li>تعیین معیارهای موفقیت و ROI</li>\n          <li>مدیریت تیم‌های متشکل از فنی و غیرفنی</li>\n          <li>اخلاق و مسئولیت‌پذیری در AI</li>\n        </ul>\n      </li>\n      \n      <li><strong>ابزارهای No-Code/Low-Code AI</strong>\n        <ul>\n          <li>پلتفرم‌های ساخت مدل بدون کدنویسی</li>\n          <li>سرویس‌های ابری AI (AWS AI Services، Google Cloud AI)</li>\n          <li>ابزارهای تحلیل داده بصری</li>\n          <li>چت‌بات‌سازها و اتوماسیون‌سازها</li>\n        </ul>\n      </li>\n      \n      <li><strong>پیاده‌سازی و یکپارچه‌سازی</strong>\n        <ul>\n          <li>انتخاب راه‌حل مناسب (ساخت، خرید یا ترکیبی)</li>\n          <li>یکپارچه‌سازی با سیستم‌های موجود</li>\n          <li>مدیریت تغییر و پذیرش در سازمان</li>\n          <li>آموزش کارکنان برای استفاده از ابزارهای AI</li>\n        </ul>\n      </li>\n      \n      <li><strong>مباحث پیشرفته کسب‌وکار با AI</strong>\n        <ul>\n          <li>AI Strategy و Digital Transformation</li>\n          <li>مدل‌های درآمدی جدید با AI</li>\n          <li>Competitive Advantage با هوش مصنوعی</li>\n          <li>Data Governance و مدیریت داده برای AI</li>\n          <li>Compliance و مقررات AI در صنایع مختلف</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 مخاطبان این مسیر:</h4>\n    <ul>\n      <li>مدیران و تصمیم‌گیران سازمانی</li>\n      <li>کارآفرینان و استارتاپ‌ها</li>\n      <li>مدیران محصول (Product Managers)</li>\n      <li>تحلیل‌گران کسب‌وکار (Business Analysts)</li>\n      <li>مدیران بازاریابی و فروش</li>\n      <li>مشاوران مدیریت و استراتژی</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>شناسایی و اولویت‌بندی فرصت‌های AI در سازمان</li>\n      <li>مدیریت و هدایت پروژه‌های هوش مصنوعی</li>\n      <li>برقراری ارتباط مؤثر بین تیم فنی و کسب‌وکار</li>\n      <li>محاسبه ROI و ارزش‌آفرینی AI</li>\n      <li>ایجاد استراتژی هوش مصنوعی برای سازمان</li>\n      <li>استفاده از ابزارهای Low-Code برای پیاده‌سازی راه‌حل‌ها</li>\n    </ul>\n    \n    <h4>📊 نمونه پروژه‌های عملی:</h4>\n    <ul>\n      <li>طراحی سیستم پیشنهاددهنده محصول (Recommender System)</li>\n      <li>پیاده‌سازی چت‌بات برای خدمات مشتری</li>\n      <li>تحلیل احساسات مشتریان از نظرات و بازخوردها</li>\n      <li>پیش‌بینی تقاضا و بهینه‌سازی موجودی</li>\n      <li>تشخیص تقلب در تراکنش‌های مالی</li>\n      <li>اتوماسیون فرآیندهای اداری با RPA و AI</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۶ تا ۹ ماه</p>\n    <p>💡 نکته: نیازی به دانش برنامه‌نویسی پیشرفته نیست، اما درک مفاهیم ضروری است</p>\n    <p>🌟 مزیت: ترکیب دانش کسب‌وکار و AI یکی از پردرآمدترین مهارت‌های حال حاضر است</p>\n    <p>💰 ROI: سازمان‌هایی که هوش مصنوعی را به‌درستی پیاده‌سازی می‌کنند، تا ۴۰٪ افزایش بهره‌وری گزارش داده‌اند</p>\n  ",
+            "courses": [
+              {
+                "title": "مبانی هوش مصنوعی برای مدیران",
+                "duration": "6 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              },
+              {
+                "title": "استراتژی هوش مصنوعی در کسب‌وکار",
+                "duration": "8 جلسه",
+                "price": 1190000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1552664730-d307ca884978"
+              },
+              {
+                "title": "ابزارهای No-Code AI",
+                "duration": "6 جلسه",
+                "price": 990000,
+                "rating": 4.7,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+              },
+              {
+                "title": "مدیریت پروژه‌های هوش مصنوعی",
+                "duration": "8 جلس点",
+                "price": 1090000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd"
+              },
+              {
+                "title": "تحلیل ROI در پروژه‌های AI",
+                "duration": "4 جلس点",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              },
+              {
+                "title": "پروژه عملی AI در کسب‌وکار",
+                "duration": "10 جلسه",
+                "price": 1490000,
+                "rating": 5,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1552664730-d307ca884978"
+              }
+            ]
+          },
+          "childhint": ""
+        },
+        {
+          "id": "ai-dev",
+          "title": "توسعه هوش مصنوعی",
+          "description": "یادگیری ماشین و شبکه‌های عصبی",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-12.png",
+          "path": {
+            "title": "مسیر هوش مصنوعی (Artificial Intelligence)",
+            "description": "\n    <p>مسیر تخصصی <strong>هوش مصنوعی (Artificial Intelligence)</strong> شامل مراحل زیر است:</p>\n    \n    <h4>📚 مراحل یادگیری هوش مصنوعی:</h4>\n    <ol>\n      <li><strong>پایه‌های ریاضی پیشرفته</strong>\n        <ul>\n          <li>جبر خطی (ماتریس‌ها، بردارها، مقادیر ویژه)</li>\n          <li>حسابان (مشتقات، گرادیان، بهینه‌سازی)</li>\n          <li>احتمال و آمار (توزیع‌ها، Bayesian)</li>\n          <li>بهینه‌سازی (گرادیان نزولی، محدب)</li>\n        </ul>\n      </li>\n      \n      <li><strong>برنامه‌نویسی و ابزارها</strong>\n        <ul>\n          <li>Python پیشرفته</li>\n          <li>NumPy، Pandas، Matplotlib</li>\n          <li>Jupyter Notebook/Lab</li>\n          <li>محیط‌های توسعه (VS Code، PyCharm)</li>\n        </ul>\n      </li>\n      \n      <li><strong>یادگیری ماشین (Machine Learning)</strong>\n        <ul>\n          <li>مدل‌های Supervised (Regression، Classification)</li>\n          <li>مدل‌های Unsupervised (Clustering، Dimensionality Reduction)</li>\n          <li>Scikit-learn برای پیاده‌سازی</li>\n          <li>ارزیابی مدل و Hyperparameter Tuning</li>\n          <li>Ensemble Methods و Boosting</li>\n        </ul>\n      </li>\n      \n      <li><strong>یادگیری عمیق (Deep Learning)</strong>\n        <ul>\n          <li>شبکه‌های عصبی (Neural Networks)</li>\n          <li>TensorFlow یا PyTorch (انتخاب یکی)</li>\n          <li>شبکه‌های کانولوشنی (CNN) برای بینایی کامپیوتر</li>\n          <li>شبکه‌های بازگشتی (RNN/LSTM) برای داده‌های سری زمانی</li>\n          <li>Transformers برای پردازش زبان طبیعی</li>\n          <li>Generative AI و GANs</li>\n        </ul>\n      </li>\n      \n      <li><strong>زیرشاخه‌های تخصصی AI</strong>\n        <ul>\n          <li><strong>پردازش زبان طبیعی (NLP):</strong> تحلیل متن، ترجمه، chatbots</li>\n          <li><strong>بینایی کامپیوتر (Computer Vision):</strong> تشخیص اشیاء، تصویر</li>\n          <li><strong>سیستم‌های توصیه‌گر (Recommender Systems):</strong> فیلم، محصول</li>\n          <li><strong>رباتیک و کنترل هوشمند</strong></li>\n          <li><strong>مدل‌های زبانی بزرگ (LLMs):</strong> GPT، LLaMA، fine-tuning</li>\n        </ul>\n      </li>\n      \n      <li><strong>پیاده‌سازی و استقرار</strong>\n        <ul>\n          <li>MLOps (مدیریت چرخه حیات مدل)</li>\n          <li>Deployment مدل‌ها (Docker، FastAPI، Flask)</li>\n          <li>Cloud Platforms (AWS SageMaker، Google AI Platform)</li>\n          <li>Monitoring و Maintenance مدل‌ها</li>\n        </ul>\n      </li>\n    </ol>\n    \n    <h4>🎯 بازار کار و موقعیت‌ها:</h4>\n    <ul>\n      <li>Machine Learning Engineer</li>\n      <li>AI Researcher/ Scientist</li>\n      <li>Deep Learning Engineer</li>\n      <li>NLP Engineer</li>\n      <li>Computer Vision Engineer</li>\n      <li>AI Product Manager</li>\n    </ul>\n    \n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul>\n      <li>طراحی و پیاده‌سازی مدل‌های ML/DL</li>\n      <li>کار با چارچوب‌های TensorFlow/PyTorch</li>\n      <li>توسعه سیستم‌های هوشمند در حوزه‌های تخصصی</li>\n      <li>استقرار و نگهداری مدل‌های هوش مصنوعی</li>\n      <li>حل مسائل پیچیده با راه‌حل‌های هوشمند</li>\n    </ul>\n    \n    <p>⏱ مدت زمان: ۱۸ تا ۲۴ ماه (نیازمند پایه ریاضی قوی)</p>\n    <p>💡 نکته: هوش مصنوعی یکی از پردرآمدترین و آینده‌دارترین حوزه‌های تکنولوژی است</p>\n    <p>🌟 پیش‌نیاز: علاقه به ریاضی و حل مسائل پیچیده ضروری است</p>\n  ",
+            "courses": [
+              {
+                "title": "ریاضیات برای هوش مصنوعی",
+                "duration": "10 جلسه",
+                "price": 1290000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb"
+              },
+              {
+                "title": "یادگیری ماشین پیشرفته",
+                "duration": "12 جلسه",
+                "price": 1690000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+              },
+              {
+                "title": "یادگیری عمیق با PyTorch",
+                "duration": "14 جلسه",
+                "price": 1890000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485"
+              },
+              {
+                "title": "پردازش زبان طبیعی (NLP)",
+                "duration": "10 جلسه",
+                "price": 1490000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+              },
+              {
+                "title": "بینایی کامپیوتر",
+                "duration": "10 جلسه",
+                "price": 1490000,
+                "rating": 4.9,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+              },
+              {
+                "title": "پروژه عملی هوش مصنوعی",
+                "duration": "12 جلسه",
+                "price": 1790000,
+                "rating": 5,
+                "link": "#",
+                "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              }
+            ]
+          },
+          "childhint": ""
+        }
+      ]
+    },
+    {
+      "id": "gr",
+      "title": "گرافیک و انیمیشن",
+      "description": "مسیر یادگیری گرافیک و انیمیشن",
+      "childhint": "گرافیک و انیمیشن شامل طراحی بصری، موشن و تدوین است. مسیر مورد علاقه خود را انتخاب کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-13.png",
+      "children": [
+        {
+          "id": "graphic-design",
+          "title": "طراحی گرافیک",
+          "description": "طراحی پوستر، هویت بصری و محتوای تبلیغاتی",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر طراحی گرافیک",
+            "description": "\n    <p>این مسیر برای ورود به طراحی بصری، کار با نرم‌افزارهای گرافیکی و ساخت خروجی‌های تبلیغاتی طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری طراحی گرافیک:</h4>\n    <ol>\n      <li><strong>اصول طراحی</strong>\n        <ul><li>رنگ، ترکیب‌بندی و تایپوگرافی</li><li>شناخت فرمت‌ها و خروجی‌ها</li><li>ایده‌پردازی و اتود اولیه</li></ul>\n      </li>\n      <li><strong>نرم‌افزارهای اصلی</strong>\n        <ul><li>Photoshop برای ویرایش تصویر</li><li>Illustrator برای طراحی برداری</li><li>آماده‌سازی فایل چاپ و وب</li></ul>\n      </li>\n      <li><strong>پروژه‌های کاربردی</strong>\n        <ul><li>پوستر و بنر</li><li>هویت بصری ساده</li><li>پست شبکه اجتماعی</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان طراحی</li><li>ادمین‌های شبکه اجتماعی</li><li>فریلنسرهای تازه‌کار</li><li>کسب‌وکارهای کوچک</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>طراحی خروجی تبلیغاتی</li><li>کار با فتوشاپ و ایلاستریتور</li><li>ساخت هویت بصری ساده</li><li>آمادگی برای پروژه‌های فریلنسری</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "اصول طراحی گرافیک",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "Photoshop کاربردی",
+                "duration": "8 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "Illustrator مقدماتی",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "motion-animation",
+          "title": "موشن گرافیک و انیمیشن",
+          "description": "ساخت حرکت، انیمیشن دوبعدی و ویدیوهای تبلیغاتی",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر موشن گرافیک و انیمیشن",
+            "description": "\n    <p>این مسیر برای ساخت ویدیوهای کوتاه تبلیغاتی، انیمیشن‌های دوبعدی و حرکت دادن عناصر گرافیکی مناسب است.</p>\n\n    <h4>📚 مراحل یادگیری موشن گرافیک و انیمیشن:</h4>\n    <ol>\n      <li><strong>مبانی حرکت</strong>\n        <ul><li>اصول زمان‌بندی و ریتم</li><li>Storyboard و سناریوی کوتاه</li><li>آشنایی با keyframe</li></ul>\n      </li>\n      <li><strong>After Effects</strong>\n        <ul><li>حرکت متن و شکل‌ها</li><li>ترنزیشن و افکت‌های پایه</li><li>خروجی گرفتن برای شبکه‌های اجتماعی</li></ul>\n      </li>\n      <li><strong>پروژه تبلیغاتی</strong>\n        <ul><li>ساخت تیزر کوتاه</li><li>هماهنگی صدا و تصویر</li><li>بهینه‌سازی خروجی نهایی</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>طراحان گرافیک</li><li>تولیدکنندگان محتوا</li><li>ادمین‌های شبکه اجتماعی</li><li>علاقه‌مندان انیمیشن دوبعدی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>ساخت موشن تبلیغاتی</li><li>کار با After Effects</li><li>طراحی سناریوی ویدیویی</li><li>خروجی حرفه‌ای برای وب</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "مبانی موشن گرافیک",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "After Effects مقدماتی",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "پروژه تیزر تبلیغاتی",
+                "duration": "6 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "video-editing-vfx",
+          "title": "تدوین و جلوه‌های ویدیویی",
+          "description": "تدوین ویدیو، اصلاح رنگ و افکت‌های پایه",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر تدوین و جلوه‌های ویدیویی",
+            "description": "\n    <p>این مسیر برای تبدیل ویدیوهای خام به خروجی حرفه‌ای، آموزشی، تبلیغاتی و شبکه اجتماعی طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری تدوین و جلوه‌های ویدیویی:</h4>\n    <ol>\n      <li><strong>مبانی تدوین</strong>\n        <ul><li>شناخت کات، ریتم و روایت</li><li>مرتب‌سازی فایل‌ها</li><li>انتخاب موسیقی و صدا</li></ul>\n      </li>\n      <li><strong>Premiere و اصلاح رنگ</strong>\n        <ul><li>برش و چیدمان ویدیو</li><li>اصلاح رنگ پایه</li><li>زیرنویس و خروجی گرفتن</li></ul>\n      </li>\n      <li><strong>افکت و خروجی نهایی</strong>\n        <ul><li>ترنزیشن‌های کاربردی</li><li>هماهنگی با شبکه‌های اجتماعی</li><li>بهینه‌سازی حجم و کیفیت</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>تولیدکنندگان ویدیو</li><li>یوتیوبرها و مدرس‌ها</li><li>ادمین‌های شبکه اجتماعی</li><li>علاقه‌مندان تدوین</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>تدوین ویدیوهای حرفه‌ای</li><li>اصلاح رنگ و صدا</li><li>ساخت خروجی تبلیغاتی</li><li>آمادگی برای پروژه‌های تولید محتوا</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "Premiere مقدماتی",
+                "duration": "8 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "اصلاح رنگ و صدا",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "پروژه تدوین ویدیو",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "title": "تولید محتوا",
+      "description": "مسیر یادگیری تولید محتوا",
+      "childhint": "تولید محتوا شامل نوشتن، ویدیو و مدیریت شبکه‌های اجتماعی است. مسیر مناسب خود را انتخاب کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-6.png",
+      "children": [
+        {
+          "id": "copywriting-writing",
+          "title": "نویسندگی و کپی‌رایتینگ",
+          "description": "نوشتن محتوای وب، تبلیغاتی و فروش",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر نویسندگی و کپی‌رایتینگ",
+            "description": "\n    <p>این مسیر برای یادگیری نوشتن محتوای اثرگذار، متن تبلیغاتی و محتوای قابل انتشار در وب طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری نویسندگی و کپی‌رایتینگ:</h4>\n    <ol>\n      <li><strong>مبانی نویسندگی محتوا</strong>\n        <ul><li>شناخت مخاطب</li><li>ساختار مقاله و تیتر</li><li>لحن برند و ویرایش متن</li></ul>\n      </li>\n      <li><strong>کپی‌رایتینگ</strong>\n        <ul><li>نوشتن متن فروش</li><li>CTA و پیشنهاد ارزش</li><li>متن تبلیغاتی برای کمپین‌ها</li></ul>\n      </li>\n      <li><strong>محتوای وب و سئو</strong>\n        <ul><li>کلمات کلیدی</li><li>ساختار مقاله سئو شده</li><li>بهینه‌سازی عنوان و توضیحات</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان نویسندگی</li><li>کارشناسان محتوا</li><li>صاحبان کسب‌وکار</li><li>ادمین‌های سایت و شبکه اجتماعی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>نوشتن مقاله و متن تبلیغاتی</li><li>شناخت مخاطب</li><li>تولید محتوای سئو شده</li><li>آمادگی برای کار محتوا</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "نویسندگی محتوای وب",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "کپی‌رایتینگ فروش",
+                "duration": "5 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "محتوای سئو شده",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "video-content",
+          "title": "تولید محتوای ویدیویی",
+          "description": "سناریو، فیلم‌برداری، تدوین و انتشار",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر تولید محتوای ویدیویی",
+            "description": "\n    <p>این مسیر برای ساخت ویدیوهای آموزشی، تبلیغاتی و شبکه اجتماعی با امکانات ساده تا نیمه‌حرفه‌ای طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری تولید محتوای ویدیویی:</h4>\n    <ol>\n      <li><strong>ایده و سناریو</strong>\n        <ul><li>انتخاب موضوع و زاویه محتوا</li><li>نوشتن سناریوی کوتاه</li><li>برنامه‌ریزی تولید</li></ul>\n      </li>\n      <li><strong>تصویربرداری و صدا</strong>\n        <ul><li>نورپردازی ساده</li><li>کادربندی و ضبط با موبایل</li><li>ضبط صدای قابل قبول</li></ul>\n      </li>\n      <li><strong>تدوین و انتشار</strong>\n        <ul><li>برش و تدوین سریع</li><li>زیرنویس و کاور</li><li>انتشار در اینستاگرام، یوتیوب و سایت</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>تولیدکنندگان محتوا</li><li>مدرس‌ها</li><li>ادمین‌های شبکه اجتماعی</li><li>کسب‌وکارهای آنلاین</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>ساخت ویدیو از ایده تا انتشار</li><li>کار با ابزارهای ساده تولید</li><li>تدوین سریع</li><li>برنامه‌ریزی تقویم ویدیویی</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "سناریونویسی ویدیویی",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "فیلم‌برداری با موبایل",
+                "duration": "5 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "تدوین سریع محتوا",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "social-media-management",
+          "title": "مدیریت شبکه‌های اجتماعی",
+          "description": "تقویم محتوا، انتشار و تحلیل عملکرد",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر مدیریت شبکه‌های اجتماعی",
+            "description": "\n    <p>این مسیر برای برنامه‌ریزی، تولید، انتشار و تحلیل محتوای شبکه‌های اجتماعی کسب‌وکارها طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری مدیریت شبکه‌های اجتماعی:</h4>\n    <ol>\n      <li><strong>استراتژی محتوا</strong>\n        <ul><li>شناخت پرسونای مخاطب</li><li>تقویم محتوایی</li><li>انتخاب قالب‌های محتوا</li></ul>\n      </li>\n      <li><strong>انتشار و تعامل</strong>\n        <ul><li>نوشتن کپشن</li><li>زمان‌بندی انتشار</li><li>مدیریت کامنت و دایرکت</li></ul>\n      </li>\n      <li><strong>تحلیل و رشد</strong>\n        <ul><li>شاخص‌های عملکرد</li><li>گزارش ماهانه</li><li>بهینه‌سازی محتوا بر اساس داده</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>ادمین‌های شبکه اجتماعی</li><li>صاحبان کسب‌وکار</li><li>کارشناسان محتوا</li><li>فریلنسرهای دیجیتال</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>طراحی تقویم محتوا</li><li>مدیریت انتشار و تعامل</li><li>تحلیل عملکرد</li><li>رشد ارگانیک صفحات</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "ادمینی اینستاگرام",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "تقویم محتوا و کپشن‌نویسی",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "تحلیل و گزارش شبکه اجتماعی",
+                "duration": "4 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "title": "بازاریابی و تبلیغات",
+      "description": "مسیر یادگیری بازاریابی و تبلیغات",
+      "childhint": "برای ورود به بازاریابی می‌توانید از دیجیتال مارکتینگ، سئو یا تبلیغات و فروش شروع کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-8.png",
+      "children": [
+        {
+          "id": "digital-marketing",
+          "title": "دیجیتال مارکتینگ",
+          "description": "استراتژی، کمپین و کانال‌های آنلاین",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر دیجیتال مارکتینگ",
+            "description": "\n    <p>این مسیر دید جامع از بازاریابی آنلاین، کانال‌های جذب مشتری و اجرای کمپین‌های دیجیتال ارائه می‌دهد.</p>\n\n    <h4>📚 مراحل یادگیری دیجیتال مارکتینگ:</h4>\n    <ol>\n      <li><strong>مبانی بازاریابی دیجیتال</strong>\n        <ul><li>قیف فروش و سفر مشتری</li><li>شناخت کانال‌های دیجیتال</li><li>پرسونا و پیام بازاریابی</li></ul>\n      </li>\n      <li><strong>اجرای کمپین</strong>\n        <ul><li>کمپین شبکه اجتماعی</li><li>ایمیل و پیامک مارکتینگ</li><li>بودجه‌بندی و زمان‌بندی</li></ul>\n      </li>\n      <li><strong>تحلیل و بهینه‌سازی</strong>\n        <ul><li>شاخص‌های کلیدی</li><li>Google Analytics و گزارش‌گیری</li><li>بهینه‌سازی نرخ تبدیل</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>کارشناسان بازاریابی</li><li>صاحبان کسب‌وکار</li><li>فریلنسرها</li><li>علاقه‌مندان ورود به دیجیتال مارکتینگ</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>طراحی کمپین دیجیتال</li><li>شناخت کانال‌های جذب</li><li>تحلیل داده بازاریابی</li><li>برنامه‌ریزی رشد آنلاین</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "مبانی دیجیتال مارکتینگ",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "طراحی کمپین آنلاین",
+                "duration": "6 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "تحلیل داده بازاریابی",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "seo-content-marketing",
+          "title": "سئو و بازاریابی محتوا",
+          "description": "جذب مخاطب از گوگل و محتوای هدفمند",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر سئو و بازاریابی محتوا",
+            "description": "\n    <p>این مسیر برای افزایش بازدید ارگانیک سایت، تولید محتوای هدفمند و بهینه‌سازی صفحات طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری سئو و بازاریابی محتوا:</h4>\n    <ol>\n      <li><strong>تحقیق و برنامه‌ریزی</strong>\n        <ul><li>تحقیق کلمات کلیدی</li><li>تحلیل رقبا</li><li>ساخت تقویم محتوایی سئو</li></ul>\n      </li>\n      <li><strong>سئوی داخلی و محتوا</strong>\n        <ul><li>ساختار مقاله</li><li>بهینه‌سازی عنوان و لینک‌ها</li><li>بهبود تجربه کاربری محتوا</li></ul>\n      </li>\n      <li><strong>سئوی فنی و گزارش</strong>\n        <ul><li>سرعت و ساختار سایت</li><li>Search Console</li><li>گزارش‌گیری و بهبود رتبه</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>مدیران سایت</li><li>کارشناسان محتوا</li><li>فروشگاه‌های آنلاین</li><li>فریلنسرهای سئو</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>تحقیق کلمات کلیدی</li><li>تولید محتوای رتبه‌گیر</li><li>بهینه‌سازی صفحات</li><li>تحلیل عملکرد سئو</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "سئو مقدماتی",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "بازاریابی محتوا",
+                "duration": "5 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "Search Console و گزارش سئو",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ads-sales",
+          "title": "تبلیغات و فروش",
+          "description": "تبلیغ‌نویسی، مذاکره و افزایش فروش",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر تبلیغات و فروش",
+            "description": "\n    <p>این مسیر برای طراحی پیام تبلیغاتی، اجرای تبلیغات هدفمند و تبدیل مخاطب به مشتری مناسب است.</p>\n\n    <h4>📚 مراحل یادگیری تبلیغات و فروش:</h4>\n    <ol>\n      <li><strong>پیام و پیشنهاد فروش</strong>\n        <ul><li>شناخت نیاز مشتری</li><li>نوشتن پیشنهاد ارزش</li><li>طراحی پیام تبلیغاتی</li></ul>\n      </li>\n      <li><strong>کانال‌های تبلیغاتی</strong>\n        <ul><li>تبلیغات شبکه اجتماعی</li><li>تبلیغات کلیکی و بنری</li><li>کمپین‌های محلی و مناسبتی</li></ul>\n      </li>\n      <li><strong>فروش و پیگیری</strong>\n        <ul><li>مذاکره و پاسخ به اعتراض</li><li>CRM مقدماتی</li><li>اندازه‌گیری نرخ تبدیل</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>فروشندگان</li><li>صاحبان کسب‌وکار</li><li>کارشناسان تبلیغات</li><li>افراد علاقه‌مند به فروش آنلاین</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>طراحی پیام فروش</li><li>اجرای تبلیغات هدفمند</li><li>بهبود نرخ تبدیل</li><li>پیگیری و گزارش فروش</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "تبلیغ‌نویسی و فروش",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "کمپین تبلیغاتی شبکه اجتماعی",
+                "duration": "5 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "مذاکره و پیگیری فروش",
+                "duration": "4 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "beauty",
+      "title": "مراقبت زیبایی",
+      "description": "مسیر یادگیری مراقبت زیبایی",
+      "childhint": "مراقبت زیبایی شامل پوست و مو، میکاپ و خدمات ناخن است. مسیر مورد علاقه خود را انتخاب کنید.",
+      "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-5.png",
+      "children": [
+        {
+          "id": "skin-hair-care",
+          "title": "مراقبت پوست و مو",
+          "description": "شناخت پوست، مو و روتین‌های مراقبتی",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر مراقبت پوست و مو",
+            "description": "\n    <p>این مسیر برای شناخت اصول مراقبت پوست و مو، انتخاب محصولات مناسب و ارائه خدمات پایه زیبایی طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری مراقبت پوست و مو:</h4>\n    <ol>\n      <li><strong>شناخت پوست و مو</strong>\n        <ul><li>انواع پوست و مشکلات رایج</li><li>انواع مو و آسیب‌ها</li><li>اصول بهداشت و ایمنی</li></ul>\n      </li>\n      <li><strong>روتین مراقبتی</strong>\n        <ul><li>پاکسازی و آبرسانی</li><li>مراقبت مو و پوست سر</li><li>انتخاب محصول مناسب</li></ul>\n      </li>\n      <li><strong>خدمات پایه</strong>\n        <ul><li>مشاوره مراقبتی</li><li>اجرای مراحل مراقبت</li><li>پیگیری نتیجه و توصیه‌های خانگی</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان حوزه زیبایی</li><li>افراد مبتدی سالن‌ها</li><li>مشاوران زیبایی</li><li>افراد علاقه‌مند به مراقبت شخصی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>تشخیص نیازهای پایه پوست و مو</li><li>طراحی روتین مراقبتی</li><li>اجرای خدمات مراقبتی ساده</li><li>رعایت بهداشت حرفه‌ای</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "مبانی مراقبت پوست",
+                "duration": "6 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "مراقبت و احیای مو",
+                "duration": "5 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "بهداشت و مشاوره زیبایی",
+                "duration": "4 جلسه",
+                "price": 490000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "makeup",
+          "title": "آرایشگری و میکاپ",
+          "description": "گریم، میکاپ روزانه و مجلسی",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر آرایشگری و میکاپ",
+            "description": "\n    <p>این مسیر برای یادگیری اصول میکاپ، شناخت فرم صورت و اجرای آرایش روزانه تا مجلسی طراحی شده است.</p>\n\n    <h4>📚 مراحل یادگیری آرایشگری و میکاپ:</h4>\n    <ol>\n      <li><strong>مبانی میکاپ</strong>\n        <ul><li>شناخت فرم صورت</li><li>آماده‌سازی پوست</li><li>انتخاب رنگ و ابزار</li></ul>\n      </li>\n      <li><strong>تکنیک‌های کاربردی</strong>\n        <ul><li>زیرسازی و کانتور</li><li>آرایش چشم و ابرو</li><li>رژگونه، لب و فیکس نهایی</li></ul>\n      </li>\n      <li><strong>میکاپ مناسبتی</strong>\n        <ul><li>میکاپ روزانه و اداری</li><li>میکاپ مجلسی</li><li>عکاسی و نورپردازی ساده</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان میکاپ</li><li>کارآموزان سالن زیبایی</li><li>افراد آماده ورود به خدمات زیبایی</li><li>فریلنسرهای زیبایی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>اجرای میکاپ کامل</li><li>شناخت ابزار و محصولات</li><li>هماهنگی رنگ و فرم صورت</li><li>آمادگی برای خدمات مشتری</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "میکاپ مقدماتی",
+                "duration": "6 جلسه",
+                "price": 790000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "آرایش چشم و ابرو",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "میکاپ مجلسی",
+                "duration": "6 جلسه",
+                "price": 890000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nail-beauty-services",
+          "title": "ناخن و خدمات زیبایی",
+          "description": "مانیکور، کاشت ناخن و طراحی پایه",
+          "childhint": "",
+          "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png",
+          "path": {
+            "title": "مسیر ناخن و خدمات زیبایی",
+            "description": "\n    <p>این مسیر برای یادگیری خدمات ناخن، بهداشت کار و طراحی‌های پایه تا قابل ارائه در سالن مناسب است.</p>\n\n    <h4>📚 مراحل یادگیری ناخن و خدمات زیبایی:</h4>\n    <ol>\n      <li><strong>مبانی و بهداشت</strong>\n        <ul><li>شناخت ابزار ناخن</li><li>ضدعفونی و ایمنی</li><li>آماده‌سازی ناخن طبیعی</li></ul>\n      </li>\n      <li><strong>خدمات ناخن</strong>\n        <ul><li>مانیکور و پدیکور</li><li>ژلیش و لمینت</li><li>کاشت و ترمیم مقدماتی</li></ul>\n      </li>\n      <li><strong>طراحی و مشتری‌مداری</strong>\n        <ul><li>طراحی ساده ناخن</li><li>انتخاب رنگ و فرم</li><li>نگهداری و توصیه به مشتری</li></ul>\n      </li>\n    </ol>\n\n    <h4>🎯 این مسیر مناسب چه کسانی است؟</h4>\n    <ul><li>علاقه‌مندان خدمات ناخن</li><li>کارآموزان سالن</li><li>افراد علاقه‌مند به کسب‌وکار خانگی</li><li>فعالان زیبایی</li></ul>\n\n    <h4>🎯 مهارت‌های نهایی:</h4>\n    <ul><li>اجرای خدمات پایه ناخن</li><li>رعایت بهداشت حرفه‌ای</li><li>طراحی و ترمیم ساده</li><li>آمادگی برای ارائه خدمات</li></ul>\n\n    <p>💡 نکته: بهتر است پس از هر مرحله یک پروژه کوچک عملی انجام شود.</p>\n  ",
+            "courses": [
+              {
+                "title": "مانیکور و پدیکور",
+                "duration": "5 جلسه",
+                "price": 590000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "ژلیش و لمینت ناخن",
+                "duration": "5 جلسه",
+                "price": 690000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              },
+              {
+                "title": "کاشت و طراحی مقدماتی",
+                "duration": "8 جلسه",
+                "price": 990000,
+                "rating": 4.8,
+                "link": "#",
+                "image": "https://www.aryatehran.com/wp-content/uploads/2026/01/where-do-i-start-4.png"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
